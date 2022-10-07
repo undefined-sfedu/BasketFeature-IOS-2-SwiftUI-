@@ -9,7 +9,6 @@ import Foundation
 class TeamsViewModel: ObservableObject{
     private var model = TeamsModel()
     @Published var teams = [Team]()
-    @Published var nameOfTeams = [String]()
     
     init(){
 //        teams.forEach { item in

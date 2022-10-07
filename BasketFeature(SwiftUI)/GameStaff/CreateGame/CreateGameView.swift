@@ -64,10 +64,7 @@ struct CreateGameView: View {
             }
         }
         
-        //        LazyVStack(pinnedViews:
-        //        ){
-        //
-        //        }
+        .navigationBarTitle("Новая игра")
     }
     
     var selectTeamA: some View{

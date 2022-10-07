@@ -55,7 +55,7 @@ private extension AddPlayerToTeamViewModel{
         
         
         for i in textFieldsDescription.indices{
-            if textFieldsDescription[i].fieldValue.isEmpty{
+            if textFieldsDescription[i].fieldValue.isEmpty && textFieldsDescription[i].placeholder != textFieldsDescription[AddPlayerToTeamView.IndexesOfDescription.middleName.rawValue].placeholder {
                 textFieldsDescription[i].visibleOfError = true
                 res = false
             }
