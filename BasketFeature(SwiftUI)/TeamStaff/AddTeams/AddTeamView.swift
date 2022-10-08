@@ -45,11 +45,11 @@ struct AddTeamView: View {
         })
         
         .onAppear() {
-            tabBarConfig.tabBarIsHidden = true
+                tabBarConfig.tabBarIsHidden = true
         }
         
         .onDisappear() {
-            tabBarConfig.tabBarIsHidden = false
+                tabBarConfig.tabBarIsHidden = false
         }
         
     }

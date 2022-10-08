@@ -8,46 +8,56 @@
 import SwiftUI
 
 struct SelectFivePlayersView: View {
-//    @State var data = [0, 7, 9, 10, 11, 25, 31, 41, 43, 54, 65, 70, 71, 89]
-    @State var data = [
-        [0, 7, 9, 10, 11],
-        [25, 31, 41, 43, 54],
-        [65, 70, 71, 89]
-    ]
-    
-    init(){
-        
-    }
+   @StateObject var viewModel = SelectFivePlayersViewModel()
     var body: some View {
         VStack{
             Text("Название команды")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding(.vertical)
-            teamPlayers
+            UnselectedPlayersGrid
             Divider()
                 .frame(height: 3)
-                .overlay(Color.customOrange)
+                .overlay(Color.orange)
                 .padding(.horizontal)
-                
+            SelectedPlayersGrid
             Spacer()
             
             
         }
         
-            .navigationTitle("Стартовая пятерка")
-            .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("Стартовая пятерка")
+        .navigationBarTitleDisplayMode(.inline)
     }
     
-    var teamPlayers: some View{
+    var UnselectedPlayersGrid: some View{
         VStack{
-            ForEach(0..<data.count) { i in
+            ForEach(viewModel.unselectedPLayers, id:\.self) { array in
                 HStack{
-                    ForEach(0..<data[i].count) { j in
-                        Text("\(data[i][j])")
+                    ForEach(array, id: \.self) { item in
+                        Button {
+                            viewModel.selectPlayer(number: item)
+                        } label: {
+                            Text("\(item)")
+                                .padding()
+                        }
                     }
                 }
             }
+        }
+    }
+    
+    var SelectedPlayersGrid: some View{
+        HStack{
+            ForEach(viewModel.selectedPLayers, id: \.self) { item in
+                Button {
+                    viewModel.unselectPlayer(number: item)
+                } label: {
+                    Text("\(item)")
+                        .padding()
+                }
+            }
+            
         }
     }
     
@@ -57,7 +67,7 @@ struct SelectFivePlayersView: View {
 struct SelectFivePlayersView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-        SelectFivePlayersView()
+            SelectFivePlayersView()
         }
     }
 }

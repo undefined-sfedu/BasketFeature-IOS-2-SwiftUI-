@@ -13,7 +13,7 @@ struct BasketFeature_SwiftUI_App: App {
         WindowGroup {
             NavigationView{
                 
-                CustomTabBar()
+                SelectFivePlayersView()
             }
         }
     }
