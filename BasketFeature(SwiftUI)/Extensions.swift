@@ -17,4 +17,8 @@ extension Color{
     public static var customGray: Color{
         Color.init(uiColor: UIColor(red: 174/256, green: 174/256, blue: 174/256, alpha: 1))
     }
+    
+    public static var customPink: Color{
+        Color.init(uiColor: UIColor(red: 252/256, green: 221/256, blue: 236/256, alpha: 1))
+    }
 }

@@ -38,6 +38,7 @@
 		F35B399528EFF928008A62B9 /* CreateGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35B399428EFF928008A62B9 /* CreateGameViewModel.swift */; };
 		F35B399728EFF930008A62B9 /* CreateGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35B399628EFF930008A62B9 /* CreateGameModel.swift */; };
 		F35B399928EFFA57008A62B9 /* SelectFivePlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35B399828EFFA57008A62B9 /* SelectFivePlayersView.swift */; };
+		F3810C1F28F89F23009170BA /* SelectTimeAndTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3810C1E28F89F23009170BA /* SelectTimeAndTeam.swift */; };
 		F394FA6A28EFE647008DB55B /* AddPlayerToTeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394FA6928EFE647008DB55B /* AddPlayerToTeamModel.swift */; };
 		F3986E1A28E9623E008F16E9 /* ForgetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3986E1928E9623E008F16E9 /* ForgetPasswordView.swift */; };
 		F3B2F29328F0BDD000E96FDA /* SelectFivePlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B2F29228F0BDD000E96FDA /* SelectFivePlayersViewModel.swift */; };
@@ -85,6 +86,7 @@
 		F35B399428EFF928008A62B9 /* CreateGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameViewModel.swift; sourceTree = "<group>"; };
 		F35B399628EFF930008A62B9 /* CreateGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameModel.swift; sourceTree = "<group>"; };
 		F35B399828EFFA57008A62B9 /* SelectFivePlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFivePlayersView.swift; sourceTree = "<group>"; };
+		F3810C1E28F89F23009170BA /* SelectTimeAndTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeAndTeam.swift; sourceTree = "<group>"; };
 		F394FA6928EFE647008DB55B /* AddPlayerToTeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerToTeamModel.swift; sourceTree = "<group>"; };
 		F3986E1928E9623E008F16E9 /* ForgetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordView.swift; sourceTree = "<group>"; };
 		F3B2F29228F0BDD000E96FDA /* SelectFivePlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFivePlayersViewModel.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				F3561C7328EF0F5A0098188E /* Games */,
 				F3561C7628EF0FAB0098188E /* CreateGame */,
 				F35B399B28EFFA6D008A62B9 /* SelectFivePlayers */,
+				F3810C1D28F89EFB009170BA /* SelectTimeAndTeam */,
 			);
 			path = GameStaff;
 			sourceTree = "<group>";
@@ -243,6 +246,14 @@
 				F3B2F29228F0BDD000E96FDA /* SelectFivePlayersViewModel.swift */,
 			);
 			path = SelectFivePlayers;
+			sourceTree = "<group>";
+		};
+		F3810C1D28F89EFB009170BA /* SelectTimeAndTeam */ = {
+			isa = PBXGroup;
+			children = (
+				F3810C1E28F89F23009170BA /* SelectTimeAndTeam.swift */,
+			);
+			path = SelectTimeAndTeam;
 			sourceTree = "<group>";
 		};
 		F3986E1828E9621A008F16E9 /* ForgetPassword */ = {
@@ -411,6 +422,7 @@
 				F3E2275228EE992700A712D4 /* CustomTabBar.swift in Sources */,
 				F35B399528EFF928008A62B9 /* CreateGameViewModel.swift in Sources */,
 				F3986E1A28E9623E008F16E9 /* ForgetPasswordView.swift in Sources */,
+				F3810C1F28F89F23009170BA /* SelectTimeAndTeam.swift in Sources */,
 				F3FF7A7228E97E04008B1FE8 /* CustomAlert.swift in Sources */,
 				F394FA6A28EFE647008DB55B /* AddPlayerToTeamModel.swift in Sources */,
 				F3D911DB28EC384C00BDA6D3 /* AddPlayerToTeamView.swift in Sources */,
