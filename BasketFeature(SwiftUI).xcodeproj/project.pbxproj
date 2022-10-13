@@ -12,6 +12,7 @@
 		F316CC7528ED535500F98BC4 /* ServerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F316CC7428ED535500F98BC4 /* ServerHelper.swift */; };
 		F316CC7728ED562100F98BC4 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F316CC7628ED562100F98BC4 /* LoginModel.swift */; };
 		F316CC7928ED6DE700F98BC4 /* LocalUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F316CC7828ED6DE700F98BC4 /* LocalUser.swift */; };
+		F324F27228F1966900293DE4 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324F27128F1966900293DE4 /* Field.swift */; };
 		F32B7C1028E9E42F00E279AE /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B7C0F28E9E42F00E279AE /* Player.swift */; };
 		F32B7C1228E9E47A00E279AE /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B7C1128E9E47A00E279AE /* Team.swift */; };
 		F32B7C1428E9E7DC00E279AE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B7C1328E9E7DC00E279AE /* User.swift */; };
@@ -57,6 +58,7 @@
 		F316CC7428ED535500F98BC4 /* ServerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerHelper.swift; sourceTree = "<group>"; };
 		F316CC7628ED562100F98BC4 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		F316CC7828ED6DE700F98BC4 /* LocalUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUser.swift; sourceTree = "<group>"; };
+		F324F27128F1966900293DE4 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 		F32B7C0F28E9E42F00E279AE /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F32B7C1128E9E47A00E279AE /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		F32B7C1328E9E7DC00E279AE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				F3FF7A7128E97E04008B1FE8 /* CustomAlert.swift */,
 				F32B7C1928E9E9CF00E279AE /* TeamCell.swift */,
 				F3CD446328EC272600CF88BB /* CustomPlayerCell.swift */,
+				F324F27128F1966900293DE4 /* Field.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				F3561C6D28EF02370098188E /* ShowTeamViewModel.swift in Sources */,
 				F32B7C1228E9E47A00E279AE /* Team.swift in Sources */,
 				F3CD446628EC2C4F00CF88BB /* AddPlayerToTeamViewModel.swift in Sources */,
+				F324F27228F1966900293DE4 /* Field.swift in Sources */,
 				F32B7C1A28E9E9CF00E279AE /* TeamCell.swift in Sources */,
 				F3561C7828EF0FBD0098188E /* CreateGameView.swift in Sources */,
 				F3FF7A7028E9638E008B1FE8 /* ForgetPasswordViewModel.swift in Sources */,
@@ -564,7 +568,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Daniil.BasketFeature-SwiftUI-";
+				PRODUCT_BUNDLE_IDENTIFIER = Daniil.BasketFeatureSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -593,7 +597,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Daniil.BasketFeature-SwiftUI-";
+				PRODUCT_BUNDLE_IDENTIFIER = Daniil.BasketFeatureSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

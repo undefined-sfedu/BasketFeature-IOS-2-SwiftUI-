@@ -19,13 +19,13 @@ class LoginModel{
     var viewModel: LoginViewModel? = nil
     
     func enter(email: String, password: String){
-        var url = helperServer.getPath(typeOfrequest: .authUser)
-        url += "\(email)/\(password)"
+        let url = helperServer.getPath(typeOfrequest: .authUser, typeOfParam: .authData, param: [email, password])
         let headers: HTTPHeaders = ["accept": "application/json"]
         //        let body = [
         //            "email" : email,
         //            "password" : password
         //        ]
+        print(url)
         print(email)
         print(password)
         AF.request(url, method: .get, headers: headers).responseJSON { [self] answer in

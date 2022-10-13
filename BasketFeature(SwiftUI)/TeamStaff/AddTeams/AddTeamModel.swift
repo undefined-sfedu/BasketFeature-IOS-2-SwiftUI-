@@ -14,8 +14,9 @@ class AddTeamModel{
     private var localUser = LocalUser()
     
     func createTeam(name: String, players: [String]){
-        var url = serverHelper.getPath(typeOfrequest: .createTeamForUser)
-        url += "\(localUser.getData(typeOfData: .id))/teams/"
+//        var url = serverHelper.getPath(typeOfrequest: .createTeamForUser)
+//        url += "\(localUser.getData(typeOfData: .id))/teams/"
+        let url = serverHelper.getPath(typeOfrequest: .createTeamForUser, typeOfParam: .userId, param: [localUser.getData(typeOfData: .id)])
         let headers: HTTPHeaders = [
             "Accept": "application/json",
             "Content-Type": "application/json"
@@ -25,6 +26,7 @@ class AddTeamModel{
         print(url)
         AF.request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: headers).responseJSON { [self] answer in
             print(answer.response?.statusCode)
+            print(answer)
             guard let corData = answer.data else {return}
             let maybeData = try? JSON(data: corData)
             guard let myData = maybeData else {return}
@@ -38,8 +40,9 @@ class AddTeamModel{
     }
     
     func addPlayersToTeam(teamId: Int, players: [String]){
-        var url = serverHelper.getPath(typeOfrequest: .createPlayerForTeam)
-        url += "\(teamId)/players"
+//        var url = serverHelper.getPath(typeOfrequest: .createPlayerForTeam)
+        let url = serverHelper.getPath(typeOfrequest: .createPlayerForTeam, typeOfParam: .teamId, param: ["\(teamId)"])
+        print(url)
         let headers: HTTPHeaders = [
             "Accept": "application/json",
             "Content-Type": "application/json"

@@ -14,7 +14,9 @@ class ShowTeamModel{
     var viewModel: ShowTeamViewModel? = nil
     
     func getPlayers(teamId: Int){
-        var url = serverHelper.getPath(typeOfrequest: .getUserTeams) + "\(localUser.getData(typeOfData: .id))"
+//        var url = serverHelper.getPath(typeOfrequest: .getUserTeams) + "\(localUser.getData(typeOfData: .id))"
+        let url = serverHelper.getPath(typeOfrequest: .getUserTeams, typeOfParam: .userId, param: [localUser.getData(typeOfData: .id)])
+        print(url)
         AF.request(url, method: .get).responseJSON { [self] answer in
             guard let corData = answer.data else {return}
             let maybeData = try? JSON(data: corData)

@@ -14,18 +14,20 @@ class TeamsModel{
     private var localUser = LocalUser()
     
     func getTeams(){
-        var url = serverHelper.getPath(typeOfrequest: .getUserTeams)
-        url += "\(localUser.getData(typeOfData: .id))"
-        //        print(url)
+//        var url = serverHelper.getPath(typeOfrequest: .getUserTeams)
+//        url += "\(localUser.getData(typeOfData: .id))"
+        let url = serverHelper.getPath(typeOfrequest: .getAllTeams, typeOfParam: .withoutParam, param: nil)
+                print(url)
         AF.request(url).responseJSON { [self] answer in
 
             guard let corData = answer.data else {return}
             let maybeData = try? JSON(data: corData)
             guard let myData = maybeData else {return}
-//            print(myData)
+            print(answer.response?.statusCode)
+            print(myData)
             if answer.response?.statusCode == 200{
                 var res = [Team]()
-                let teams = myData["teams"].arrayValue
+                let teams = myData.arrayValue
                 
                 teams.forEach { item in
                     let name = item["name"].stringValue

@@ -13,7 +13,8 @@ class RegisterModel{
     var viewModel: RegisterViewModel? = nil
     
     func register(email: String, password: String){
-        let url = serverHelper.getPath(typeOfrequest: .createUser)
+//        let url = serverHelper.getPath(typeOfrequest: .createUser)
+        let url = serverHelper.getPath(typeOfrequest: .createUser, typeOfParam: .withoutParam, param: nil)
         let body = [
             "email" : email,
             "password" : password

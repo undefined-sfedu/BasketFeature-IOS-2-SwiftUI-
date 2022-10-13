@@ -7,11 +7,11 @@
 
 import Foundation
 import SwiftUI
-class CreateGameViewModel{
+class CreateGameViewModel: ObservableObject{
     var model = CreateGameModel()
     @Published var teams = [Team]()
+    @Published var teamsName = ["Example1", "Example2", "Example3", "Example1", "Example2", "Example3", "Example1", "Example2", "Example3", "Example1", "Example2", "Example3"]
     init(){
-
         model.viewModel = self
         getTeams()
     }
@@ -24,6 +24,9 @@ class CreateGameViewModel{
 // MARK: - Model Methods
     func updateTeams(team: [Team]){
         teams = team
+        teams.forEach { item in
+            teamsName.append(item.name)
+        }
     }
     
 }

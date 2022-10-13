@@ -20,6 +20,7 @@ struct SelectFivePlayersView: View {
                 .frame(height: 3)
                 .overlay(Color.orange)
                 .padding(.horizontal)
+            Spacer()
             SelectedPlayersGrid
             Spacer()
             

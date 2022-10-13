@@ -47,7 +47,7 @@ struct TeamsView: View {
                 }
                 else{
                     Text("Создайте команду")
-                        .foregroundColor(.customGray)
+                        .foregroundColor(viewModel.teams.isEmpty ? .white : .customGray)
                     Spacer()
                 }
             }
