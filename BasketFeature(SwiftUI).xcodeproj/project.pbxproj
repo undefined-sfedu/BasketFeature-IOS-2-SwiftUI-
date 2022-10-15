@@ -49,6 +49,14 @@
 		F3E2275228EE992700A712D4 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E2275128EE992700A712D4 /* CustomTabBar.swift */; };
 		F3E2275428EEA59600A712D4 /* AddTeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E2275328EEA59600A712D4 /* AddTeamModel.swift */; };
 		F3E2275628EEB6CB00A712D4 /* TabBarConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E2275528EEB6CB00A712D4 /* TabBarConfig.swift */; };
+		F3E9129128FA81F400D47E44 /* SelectBeginningAttackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E9129028FA81F400D47E44 /* SelectBeginningAttackView.swift */; };
+		F3E9129328FA81FF00D47E44 /* SelectBeginningAttackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E9129228FA81FF00D47E44 /* SelectBeginningAttackViewModel.swift */; };
+		F3F2BD0B28FA88AE001DEE56 /* PropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F2BD0A28FA88AE001DEE56 /* PropertyView.swift */; };
+		F3F2BD0D28FA8B94001DEE56 /* PropertyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F2BD0C28FA8B94001DEE56 /* PropertyViewModel.swift */; };
+		F3F2BD1128FA9615001DEE56 /* SelectTypeOfAttackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F2BD1028FA9615001DEE56 /* SelectTypeOfAttackView.swift */; };
+		F3F2BD1328FA96B7001DEE56 /* SelectTypeOfAttackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F2BD1228FA96B7001DEE56 /* SelectTypeOfAttackViewModel.swift */; };
+		F3F2BD1728FA9793001DEE56 /* SelectResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F2BD1628FA9793001DEE56 /* SelectResultView.swift */; };
+		F3F2BD1928FA979B001DEE56 /* SelectResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F2BD1828FA979B001DEE56 /* SelectResultViewModel.swift */; };
 		F3FBBFFA28E4C20D00B6C73E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FBBFF928E4C20D00B6C73E /* LoginView.swift */; };
 		F3FBBFFC28E4C2F500B6C73E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FBBFFB28E4C2F500B6C73E /* LoginViewModel.swift */; };
 		F3FF7A7028E9638E008B1FE8 /* ForgetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FF7A6F28E9638E008B1FE8 /* ForgetPasswordViewModel.swift */; };
@@ -97,6 +105,14 @@
 		F3E2275128EE992700A712D4 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		F3E2275328EEA59600A712D4 /* AddTeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeamModel.swift; sourceTree = "<group>"; };
 		F3E2275528EEB6CB00A712D4 /* TabBarConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarConfig.swift; sourceTree = "<group>"; };
+		F3E9129028FA81F400D47E44 /* SelectBeginningAttackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBeginningAttackView.swift; sourceTree = "<group>"; };
+		F3E9129228FA81FF00D47E44 /* SelectBeginningAttackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBeginningAttackViewModel.swift; sourceTree = "<group>"; };
+		F3F2BD0A28FA88AE001DEE56 /* PropertyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyView.swift; sourceTree = "<group>"; };
+		F3F2BD0C28FA8B94001DEE56 /* PropertyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyViewModel.swift; sourceTree = "<group>"; };
+		F3F2BD1028FA9615001DEE56 /* SelectTypeOfAttackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTypeOfAttackView.swift; sourceTree = "<group>"; };
+		F3F2BD1228FA96B7001DEE56 /* SelectTypeOfAttackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTypeOfAttackViewModel.swift; sourceTree = "<group>"; };
+		F3F2BD1628FA9793001DEE56 /* SelectResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectResultView.swift; sourceTree = "<group>"; };
+		F3F2BD1828FA979B001DEE56 /* SelectResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectResultViewModel.swift; sourceTree = "<group>"; };
 		F3FBBFF928E4C20D00B6C73E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F3FBBFFB28E4C2F500B6C73E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F3FF7A6F28E9638E008B1FE8 /* ForgetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewModel.swift; sourceTree = "<group>"; };
@@ -217,6 +233,10 @@
 				F3561C7628EF0FAB0098188E /* CreateGame */,
 				F35B399B28EFFA6D008A62B9 /* SelectFivePlayers */,
 				F3810C1D28F89EFB009170BA /* SelectTimeAndTeam */,
+				F3E9128F28FA81D600D47E44 /* SelectBeginningAttack */,
+				F3F2BD0928FA887B001DEE56 /* Property */,
+				F3F2BD0E28FA95DB001DEE56 /* SelectTypeOfAttack */,
+				F3F2BD0F28FA95EE001DEE56 /* SelectResult */,
 			);
 			path = GameStaff;
 			sourceTree = "<group>";
@@ -298,6 +318,42 @@
 				F394FA6928EFE647008DB55B /* AddPlayerToTeamModel.swift */,
 			);
 			path = AddPlayerToTeam;
+			sourceTree = "<group>";
+		};
+		F3E9128F28FA81D600D47E44 /* SelectBeginningAttack */ = {
+			isa = PBXGroup;
+			children = (
+				F3E9129028FA81F400D47E44 /* SelectBeginningAttackView.swift */,
+				F3E9129228FA81FF00D47E44 /* SelectBeginningAttackViewModel.swift */,
+			);
+			path = SelectBeginningAttack;
+			sourceTree = "<group>";
+		};
+		F3F2BD0928FA887B001DEE56 /* Property */ = {
+			isa = PBXGroup;
+			children = (
+				F3F2BD0A28FA88AE001DEE56 /* PropertyView.swift */,
+				F3F2BD0C28FA8B94001DEE56 /* PropertyViewModel.swift */,
+			);
+			path = Property;
+			sourceTree = "<group>";
+		};
+		F3F2BD0E28FA95DB001DEE56 /* SelectTypeOfAttack */ = {
+			isa = PBXGroup;
+			children = (
+				F3F2BD1028FA9615001DEE56 /* SelectTypeOfAttackView.swift */,
+				F3F2BD1228FA96B7001DEE56 /* SelectTypeOfAttackViewModel.swift */,
+			);
+			path = SelectTypeOfAttack;
+			sourceTree = "<group>";
+		};
+		F3F2BD0F28FA95EE001DEE56 /* SelectResult */ = {
+			isa = PBXGroup;
+			children = (
+				F3F2BD1628FA9793001DEE56 /* SelectResultView.swift */,
+				F3F2BD1828FA979B001DEE56 /* SelectResultViewModel.swift */,
+			);
+			path = SelectResult;
 			sourceTree = "<group>";
 		};
 		F3FBBFF828E4C1F500B6C73E /* Login */ = {
@@ -400,8 +456,10 @@
 				F34B54F128E311290045BA28 /* TextFieldDescription.swift in Sources */,
 				F35B399728EFF930008A62B9 /* CreateGameModel.swift in Sources */,
 				F3B2F29328F0BDD000E96FDA /* SelectFivePlayersViewModel.swift in Sources */,
+				F3F2BD1928FA979B001DEE56 /* SelectResultViewModel.swift in Sources */,
 				F316CC7728ED562100F98BC4 /* LoginModel.swift in Sources */,
 				F34B54F328E31E890045BA28 /* RegisterModel.swift in Sources */,
+				F3F2BD1328FA96B7001DEE56 /* SelectTypeOfAttackViewModel.swift in Sources */,
 				F34B54DE28E3030E0045BA28 /* RegisterView.swift in Sources */,
 				F3FBBFFA28E4C20D00B6C73E /* LoginView.swift in Sources */,
 				F3433C1728EC1F3500585633 /* ShowTeamView.swift in Sources */,
@@ -418,11 +476,15 @@
 				F3E2275628EEB6CB00A712D4 /* TabBarConfig.swift in Sources */,
 				F3561C7528EF0F6A0098188E /* GamesView.swift in Sources */,
 				F3E2275428EEA59600A712D4 /* AddTeamModel.swift in Sources */,
+				F3F2BD0B28FA88AE001DEE56 /* PropertyView.swift in Sources */,
 				F3FBBFFC28E4C2F500B6C73E /* LoginViewModel.swift in Sources */,
 				F3E2275228EE992700A712D4 /* CustomTabBar.swift in Sources */,
 				F35B399528EFF928008A62B9 /* CreateGameViewModel.swift in Sources */,
 				F3986E1A28E9623E008F16E9 /* ForgetPasswordView.swift in Sources */,
 				F3810C1F28F89F23009170BA /* SelectTimeAndTeam.swift in Sources */,
+				F3F2BD1128FA9615001DEE56 /* SelectTypeOfAttackView.swift in Sources */,
+				F3F2BD0D28FA8B94001DEE56 /* PropertyViewModel.swift in Sources */,
+				F3F2BD1728FA9793001DEE56 /* SelectResultView.swift in Sources */,
 				F3FF7A7228E97E04008B1FE8 /* CustomAlert.swift in Sources */,
 				F394FA6A28EFE647008DB55B /* AddPlayerToTeamModel.swift in Sources */,
 				F3D911DB28EC384C00BDA6D3 /* AddPlayerToTeamView.swift in Sources */,
@@ -438,6 +500,8 @@
 				F32B7C1828E9E8A400E279AE /* TeamsModel.swift in Sources */,
 				F32B7C1028E9E42F00E279AE /* Player.swift in Sources */,
 				F34B54EC28E30D500045BA28 /* Extensions.swift in Sources */,
+				F3E9129128FA81F400D47E44 /* SelectBeginningAttackView.swift in Sources */,
+				F3E9129328FA81FF00D47E44 /* SelectBeginningAttackViewModel.swift in Sources */,
 				F32B7C1628E9E89B00E279AE /* TeamsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

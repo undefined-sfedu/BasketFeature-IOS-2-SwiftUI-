@@ -10,36 +10,23 @@ import SwiftUI
 struct SelectTimeAndTeam: View {
     @State var selectedTime = "1"
     @State var selectedIndex = 0
+    @State var nextScreen = false
     var arrOfValues = ["1", "2", "3", "4", "ОТ"]
     
-    var body: some View {
-        
-        
+    var body: some View{
         VStack{
+            NavigationLink(destination: SelectBeginningAttackView(), isActive: $nextScreen) {EmptyView()}
             CustomPicker
             HStack {
                 Text("Команда")
                     .font(.system(size: 24))
                     .foregroundColor(.black)
-                    .fontWeight(.bold)
+                    .fontWeight(.medium)
                 
                 Spacer()
             }
-            
-            RoundedRectangle(cornerRadius: 10)
-                .strokeBorder(Color.black)
-                .overlay(
-                    Text("Химки")
-                        .font(.system(size: 24))
-                    
-                )
-            
-            RoundedRectangle(cornerRadius: 10)
-                .strokeBorder(Color.black)
-                .overlay(
-                    Text("ЦСКА")
-                        .font(.system(size: 24))
-                )
+            TeamAButton
+            TeamBButton
             
             HStack{
                 CancelButton
@@ -61,10 +48,42 @@ struct SelectTimeAndTeam: View {
         Text("Тайм")
             .font(.system(size: 24))
             .foregroundColor(.black)
-            .fontWeight(.bold)
+            .fontWeight(.medium)
         
     }
+  
     
+    //    MARK: - TeamA Button
+    var TeamAButton: some View{
+        Button {
+            
+            nextScreen.toggle()
+        } label: {
+            RoundedRectangle(cornerRadius: 10)
+                .strokeBorder(Color.black)
+                .overlay(
+                    Text("Химки")
+                        .foregroundColor(.black)
+                        .font(.system(size: 24))
+                )
+        }
+    }
+    //    MARK: - TeamB Button
+    var TeamBButton: some View{
+        Button {
+            
+            nextScreen.toggle()
+        } label: {
+            RoundedRectangle(cornerRadius: 10)
+                .strokeBorder(Color.black)
+                .overlay(
+                    Text("ЦСКА")
+                        .foregroundColor(.black)
+                        .font(.system(size: 24))
+                )
+        }
+    }
+    //    MARK: - Cancel Button
     var CancelButton: some View{
         Button {
             print()
@@ -81,7 +100,7 @@ struct SelectTimeAndTeam: View {
         }
         
     }
-    
+    //    MARK: - Table Button
     var TableButton: some View{
         Button {
             print()
@@ -97,7 +116,7 @@ struct SelectTimeAndTeam: View {
         }
     }
     
-    
+    //    MARK: - Picker
     var CustomPicker: some View{
         HStack{
             ForEach(0..<5) { i in
@@ -108,9 +127,9 @@ struct SelectTimeAndTeam: View {
                     Text(arrOfValues[i])
                         .foregroundColor(.black)
                         .padding(.all, UIScreen.main.bounds.width * 0.06)
-                        
-
-//                        .frame(maxHeight: UIScreen.main.bounds.width * 0.15)
+                    
+                    
+                    //                        .frame(maxHeight: UIScreen.main.bounds.width * 0.15)
                         .background(
                             ZStack{
                                 RoundedRectangle(cornerRadius: 10)
@@ -121,7 +140,7 @@ struct SelectTimeAndTeam: View {
                                 
                             }
                         )
-                        
+                    
                     
                 }
                 
@@ -136,7 +155,7 @@ struct SelectTimeAndTeam: View {
 
 
 
-
+//    MARK: - Preview Provider
 struct SelectTimeAndTeam_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
