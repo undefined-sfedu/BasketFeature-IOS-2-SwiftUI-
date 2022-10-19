@@ -38,6 +38,12 @@
 		F35B399528EFF928008A62B9 /* CreateGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35B399428EFF928008A62B9 /* CreateGameViewModel.swift */; };
 		F35B399728EFF930008A62B9 /* CreateGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35B399628EFF930008A62B9 /* CreateGameModel.swift */; };
 		F35B399928EFFA57008A62B9 /* SelectFivePlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35B399828EFFA57008A62B9 /* SelectFivePlayersView.swift */; };
+		F3803F3528FFC16600E590CB /* SelectLossView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3803F3428FFC16600E590CB /* SelectLossView.swift */; };
+		F3803F3728FFC17E00E590CB /* SelectLossViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3803F3628FFC17E00E590CB /* SelectLossViewModel.swift */; };
+		F3803F3A28FFC92C00E590CB /* SelectFoulView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3803F3928FFC92C00E590CB /* SelectFoulView.swift */; };
+		F3803F3C28FFC93B00E590CB /* SelectFoulViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3803F3B28FFC93B00E590CB /* SelectFoulViewModel.swift */; };
+		F3803F3E28FFCD1700E590CB /* SelectBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3803F3D28FFCD1700E590CB /* SelectBallView.swift */; };
+		F3803F4428FFDC7600E590CB /* SelectTechnicalParamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3803F4328FFDC7600E590CB /* SelectTechnicalParamsView.swift */; };
 		F3810C1F28F89F23009170BA /* SelectTimeAndTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3810C1E28F89F23009170BA /* SelectTimeAndTeam.swift */; };
 		F394FA6A28EFE647008DB55B /* AddPlayerToTeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394FA6928EFE647008DB55B /* AddPlayerToTeamModel.swift */; };
 		F3986E1A28E9623E008F16E9 /* ForgetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3986E1928E9623E008F16E9 /* ForgetPasswordView.swift */; };
@@ -94,6 +100,12 @@
 		F35B399428EFF928008A62B9 /* CreateGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameViewModel.swift; sourceTree = "<group>"; };
 		F35B399628EFF930008A62B9 /* CreateGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameModel.swift; sourceTree = "<group>"; };
 		F35B399828EFFA57008A62B9 /* SelectFivePlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFivePlayersView.swift; sourceTree = "<group>"; };
+		F3803F3428FFC16600E590CB /* SelectLossView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLossView.swift; sourceTree = "<group>"; };
+		F3803F3628FFC17E00E590CB /* SelectLossViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLossViewModel.swift; sourceTree = "<group>"; };
+		F3803F3928FFC92C00E590CB /* SelectFoulView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFoulView.swift; sourceTree = "<group>"; };
+		F3803F3B28FFC93B00E590CB /* SelectFoulViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFoulViewModel.swift; sourceTree = "<group>"; };
+		F3803F3D28FFCD1700E590CB /* SelectBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBallView.swift; sourceTree = "<group>"; };
+		F3803F4328FFDC7600E590CB /* SelectTechnicalParamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTechnicalParamsView.swift; sourceTree = "<group>"; };
 		F3810C1E28F89F23009170BA /* SelectTimeAndTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeAndTeam.swift; sourceTree = "<group>"; };
 		F394FA6928EFE647008DB55B /* AddPlayerToTeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerToTeamModel.swift; sourceTree = "<group>"; };
 		F3986E1928E9623E008F16E9 /* ForgetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordView.swift; sourceTree = "<group>"; };
@@ -237,6 +249,8 @@
 				F3F2BD0928FA887B001DEE56 /* Property */,
 				F3F2BD0E28FA95DB001DEE56 /* SelectTypeOfAttack */,
 				F3F2BD0F28FA95EE001DEE56 /* SelectResult */,
+				F3803F3328FFC14000E590CB /* SelectLoss */,
+				F3803F3828FFC8FC00E590CB /* SelectFoul */,
 			);
 			path = GameStaff;
 			sourceTree = "<group>";
@@ -266,6 +280,42 @@
 				F3B2F29228F0BDD000E96FDA /* SelectFivePlayersViewModel.swift */,
 			);
 			path = SelectFivePlayers;
+			sourceTree = "<group>";
+		};
+		F3803F3328FFC14000E590CB /* SelectLoss */ = {
+			isa = PBXGroup;
+			children = (
+				F3803F3428FFC16600E590CB /* SelectLossView.swift */,
+				F3803F3628FFC17E00E590CB /* SelectLossViewModel.swift */,
+			);
+			path = SelectLoss;
+			sourceTree = "<group>";
+		};
+		F3803F3828FFC8FC00E590CB /* SelectFoul */ = {
+			isa = PBXGroup;
+			children = (
+				F3803F3928FFC92C00E590CB /* SelectFoulView.swift */,
+				F3803F3B28FFC93B00E590CB /* SelectFoulViewModel.swift */,
+				F3803F4028FFDC3800E590CB /* SelectTechnicalParams */,
+				F3803F3F28FFDA2A00E590CB /* SelectBalls */,
+			);
+			path = SelectFoul;
+			sourceTree = "<group>";
+		};
+		F3803F3F28FFDA2A00E590CB /* SelectBalls */ = {
+			isa = PBXGroup;
+			children = (
+				F3803F3D28FFCD1700E590CB /* SelectBallView.swift */,
+			);
+			path = SelectBalls;
+			sourceTree = "<group>";
+		};
+		F3803F4028FFDC3800E590CB /* SelectTechnicalParams */ = {
+			isa = PBXGroup;
+			children = (
+				F3803F4328FFDC7600E590CB /* SelectTechnicalParamsView.swift */,
+			);
+			path = SelectTechnicalParams;
 			sourceTree = "<group>";
 		};
 		F3810C1D28F89EFB009170BA /* SelectTimeAndTeam */ = {
@@ -459,10 +509,13 @@
 				F3F2BD1928FA979B001DEE56 /* SelectResultViewModel.swift in Sources */,
 				F316CC7728ED562100F98BC4 /* LoginModel.swift in Sources */,
 				F34B54F328E31E890045BA28 /* RegisterModel.swift in Sources */,
+				F3803F3C28FFC93B00E590CB /* SelectFoulViewModel.swift in Sources */,
 				F3F2BD1328FA96B7001DEE56 /* SelectTypeOfAttackViewModel.swift in Sources */,
 				F34B54DE28E3030E0045BA28 /* RegisterView.swift in Sources */,
+				F3803F3E28FFCD1700E590CB /* SelectBallView.swift in Sources */,
 				F3FBBFFA28E4C20D00B6C73E /* LoginView.swift in Sources */,
 				F3433C1728EC1F3500585633 /* ShowTeamView.swift in Sources */,
+				F3803F4428FFDC7600E590CB /* SelectTechnicalParamsView.swift in Sources */,
 				F316CC7528ED535500F98BC4 /* ServerHelper.swift in Sources */,
 				F34B54F528E31EA10045BA28 /* TeamsView.swift in Sources */,
 				F3561C6F28EF02580098188E /* ShowTeamModel.swift in Sources */,
@@ -490,6 +543,8 @@
 				F3D911DB28EC384C00BDA6D3 /* AddPlayerToTeamView.swift in Sources */,
 				F316CC7928ED6DE700F98BC4 /* LocalUser.swift in Sources */,
 				F3561C6D28EF02370098188E /* ShowTeamViewModel.swift in Sources */,
+				F3803F3728FFC17E00E590CB /* SelectLossViewModel.swift in Sources */,
+				F3803F3528FFC16600E590CB /* SelectLossView.swift in Sources */,
 				F32B7C1228E9E47A00E279AE /* Team.swift in Sources */,
 				F3CD446628EC2C4F00CF88BB /* AddPlayerToTeamViewModel.swift in Sources */,
 				F324F27228F1966900293DE4 /* Field.swift in Sources */,
@@ -501,6 +556,7 @@
 				F32B7C1028E9E42F00E279AE /* Player.swift in Sources */,
 				F34B54EC28E30D500045BA28 /* Extensions.swift in Sources */,
 				F3E9129128FA81F400D47E44 /* SelectBeginningAttackView.swift in Sources */,
+				F3803F3A28FFC92C00E590CB /* SelectFoulView.swift in Sources */,
 				F3E9129328FA81FF00D47E44 /* SelectBeginningAttackViewModel.swift in Sources */,
 				F32B7C1628E9E89B00E279AE /* TeamsViewModel.swift in Sources */,
 			);

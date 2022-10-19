@@ -11,16 +11,19 @@ struct SelectResultView: View {
     @Environment (\.dismiss) var dismiss
     @StateObject var viewModel = SelectResultViewModel()
     @State var nextScreen = false
+    @State var idOfSelected = 0
     var body: some View {
         VStack{
-            ForEach(viewModel.typesOfRes, id: \.self) { i in
+            NavigationLink(destination: viewModel.getNextView(id: idOfSelected), isActive: $nextScreen) {EmptyView()}
+            ForEach(viewModel.typesOfRes.indices) { i in
                 Button {
-                    
+                    idOfSelected = i
+                    nextScreen.toggle()
                 } label: {
                     RoundedRectangle(cornerRadius: 10)
                         .strokeBorder(Color.black)
                         .overlay(
-                            Text(i)
+                            Text(viewModel.typesOfRes[i])
                                 .foregroundColor(.black)
                                 .font(.system(size: 24))
                         )

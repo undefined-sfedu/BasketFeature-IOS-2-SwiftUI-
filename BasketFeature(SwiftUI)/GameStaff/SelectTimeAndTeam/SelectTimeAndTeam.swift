@@ -41,6 +41,7 @@ struct SelectTimeAndTeam: View {
         
         .navigationBarItems(leading: MainTitle)
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
     }
     
     

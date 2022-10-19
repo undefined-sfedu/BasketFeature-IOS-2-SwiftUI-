@@ -7,7 +7,7 @@
 
 import Foundation
 struct ServerHelper{
-    private let url = "http://127.0.0.1:8000"
+    private let url = "http://85.193.83.34:8000"
     private let userPath = "/users/"
     private let teamPath = "/teams/"
     private let playerPath = "/players/"
