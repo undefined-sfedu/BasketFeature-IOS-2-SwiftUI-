@@ -18,7 +18,7 @@ struct CreateGameView: View {
     @State var titleOfDatePicker = "Дата"
     @State var selectedDate = Date()
     @State var endDate = Date()
-    
+    @State var nextView = false
     var dateFormatter: DateFormatter{
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
@@ -28,6 +28,7 @@ struct CreateGameView: View {
     }
     var body: some View {
         VStack{
+            NavigationLink(destination: SelectFivePlayersView(), isActive: $nextView) {EmptyView()}
         ScrollView {
             Section(header: selectTeamA) {
                 if presentListA{
@@ -86,7 +87,7 @@ struct CreateGameView: View {
             
             //                }
             Spacer()
-            nextScreenButton
+            NextScreenButton
         }
         .padding(.horizontal)
         .padding(.bottom)
@@ -95,7 +96,9 @@ struct CreateGameView: View {
             tabBarConfig.tabBarIsHidden = true
         })
         .onDisappear(perform: {
+            if nextView == false{
             tabBarConfig.tabBarIsHidden = false
+            }
         })
         
         //        }
@@ -117,7 +120,8 @@ struct CreateGameView: View {
                     .foregroundColor(titleOfAHeader == "Выберите команду А" ? .customGray : .black)
                 Spacer()
                 Image(systemName: "chevron.backward")
-                    .foregroundColor(titleOfBHeader == "Выберите команду B" ? .customGray : .black)
+                    .foregroundColor(titleOfAHeader == "Выберите команду А" ? .customGray : .black)
+                    
                     .rotationEffect(Angle(degrees: presentListA ? -90 : 0))
             }
             .foregroundColor(.black)
@@ -186,9 +190,9 @@ struct CreateGameView: View {
         }
     }
     
-    var nextScreenButton: some View{
+    var NextScreenButton: some View{
         Button {
-            print()
+            nextView.toggle()
         } label: {
             Text("Далее")
                 .font(.system(size: 24))

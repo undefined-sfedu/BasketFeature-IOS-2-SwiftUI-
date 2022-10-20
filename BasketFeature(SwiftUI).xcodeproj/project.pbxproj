@@ -49,6 +49,9 @@
 		F3986E1A28E9623E008F16E9 /* ForgetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3986E1928E9623E008F16E9 /* ForgetPasswordView.swift */; };
 		F3B2F29328F0BDD000E96FDA /* SelectFivePlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B2F29228F0BDD000E96FDA /* SelectFivePlayersViewModel.swift */; };
 		F3C1432D28EBFDBA002E26EA /* AddTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C1432C28EBFDBA002E26EA /* AddTeamViewModel.swift */; };
+		F3C6EB412901977B00A2A5BC /* SelectShotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C6EB402901977B00A2A5BC /* SelectShotView.swift */; };
+		F3C6EB45290197AD00A2A5BC /* SelectShotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C6EB44290197AD00A2A5BC /* SelectShotViewModel.swift */; };
+		F3C6EB4829019A7600A2A5BC /* SelectShotParamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C6EB4729019A7600A2A5BC /* SelectShotParamsView.swift */; };
 		F3CD446428EC272600CF88BB /* CustomPlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CD446328EC272600CF88BB /* CustomPlayerCell.swift */; };
 		F3CD446628EC2C4F00CF88BB /* AddPlayerToTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CD446528EC2C4F00CF88BB /* AddPlayerToTeamViewModel.swift */; };
 		F3D911DB28EC384C00BDA6D3 /* AddPlayerToTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D911DA28EC384C00BDA6D3 /* AddPlayerToTeamView.swift */; };
@@ -111,6 +114,9 @@
 		F3986E1928E9623E008F16E9 /* ForgetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordView.swift; sourceTree = "<group>"; };
 		F3B2F29228F0BDD000E96FDA /* SelectFivePlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFivePlayersViewModel.swift; sourceTree = "<group>"; };
 		F3C1432C28EBFDBA002E26EA /* AddTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeamViewModel.swift; sourceTree = "<group>"; };
+		F3C6EB402901977B00A2A5BC /* SelectShotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectShotView.swift; sourceTree = "<group>"; };
+		F3C6EB44290197AD00A2A5BC /* SelectShotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectShotViewModel.swift; sourceTree = "<group>"; };
+		F3C6EB4729019A7600A2A5BC /* SelectShotParamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectShotParamsView.swift; sourceTree = "<group>"; };
 		F3CD446328EC272600CF88BB /* CustomPlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPlayerCell.swift; sourceTree = "<group>"; };
 		F3CD446528EC2C4F00CF88BB /* AddPlayerToTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerToTeamViewModel.swift; sourceTree = "<group>"; };
 		F3D911DA28EC384C00BDA6D3 /* AddPlayerToTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerToTeamView.swift; sourceTree = "<group>"; };
@@ -251,6 +257,7 @@
 				F3F2BD0F28FA95EE001DEE56 /* SelectResult */,
 				F3803F3328FFC14000E590CB /* SelectLoss */,
 				F3803F3828FFC8FC00E590CB /* SelectFoul */,
+				F3C6EB3F2901976300A2A5BC /* SelectShot */,
 			);
 			path = GameStaff;
 			sourceTree = "<group>";
@@ -358,6 +365,24 @@
 				F316CC7828ED6DE700F98BC4 /* LocalUser.swift */,
 			);
 			path = "Custom Structs";
+			sourceTree = "<group>";
+		};
+		F3C6EB3F2901976300A2A5BC /* SelectShot */ = {
+			isa = PBXGroup;
+			children = (
+				F3C6EB402901977B00A2A5BC /* SelectShotView.swift */,
+				F3C6EB44290197AD00A2A5BC /* SelectShotViewModel.swift */,
+				F3C6EB4629019A3800A2A5BC /* SelectShotParams */,
+			);
+			path = SelectShot;
+			sourceTree = "<group>";
+		};
+		F3C6EB4629019A3800A2A5BC /* SelectShotParams */ = {
+			isa = PBXGroup;
+			children = (
+				F3C6EB4729019A7600A2A5BC /* SelectShotParamsView.swift */,
+			);
+			path = SelectShotParams;
 			sourceTree = "<group>";
 		};
 		F3D911DC28EC394F00BDA6D3 /* AddPlayerToTeam */ = {
@@ -513,6 +538,7 @@
 				F3F2BD1328FA96B7001DEE56 /* SelectTypeOfAttackViewModel.swift in Sources */,
 				F34B54DE28E3030E0045BA28 /* RegisterView.swift in Sources */,
 				F3803F3E28FFCD1700E590CB /* SelectBallView.swift in Sources */,
+				F3C6EB45290197AD00A2A5BC /* SelectShotViewModel.swift in Sources */,
 				F3FBBFFA28E4C20D00B6C73E /* LoginView.swift in Sources */,
 				F3433C1728EC1F3500585633 /* ShowTeamView.swift in Sources */,
 				F3803F4428FFDC7600E590CB /* SelectTechnicalParamsView.swift in Sources */,
@@ -527,6 +553,7 @@
 				F3C1432D28EBFDBA002E26EA /* AddTeamViewModel.swift in Sources */,
 				F34B54EA28E303400045BA28 /* CustomTextField.swift in Sources */,
 				F3E2275628EEB6CB00A712D4 /* TabBarConfig.swift in Sources */,
+				F3C6EB4829019A7600A2A5BC /* SelectShotParamsView.swift in Sources */,
 				F3561C7528EF0F6A0098188E /* GamesView.swift in Sources */,
 				F3E2275428EEA59600A712D4 /* AddTeamModel.swift in Sources */,
 				F3F2BD0B28FA88AE001DEE56 /* PropertyView.swift in Sources */,
@@ -536,6 +563,7 @@
 				F3986E1A28E9623E008F16E9 /* ForgetPasswordView.swift in Sources */,
 				F3810C1F28F89F23009170BA /* SelectTimeAndTeam.swift in Sources */,
 				F3F2BD1128FA9615001DEE56 /* SelectTypeOfAttackView.swift in Sources */,
+				F3C6EB412901977B00A2A5BC /* SelectShotView.swift in Sources */,
 				F3F2BD0D28FA8B94001DEE56 /* PropertyViewModel.swift in Sources */,
 				F3F2BD1728FA9793001DEE56 /* SelectResultView.swift in Sources */,
 				F3FF7A7228E97E04008B1FE8 /* CustomAlert.swift in Sources */,

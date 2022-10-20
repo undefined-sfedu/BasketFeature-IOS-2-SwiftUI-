@@ -8,180 +8,277 @@
 import SwiftUI
 
 struct Field: View {
-    private var scale: CGFloat = 2
+    var scale: CGFloat = 2
     var centerPoint = CGPoint(x: UIScreen.main.bounds.width/2, y: 0)
     var radius = UIScreen.main.bounds.width/8
     @State var paths = [Path]()
-    @State private var location: CGPoint = .zero
-    @State var heightForSecond = 0.0
+    @State var location: CGPoint = .zero
+    @Binding var selectedZone: Int
+    @State var colors = Array(repeating: Color.white, count: 14)
+    @State var borderWidth: CGFloat = 5
+    
     var body: some View {
-        //        HStack{
-        //            Spacer()
-        //        FirstZone()
-        //                .onTapGesture {
-        //                    print("zone1")
-        //                }
-        //
-        //            TenthZone()
-        //                .onTapGesture {
-        //                    print("zone10")
-        //                }
-        //        }
         ZStack {
+            // MARK: -
             ZStack{
                 SecondZone
-                    
-                    .foregroundColor(.green)
+                    .background(
+                        SecondZone
+                            .stroke(.black, lineWidth: borderWidth)
+                    )
+                    .foregroundColor(getColorOfZone(id: 1))
                     .onTapGesture {
-                        print("zone2")
+                        changeColorOfZone(id: 1)
                     }
+                // MARK: -
+
                 FirstZone
-                    
-                    .foregroundColor(.blue)
+                    .background(
+                        FirstZone
+                            .stroke(.black, lineWidth: borderWidth)
+                    )
+                
+                    .foregroundColor(getColorOfZone(id: 0))
                     .onTapGesture {
-                        print("zone1")
+                        changeColorOfZone(id: 0)
                     }
-
-                ThirdZone
-                    
-        
-                    .foregroundColor(.orange)
-                    .onTapGesture {
-                        print("zone3")
-                    }
-
+                // MARK: -
                 FourthZone
-                    
-                    
-                    .foregroundColor(.gray)
+                    .background(
+                        FourthZone
+                            .stroke(.black, lineWidth: borderWidth)
+                    )
+                    .foregroundColor(getColorOfZone(id: 3))
                     .onTapGesture {
-                        print("zone4")
+                        changeColorOfZone(id: 3)
                     }
+                // MARK: -
+                ThirdZone
+                    .background(
+                        ThirdZone
+                            .stroke(.black, lineWidth: borderWidth)
+                    )
+                    .foregroundColor(getColorOfZone(id: 2))
+
+                    .onTapGesture {
+                        changeColorOfZone(id: 2)
+                    }
+                
+                
+                // MARK: -
                 FiveZone
-                    
-                    .foregroundColor(.yellow)
+                    .background(
+                        FiveZone
+                            .stroke(.black, lineWidth: borderWidth)
+                    )
+                    .foregroundColor(getColorOfZone(id: 4))
                     .onTapGesture {
-                        print("zone5")
+                        changeColorOfZone(id: 4)
                     }
+                // MARK: -
             }
             ZStack{
-            SixthZone
-                
-                
-                .foregroundColor(.red)
-                .onTapGesture {
-                    print("zone6")
-                }
-            SeventhZone
-                
-                .foregroundColor(.customOrange)
-                .onTapGesture {
-                    print("zone7")
-                }
-            EightZone
-                
-                .foregroundColor(.customGray)
-                .onTapGesture {
-                    print("zone8")
-                }
-            NineZone
-                
-                .foregroundColor(.purple)
-                .onTapGesture {
-                    print("zone9")
-                }
-            TenthZone
-                
-                .onTapGesture {
-                    print("zone10")
-                }
+                // MARK: -
+                SixthZone
+                    .background(
+                        SixthZone
+                            .stroke(.black, lineWidth: borderWidth)
+                    )
+                    .foregroundColor(getColorOfZone(id: 5))
+                    .onTapGesture {
+                        changeColorOfZone(id: 5)
+                    }
+                // MARK: -
+                SeventhZone
+                    .background(
+                        SeventhZone
+                            .stroke(.black, lineWidth: borderWidth)
+                    )
+                    .foregroundColor(getColorOfZone(id: 6))
+                    .onTapGesture {
+                        changeColorOfZone(id: 6)
+                    }
+                // MARK: -
+                EightZone
+                    .background(
+                        EightZone
+                            .stroke(.black, lineWidth: borderWidth)
+                    )
+                    .foregroundColor(getColorOfZone(id: 7))
+                    .onTapGesture {
+                        changeColorOfZone(id: 7)
+                    }
+                // MARK: -
+                NineZone
+                    .background(
+                        NineZone
+                            .stroke(.black, lineWidth: borderWidth)
+                    )
+                    .foregroundColor(getColorOfZone(id: 8))
+                    .onTapGesture {
+                        changeColorOfZone(id: 8)
+                    }
+                // MARK: -
+                TenthZone
+                    .background(
+                        TenthZone
+                            .stroke(.black, lineWidth: borderWidth)
+                    )
+                    .foregroundColor(getColorOfZone(id: 9))
+                    .onTapGesture {
+                        changeColorOfZone(id: 9)
+                    }
+                // MARK: -
             }
             ZStack{
+                // MARK: -
                 ElevenZone
-
-                    .foregroundColor(.red)
-
+                    .background(
+                        ElevenZone
+                            .stroke(.black, lineWidth: borderWidth)
+                    )
+                    .foregroundColor(getColorOfZone(id: 10))
                     .onTapGesture {
-                        print("zone11")
+                        changeColorOfZone(id: 10)
                     }
+                // MARK: -
                 TwelveZone
-
-                    .foregroundColor(.green)
-
+                    .background(
+                        TwelveZone
+                            .stroke(.black, lineWidth: borderWidth)
+                    )
+                    .foregroundColor(getColorOfZone(id: 11))
+                
                     .onTapGesture {
-                        print("zone12")
+                        changeColorOfZone(id: 11)
                     }
+                // MARK: -
                 ThretennZone
-
-                    .foregroundColor(.yellow)
-
+                    .background(
+                        ThretennZone
+                            .stroke(.black, lineWidth: borderWidth)
+                    )
+                    .foregroundColor(getColorOfZone(id: 12))
+                
                     .onTapGesture {
-                        print("zone13")
+                        changeColorOfZone(id: 12)
                     }
-
+                // MARK: -
+                
             }
             FourthTeenZone
-
-                .foregroundColor(.black)
-
+                .background(
+                    FourthTeenZone
+                        .stroke(.black, lineWidth: borderWidth)
+                )
+                .foregroundColor(getColorOfZone(id: 13))
                 .onTapGesture {
-                    print("zone14")
+                    changeColorOfZone(id: 13)
                 }
-                
+            
         }
         
+        //        ZStack{
+        //            Color.pink.opacity(0.1)
+        //                .edgesIgnoringSafeArea(.all)
+        //
+        //            FirstZone
+        //            //                .background(
+        //            //                    FirstZone
+        //            //                        .stroke(.black)
+        //            //                )
+        //            //                .overlay(content: {
+        //            //                    FirstZone
+        //            //                        .foregroundColor(getColorOfZone(id: 0))
+        //            //
+        //            //                })
+        //                .background(
+        //                    FirstZone
+        //                        .stroke(.black, lineWidth: 5)
+        //                )
+        //                .foregroundColor(getColorOfZone(id: 0))
+        //                .onTapGesture {
+        //                    changeColorOfZone(id: 0)
+        //                }
+        //
+        //        }
+    }
+    
+    func getColorOfZone(id: Int) -> Color {
+        return colors[id]
+    }
+    
+    func changeColorOfZone(id: Int){
         
+        if selectedZone == -1 && id >= 0{
+            colors[id] = .customOrange
+            selectedZone = id
+        }
+        else if selectedZone != id && id >= 0 {
+            colors[selectedZone] = .white
+            selectedZone = id
+            colors[selectedZone] = .customOrange
+        }
+        else if selectedZone == id{
+            colors[selectedZone] = .white
+            selectedZone = -1
+        }
     }
     
     var FirstZone: Path{
         Path {path in
-            path.move(to: CGPoint(x: 0, y: 0))
+            path.move(to: CGPoint(x: radius * 0.05, y: 0))
             path.addLine(to: CGPoint(x: radius, y: 0))
             path.addArc(center: centerPoint, radius: radius * 3, startAngle: Angle(degrees: 180), endAngle: Angle(degrees: 150), clockwise: true)
-            path.addLine(to: CGPoint(x: 0, y: path.currentPoint!.y))
-            path.addLine(to: CGPoint(x: 0, y: 0))
+            path.addLine(to: CGPoint(x: radius * 0.1, y: path.currentPoint!.y))
+            path.addLine(to: CGPoint(x: radius * 0.1, y: 0))
         }
     }
     
     var SecondZone: Path{
         Path {path in
-            path.move(to: CGPoint(x: 0, y: 0))
+            path.move(to: CGPoint(x: radius * 0.1, y: 0))
             path.addLine(to: CGPoint(x: radius, y: 0))
             path.addArc(center: centerPoint, radius: radius * 3, startAngle: Angle(degrees: 180), endAngle: Angle(degrees: 105), clockwise: true)
             path.addArc(center: centerPoint, radius: radius * 4.141, startAngle: Angle(degrees: 105), endAngle: Angle(degrees: 105), clockwise: true)
-            path.addLine(to: CGPoint(x: 0, y: path.currentPoint!.y))
-            path.addLine(to: CGPoint(x: 0, y: 0))
+            path.addLine(to: CGPoint(x: radius * 0.1, y: path.currentPoint!.y))
+            path.addLine(to: CGPoint(x: radius * 0.1, y: 0))
         }
     }
     
     var ThirdZone: Path{
         Path {path in
-            path.addArc(center: centerPoint, radius: radius * 3, startAngle: Angle(degrees: 105), endAngle: Angle(degrees: 75), clockwise: true)
+//            path.addArc(center: centerPoint, radius: radius * 3, startAngle: Angle(degrees: 104), endAngle: Angle(degrees: 75), clockwise: true)
+//            path.addArc(center: centerPoint, radius: radius * 4.141, startAngle: Angle(degrees: 75), endAngle: Angle(degrees: 75), clockwise: true)
+//
+//            path.addLine(to: CGPoint(x: centerPoint.x - 1.07 * radius, y: path.currentPoint!.y))
+//            path.addArc(center: centerPoint, radius: radius * 3, startAngle: Angle(degrees: 104), endAngle: Angle(degrees: 104), clockwise: true)
+            path.move(to: CGPoint(x: 3 * radius, y: UIScreen.main.bounds.width/2))
+            path.addArc(center: centerPoint, radius: radius * 3, startAngle: Angle(degrees: 104), endAngle: Angle(degrees: 104), clockwise: true)
+            path.addArc(center: centerPoint, radius: radius * 3, startAngle: Angle(degrees: 104), endAngle: Angle(degrees: 75), clockwise: true)
             path.addArc(center: centerPoint, radius: radius * 4.141, startAngle: Angle(degrees: 75), endAngle: Angle(degrees: 75), clockwise: true)
-            
-            path.addLine(to: CGPoint(x: centerPoint.x - 1.07 * radius, y: path.currentPoint!.y))
-            path.addArc(center: centerPoint, radius: radius * 3, startAngle: Angle(degrees: 105), endAngle: Angle(degrees: 105), clockwise: true)
+            path.addLine(to: CGPoint(x: 2.95 * radius, y: UIScreen.main.bounds.width/2))
         }
     }
     
     var FourthZone: Path{
         Path {path in
-            path.move(to: CGPoint(x: radius * 8, y: 0))
+            path.move(to: CGPoint(x: (radius * 8) - radius * 0.1, y: 0))
             path.addLine(to: CGPoint(x: radius * 7, y: 0))
-            path.addArc(center: centerPoint, radius: radius * 3, startAngle: Angle(degrees: 0), endAngle: Angle(degrees: 75), clockwise: false)
-            path.addArc(center: centerPoint, radius: radius * 4.141, startAngle: Angle(degrees: 75), endAngle: Angle(degrees: 75), clockwise: true)
-            path.addLine(to: CGPoint(x: radius * 8, y: path.currentPoint!.y))
-            path.addLine(to: CGPoint(x: radius * 8, y: 0))
+            path.addArc(center: centerPoint, radius: radius * 3, startAngle: Angle(degrees: 0), endAngle: Angle(degrees: 74.8), clockwise: false)
+            path.addArc(center: centerPoint, radius: radius * 4.146, startAngle: Angle(degrees: 74.8), endAngle: Angle(degrees: 74.8), clockwise: true)
+            path.addLine(to: CGPoint(x: (radius * 8) - radius * 0.1, y: path.currentPoint!.y))
+            path.addLine(to: CGPoint(x: (radius * 8) - radius * 0.1, y: 0))
         }
     }
     
     var FiveZone: Path{
         Path {path in
-            path.move(to: CGPoint(x: radius * 8, y: 0))
+            path.move(to: CGPoint(x: (radius * 8) - radius * 0.05, y: 0))
             path.addLine(to: CGPoint(x: radius * 7, y: 0))
             path.addArc(center: centerPoint, radius: radius * 3, startAngle: Angle(degrees: 0), endAngle: Angle(degrees: 30), clockwise: false)
-            path.addLine(to: CGPoint(x: radius * 8, y: path.currentPoint!.y))
-            path.addLine(to: CGPoint(x: radius * 8, y: 0))
+            path.addLine(to: CGPoint(x: (radius * 8) - radius * 0.1, y: path.currentPoint!.y))
+            path.addLine(to: CGPoint(x: (radius * 8) - radius * 0.1, y: 0))
         }
     }
     
@@ -235,7 +332,7 @@ struct Field: View {
     var ElevenZone: Path{
         Path {path in
             path.move(to: CGPoint(x: radius * 2, y: 0))
-            path.addLine(to: CGPoint(x: radius, y: 0))
+            path.addLine(to: CGPoint(x: path.currentPoint!.x + radius, y: 0))
             path.addArc(center: centerPoint, radius: radius, startAngle: Angle(degrees: 180), endAngle: Angle(degrees: 120), clockwise: true)
             path.addArc(center: centerPoint, radius: radius * 2, startAngle: Angle(degrees: 120), endAngle: Angle(degrees: 120), clockwise: true)
             path.addArc(center: centerPoint, radius: radius * 2, startAngle: Angle(degrees: 120), endAngle: Angle(degrees: 180), clockwise: false)
@@ -263,16 +360,17 @@ struct Field: View {
     
     var FourthTeenZone: Path{
         Path {path in
-        
+            
             path.addArc(center: centerPoint, radius: radius, startAngle: Angle(degrees: 180), endAngle: Angle(degrees: 0), clockwise: true)
+            path.addLine(to: CGPoint(x: path.currentPoint!.x - radius * 2, y: 0))
         }
     }
     
     
 }
 
-struct AnotherField_Previews: PreviewProvider {
-    static var previews: some View {
-        Field()
-    }
-}
+//struct AnotherField_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Field()
+//    }
+//}

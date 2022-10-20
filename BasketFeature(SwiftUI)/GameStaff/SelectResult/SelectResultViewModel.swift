@@ -24,9 +24,9 @@ class SelectResultViewModel: ObservableObject{
         let index = IndexOfTypesOfRes.init(rawValue: id)!
         switch index{
         case .foul:
-            Text("Foul")
+            SelectFoulView()
         case .shot:
-            Text("Shot")
+            SelectShotView()
         case .loss:
             SelectLossView()
         }

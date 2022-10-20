@@ -9,8 +9,10 @@ import SwiftUI
 
 struct SelectFivePlayersView: View {
    @StateObject var viewModel = SelectFivePlayersViewModel()
+    @State var nextView = false
     var body: some View {
         VStack{
+            NavigationLink(destination: SelectTimeAndTeam(), isActive: $nextView) {EmptyView()}
             Text("Название команды")
                 .font(.largeTitle)
                 .fontWeight(.bold)
@@ -22,7 +24,9 @@ struct SelectFivePlayersView: View {
                 .padding(.horizontal)
             Spacer()
             SelectedPlayersGrid
-            Spacer()
+            NextScreenButton
+                .padding(.bottom)
+                .padding(.horizontal)
             
             
         }
@@ -39,13 +43,23 @@ struct SelectFivePlayersView: View {
                         Button {
                             viewModel.selectPlayer(number: item)
                         } label: {
-                            Text("\(item)")
-                                .padding()
+                            RoundedRectangle(cornerRadius: 10)
+                                .strokeBorder(.black, lineWidth: 2)
+                                .overlay(
+                                    Text("\(item)")
+                                        .foregroundColor(.black)
+                                        .font(.system(size: 24))
+                                )
+                                .frame(width: UIScreen.main.bounds.width * 0.15,
+                                        height: UIScreen.main.bounds.width * 0.15)
+//                            Text("\(item)")
+//                                .padding()
                         }
                     }
                 }
             }
         }
+        .padding(.horizontal)
     }
     
     var SelectedPlayersGrid: some View{
@@ -54,12 +68,37 @@ struct SelectFivePlayersView: View {
                 Button {
                     viewModel.unselectPlayer(number: item)
                 } label: {
-                    Text("\(item)")
-                        .padding()
+                    RoundedRectangle(cornerRadius: 10)
+                        .strokeBorder(Color.customOrange, lineWidth: 2)
+                        .overlay(
+                            Text("\(item)")
+                                .foregroundColor(Color.customOrange)
+                                .font(.system(size: 24))
+                        )
+                        .frame(width: UIScreen.main.bounds.width * 0.15,
+                                height: UIScreen.main.bounds.width * 0.15)
+                    
                 }
             }
             
         }
+    }
+    
+    var NextScreenButton: some View{
+        Button {
+            nextView.toggle()
+        } label: {
+            Text("Далее")
+                .font(.system(size: 24))
+                .foregroundColor(.customOrange)
+                .padding(.vertical)
+                .frame(maxWidth: .infinity)
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .strokeBorder(Color.customOrange, lineWidth: 2.5)
+                )
+        }
+        
     }
     
     
