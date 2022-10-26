@@ -12,7 +12,8 @@ struct BasketFeature_SwiftUI_App: App {
     var body: some Scene {
         WindowGroup {
             NavigationView{
-                CustomTabBar()
+//                LoginView().preferredColorScheme(.light)
+                SelectFoulView()
             }
         }
     }

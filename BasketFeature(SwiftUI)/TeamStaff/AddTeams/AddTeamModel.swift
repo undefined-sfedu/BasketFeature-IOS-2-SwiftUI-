@@ -10,7 +10,7 @@ import Alamofire
 import SwiftyJSON
 class AddTeamModel{
     var viewModel: AddTeamViewModel? = nil
-    private var serverHelper = ServerHelper()
+    private var serverHelper = UrlHelper()
     private var localUser = LocalUser()
     
     func createTeam(name: String, players: [String]){

@@ -14,7 +14,7 @@ import SwiftyJSON
  "password": "testUser"
  */
 class LoginModel{
-    private var helperServer = ServerHelper()
+    private var helperServer = UrlHelper()
     private var localUser = LocalUser()
     var viewModel: LoginViewModel? = nil
     
@@ -35,7 +35,7 @@ class LoginModel{
             
             let data = try? JSON(data: answerData)
             print(answer.response?.statusCode)
-            print(data)
+            print("------------------")
             
             if answer.response?.statusCode == 200{
                 viewModel!.canEnter()

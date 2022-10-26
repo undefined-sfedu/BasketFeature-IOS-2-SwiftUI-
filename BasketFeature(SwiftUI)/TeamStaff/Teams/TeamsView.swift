@@ -63,7 +63,7 @@ struct TeamsView: View {
     
     var LeadingItem: some View{
         Text("Команды")
-            .font(.largeTitle)
+            .font(.system(size: 24))
             .fontWeight(.bold)
     }
     

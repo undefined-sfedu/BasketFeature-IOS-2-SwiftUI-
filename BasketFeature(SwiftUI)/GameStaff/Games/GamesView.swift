@@ -21,7 +21,7 @@ struct GamesView: View {
     
     var LeadingItem: some View{
         Text("Игры")
-            .font(.largeTitle)
+            .font(.system(size: 24))
             .fontWeight(.bold)
     }
     

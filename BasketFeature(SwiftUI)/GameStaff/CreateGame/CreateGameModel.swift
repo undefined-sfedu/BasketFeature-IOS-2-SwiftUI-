@@ -10,7 +10,7 @@ import SwiftyJSON
 
 class CreateGameModel{
     var viewModel: CreateGameViewModel? = nil
-    private var serverHelper = ServerHelper()
+    private var serverHelper = UrlHelper()
     private var localUser = LocalUser()
     
     func getTeams(){

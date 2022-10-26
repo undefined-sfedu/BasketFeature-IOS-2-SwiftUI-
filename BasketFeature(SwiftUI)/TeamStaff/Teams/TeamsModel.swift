@@ -10,16 +10,16 @@ import Alamofire
 import SwiftyJSON
 class TeamsModel{
     var viewModel: TeamsViewModel? = nil
-    private var serverHelper = ServerHelper()
+    private var serverHelper = UrlHelper()
     private var localUser = LocalUser()
     
     func getTeams(){
-//        var url = serverHelper.getPath(typeOfrequest: .getUserTeams)
-//        url += "\(localUser.getData(typeOfData: .id))"
+        //        var url = serverHelper.getPath(typeOfrequest: .getUserTeams)
+        //        url += "\(localUser.getData(typeOfData: .id))"
         let url = serverHelper.getPath(typeOfrequest: .getAllTeams, typeOfParam: .withoutParam, param: nil)
-                print(url)
+        print(url)
         AF.request(url).responseJSON { [self] answer in
-
+            
             guard let corData = answer.data else {return}
             let maybeData = try? JSON(data: corData)
             guard let myData = maybeData else {return}
@@ -29,10 +29,19 @@ class TeamsModel{
                 var res = [Team]()
                 let teams = myData.arrayValue
                 
-                teams.forEach { item in
-                    let name = item["name"].stringValue
-                    let id = item["id"].intValue
-                    let userId = item["user_id"].intValue
+                
+                for team in teams where team["user_id"].intValue == Int(localUser.getData(typeOfData: .id))!
+                //                teams.forEach{ item in
+                //                    let name = item["name"].stringValue
+                //                    let id = item["id"].intValue
+                //                    let userId = item["user_id"].intValue
+                //                    let team = Team(backId: id, userId: userId, name: name)
+                //                    res.append(team)
+                //                }
+                {
+                    let name = team["name"].stringValue
+                    let id = team["id"].intValue
+                    let userId = team["user_id"].intValue
                     let team = Team(backId: id, userId: userId, name: name)
                     res.append(team)
                 }

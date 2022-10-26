@@ -12,6 +12,9 @@ struct SelectBallView: View {
     @Binding var countOfBalls: Int
     @Binding var valueOfShots: [Bool]
     @Binding var showAlert: Bool
+    @State var currentValueOfShots = [Bool]()
+    
+    
     
     var body: some View {
         NavigationView{
@@ -20,14 +23,23 @@ struct SelectBallView: View {
                     
                     Spacer()
                     HStack{
-                        ForEach(0..<countOfBalls) { i in
+                        
+                        
+                        
+                        //                        ForEach(valueOfShots.indices) { i in
+                        //                            Text(valueOfShots[i].description)
+                        //                        }
+                        
+                        ForEach(valueOfShots.indices) { i in
+                            //                        ForEach(0..<countOfBalls, id: \.self) { i in
                             Button {
                                 valueOfShots[i].toggle()
+                                //                                item.toggle()
                             } label: {
                                 Image("Ball")
                                     .resizable()
                                     .renderingMode(.template)
-                                    .foregroundColor(valueOfShots[i] ? .customOrange : .gray)
+                                    .foregroundColor( valueOfShots[i] ? .customOrange : .gray)
                                 
                                     .frame(width: UIScreen.main.bounds.width * 0.25,
                                            height: UIScreen.main.bounds.width * 0.25)
@@ -40,12 +52,15 @@ struct SelectBallView: View {
                 }
                 
             }
-        
-        .padding(.horizontal)
-        .padding(.bottom)
-        .navigationBarItems(leading: MainTitle)
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarBackButtonHidden(true)
+            
+            .padding(.horizontal)
+            .padding(.bottom)
+            .navigationBarItems(leading: MainTitle)
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
+        }
+        .onAppear {
+            print(valueOfShots)
         }
     }
     
@@ -54,6 +69,7 @@ struct SelectBallView: View {
             .font(.system(size: 24))
             .foregroundColor(.black)
             .fontWeight(.medium)
+        
     }
     
     var SendBallsButton: some View{
@@ -74,10 +90,10 @@ struct SelectBallView: View {
     }
 }
 
-struct SelectBallView_Previews: PreviewProvider {
-    static var previews: some View {
-        //        NavigationView{
-        SelectBallView(countOfBalls: .constant(3), valueOfShots: .constant([false,false,false]), showAlert: .constant(false))
-        //        }
-    }
-}
+//struct SelectBallView_Previews: PreviewProvider {
+//    static var previews: some View {
+//                NavigationView{
+//        SelectBallView(countOfBalls: .constant(3), valueOfShots: .constant([false,false,false]), showAlert: .constant(false))
+//                }
+//    }
+//}

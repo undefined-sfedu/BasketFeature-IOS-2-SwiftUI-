@@ -14,7 +14,7 @@ class SelectFoulViewModel: ObservableObject{
     @Published var showBallSheet = false
     @Published var showImpenetrableSheet = false
     @Published var showTechnicalSheet = false
-    @State var valueOfShots = [false, false, false]
+    @Published var valueOfShots = [false, false, false]
     
     enum IndexOfTypesOfFoul: Int{
         case oneShot = 0
@@ -25,8 +25,8 @@ class SelectFoulViewModel: ObservableObject{
     }
     var typesOfFoul = [
     "1 бросок",
-    "2 бросока",
-    "3 бросока",
+    "2 броска",
+    "3 броска",
     "непробивной",
     "технический"
     ]
@@ -36,12 +36,15 @@ class SelectFoulViewModel: ObservableObject{
             switch index {
             case .oneShot:
                 countOfBalls = index.rawValue + 1
+                valueOfShots = [false]
                 showBallSheet.toggle()
             case .twoShot:
                 countOfBalls = index.rawValue + 1
+                valueOfShots = [false, false]
                 showBallSheet.toggle()
             case .threeShot:
                 countOfBalls = index.rawValue + 1
+                valueOfShots = [false, false, false]
                 showBallSheet.toggle()
             case .impenetrable:
                 showAlert.toggle()

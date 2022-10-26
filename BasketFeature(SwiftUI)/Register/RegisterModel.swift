@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 class RegisterModel{
-    private var serverHelper = ServerHelper()
+    private var serverHelper = UrlHelper()
     var viewModel: RegisterViewModel? = nil
     
     func register(email: String, password: String){

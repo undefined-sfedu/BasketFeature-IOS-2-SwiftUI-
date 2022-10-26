@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 class ShowTeamModel{
-    private var serverHelper = ServerHelper()
+    private var serverHelper = UrlHelper()
     private var localUser = LocalUser()
     var viewModel: ShowTeamViewModel? = nil
     
