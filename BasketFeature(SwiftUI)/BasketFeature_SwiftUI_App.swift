@@ -9,11 +9,16 @@ import SwiftUI
 
 @main
 struct BasketFeature_SwiftUI_App: App {
+    
     var body: some Scene {
         WindowGroup {
             NavigationView{
-//                LoginView().preferredColorScheme(.light)
-                SelectFoulView()
+                if LocalUser().getData(typeOfData: .id) == ""{
+                    LoginView().preferredColorScheme(.light)
+                }
+                else{
+                    CustomTabBar() .preferredColorScheme(.light)
+                }
             }
         }
     }

@@ -38,6 +38,7 @@
 		F35B399528EFF928008A62B9 /* CreateGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35B399428EFF928008A62B9 /* CreateGameViewModel.swift */; };
 		F35B399728EFF930008A62B9 /* CreateGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35B399628EFF930008A62B9 /* CreateGameModel.swift */; };
 		F35B399928EFFA57008A62B9 /* SelectFivePlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35B399828EFFA57008A62B9 /* SelectFivePlayersView.swift */; };
+		F366B76B29116A96003DA6AB /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366B76A29116A96003DA6AB /* Game.swift */; };
 		F3803F3528FFC16600E590CB /* SelectLossView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3803F3428FFC16600E590CB /* SelectLossView.swift */; };
 		F3803F3728FFC17E00E590CB /* SelectLossViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3803F3628FFC17E00E590CB /* SelectLossViewModel.swift */; };
 		F3803F3A28FFC92C00E590CB /* SelectFoulView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3803F3928FFC92C00E590CB /* SelectFoulView.swift */; };
@@ -103,6 +104,7 @@
 		F35B399428EFF928008A62B9 /* CreateGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameViewModel.swift; sourceTree = "<group>"; };
 		F35B399628EFF930008A62B9 /* CreateGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameModel.swift; sourceTree = "<group>"; };
 		F35B399828EFFA57008A62B9 /* SelectFivePlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFivePlayersView.swift; sourceTree = "<group>"; };
+		F366B76A29116A96003DA6AB /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		F3803F3428FFC16600E590CB /* SelectLossView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLossView.swift; sourceTree = "<group>"; };
 		F3803F3628FFC17E00E590CB /* SelectLossViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLossViewModel.swift; sourceTree = "<group>"; };
 		F3803F3928FFC92C00E590CB /* SelectFoulView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFoulView.swift; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 				F34B54F028E311290045BA28 /* TextFieldDescription.swift */,
 				F32B7C0F28E9E42F00E279AE /* Player.swift */,
 				F32B7C1128E9E47A00E279AE /* Team.swift */,
+				F366B76A29116A96003DA6AB /* Game.swift */,
 				F32B7C1328E9E7DC00E279AE /* User.swift */,
 				F316CC7428ED535500F98BC4 /* UrlHelper.swift */,
 				F316CC7828ED6DE700F98BC4 /* LocalUser.swift */,
@@ -559,6 +562,7 @@
 				F3F2BD0B28FA88AE001DEE56 /* PropertyView.swift in Sources */,
 				F3FBBFFC28E4C2F500B6C73E /* LoginViewModel.swift in Sources */,
 				F3E2275228EE992700A712D4 /* CustomTabBar.swift in Sources */,
+				F366B76B29116A96003DA6AB /* Game.swift in Sources */,
 				F35B399528EFF928008A62B9 /* CreateGameViewModel.swift in Sources */,
 				F3986E1A28E9623E008F16E9 /* ForgetPasswordView.swift in Sources */,
 				F3810C1F28F89F23009170BA /* SelectTimeAndTeam.swift in Sources */,

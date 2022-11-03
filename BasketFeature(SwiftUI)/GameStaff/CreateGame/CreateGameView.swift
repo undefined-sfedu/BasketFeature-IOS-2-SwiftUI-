@@ -9,26 +9,34 @@ import SwiftUI
 
 struct CreateGameView: View {
     @EnvironmentObject var tabBarConfig: TabBarConfig
+    @StateObject var viewModel = CreateGameViewModel()
+    @StateObject var game = Game(teamA: nil, teamB: nil, date: nil)
+    
     @State var presentListA = false
     @State var presentListB = false
     @State var presentDatePicker = false
-    @StateObject var viewModel = CreateGameViewModel()
+    
     @State var titleOfAHeader = "Выберите команду А"
     @State var titleOfBHeader = "Выберите команду B"
     @State var titleOfDatePicker = "Дата"
+    
+    let calendar = Calendar.current
     @State var selectedDate = Date()
     @State var endDate = Date()
+    
     @State var nextView = false
+    
+    
     var dateFormatter: DateFormatter{
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
-        
         return formatter
         
     }
     var body: some View {
+        ZStack{
         VStack{
-            NavigationLink(destination: SelectFivePlayersView(), isActive: $nextView) {EmptyView()}
+            NavigationLink(destination: SelectFivePlayersView(teamA: true).environmentObject(game), isActive: $nextView) {EmptyView()}
         ScrollView {
             Section(header: selectTeamA) {
                 if presentListA{
@@ -82,10 +90,7 @@ struct CreateGameView: View {
                     
                     
             }
-            
-            
-            
-            //                }
+
             Spacer()
             NextScreenButton
         }
@@ -101,7 +106,8 @@ struct CreateGameView: View {
             }
         })
         
-        //        }
+            CustomAlert(isShow: $viewModel.showAlert, largeTitle: "Внимание", smallTitle: "Проверьте корректность указанных данных", titleButton: "Ok", selfClosed: true)
+                }
         
         .navigationBarTitle("Новая игра")
         .navigationBarTitleDisplayMode(.inline)
@@ -164,7 +170,7 @@ struct CreateGameView: View {
         
         Button {
             withAnimation(.easeIn) {
-                print(selectedDate.description)
+//                print(selectedDate.description)
                 presentDatePicker.toggle()
                 if presentDatePicker == false{
                     titleOfDatePicker = dateFormatter.string(from: selectedDate)
@@ -192,7 +198,18 @@ struct CreateGameView: View {
     
     var NextScreenButton: some View{
         Button {
-            nextView.toggle()
+            if viewModel.checkData(teamAName: titleOfAHeader, teamBName: titleOfBHeader){
+                game.setTeam(team:viewModel.getTeamByName(name: titleOfAHeader) , teamA: true )
+                game.setTeam(team:viewModel.getTeamByName(name: titleOfBHeader) , teamA: false )
+                game.setDate(date: selectedDate)
+                nextView.toggle()
+                print(game.teamA?.name)
+                print(game.teamB?.name)
+                print(game.date?.description)
+            }
+            
+            
+
         } label: {
             Text("Далее")
                 .font(.system(size: 24))
@@ -206,6 +223,7 @@ struct CreateGameView: View {
         }
         
     }
+    
 }
 
 struct CreateGameView_Previews: PreviewProvider {

@@ -28,13 +28,20 @@ class CreateGameModel{
                 var res = [Team]()
                 let teams = myData.arrayValue
                 
-                teams.forEach { item in
-                    let name = item["name"].stringValue
-                    let id = item["id"].intValue
-                    let userId = item["user_id"].intValue
-                    let team = Team(backId: id, userId: userId, name: name)
-                    res.append(team)
+                for team in teams where team["user_id"].intValue == Int(localUser.getData(typeOfData: .id))!{
+                    let name = team["name"].stringValue
+                    let id = team["id"].intValue
+                    let userId = team["user_id"].intValue
+                    let newTeam = Team(backId: id, userId: userId, name: name)
+                    let playersFromRequest = team["players"].arrayValue
+                    playersFromRequest.forEach { item in
+                        let player = Player(serverId: item["id"].intValue, teamId: item["team_id"].intValue, name: item["first_name"].stringValue, lastName: item["last_name"].stringValue, middleName: item["middle_name"].stringValue, number: item["number"].intValue)
+                        newTeam.players.append(player)
+                    }
+                    
+                    res.append(newTeam)
                 }
+                
                 viewModel?.updateTeams(team: res.reversed())
             }
         }

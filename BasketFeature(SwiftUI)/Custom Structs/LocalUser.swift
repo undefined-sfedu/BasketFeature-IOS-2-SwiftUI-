@@ -21,6 +21,13 @@ struct LocalUser{
     }
     
     func getData(typeOfData: UserKeys) -> String{
-        UserDefaults.standard.string(forKey: typeOfData.rawValue) ?? "ERROR: SOMETHING WRONG WITH \(LocalUser.self) CLASS"
+        if let res = UserDefaults.standard.string(forKey: typeOfData.rawValue){
+            return res
+        }
+        else{
+            print("ERROR: SOMETHING WRONG WITH \(LocalUser.self) CLASS")
+            return""
+        }
+        
     }
 }

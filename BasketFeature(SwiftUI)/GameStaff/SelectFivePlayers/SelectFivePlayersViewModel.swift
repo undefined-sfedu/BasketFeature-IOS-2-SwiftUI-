@@ -8,18 +8,15 @@
 import Foundation
 import SwiftUI
 class SelectFivePlayersViewModel: ObservableObject{
-//    @Published var unselectedPLayers = [
-//        PlayerArrayModel(value: [PlayerModel(value: 0), PlayerModel(value: 7), PlayerModel(value: 9), PlayerModel(value: 10), PlayerModel(value: 11)]),
-//        PlayerArrayModel(value: [PlayerModel(value: 25), PlayerModel(value: 31), PlayerModel(value: 41), PlayerModel(value: 43), PlayerModel(value: 54)]),
-//        PlayerArrayModel(value: [PlayerModel(value: 65), PlayerModel(value: 70), PlayerModel(value: 71), PlayerModel(value: 89)])
-//    ]
-        @Published var unselectedPLayers = [
-            [0,7,9,10,11],
-            [25,31,41,43,54],
-            [65,70,71,89]
-        ]
+    
+    enum TypeOfPlayers{
+        case selected
+        case unselected
+    }
+    
+    @Published var unselectedPLayers = [[Int]]()
     @Published var countOfSelectedPlayers = 0
-//    @Published var selectedPLayers: PlayerArrayModel = PlayerArrayModel(value: [PlayerModel]()){
+    
     @Published var selectedPLayers = [Int](){
         didSet{
             countOfSelectedPlayers = selectedPLayers.count
@@ -27,6 +24,37 @@ class SelectFivePlayersViewModel: ObservableObject{
     }
     private var indexesOfLastSelectedPlayer = (i:0,j:0)
     private let countOfPlayerInOneRow = 5
+    
+    func setPlayersFromExistingGame(players: [Player], typeOfPlayers: TypeOfPlayers){
+        var count = 0
+        var array = [Int]()
+        switch typeOfPlayers {
+        case .selected:
+            selectedPLayers = [Int]()
+            for item in players{
+                selectedPLayers.append(item.number)
+            }
+            
+        case .unselected:
+            unselectedPLayers = [[Int]]()
+            for item in players{
+                array.append(item.number)
+                count += 1
+                if count == 5{
+                    unselectedPLayers.append(array)
+                    count = 0
+                    array = [Int]()
+                }
+            }
+            if unselectedPLayers.count > 0{
+                unselectedPLayers.append(array)
+            }
+        }
+        
+        
+        
+        print(unselectedPLayers)
+    }
     
     func selectPlayer(number: Int){
         var flag = true
@@ -63,26 +91,25 @@ class SelectFivePlayersViewModel: ObservableObject{
         }
         
         if unselectedPLayers.last?.count == countOfPlayerInOneRow{
-//            unselectedPLayers.append(PlayerArrayModel(value:[PlayerModel(value: number)]))
+            //            unselectedPLayers.append(PlayerArrayModel(value:[PlayerModel(value: number)]))
             unselectedPLayers.append([number])
             //            unselectedPLayers.
             print("Count of selected players \(selectedPLayers.count)")
         }
         else{
             var i = unselectedPLayers.count-1
+            if i < 0{
+                i = 0
+                unselectedPLayers.append([Int]())
+            }
+        
+            
             unselectedPLayers[i].append(number)
         }
         
     }
     
     func setTeamAfterAddingPlayersArray(){
-        // check on empty array(i mean that one of unselected array's can have 4 and less player and i must update unselected players to array of arrays where only last array can has 4 and less player)
-        //        if unselectedPLayers.last!.count < countOfPlayerInOneRow{
-        //            flag.toggle()
-        //
-        //        }
-        
-        //        if flag == false{
         
         
         for i in indexesOfLastSelectedPlayer.i...unselectedPLayers.count-1{
@@ -91,18 +118,23 @@ class SelectFivePlayersViewModel: ObservableObject{
                 
             }
             else{
+                if unselectedPLayers[i].isEmpty == false{
                 unselectedPLayers[i].removeFirst()
+                }
             }
+            
             if i < unselectedPLayers.count-1{
-                unselectedPLayers[i].append(unselectedPLayers[i+1].first!)
+                if let player = unselectedPLayers[i+1].first{
+                    unselectedPLayers[i].append(player)
+                }
+                
             }
         }
         
         if unselectedPLayers.last!.isEmpty{
             unselectedPLayers.removeLast()
         }
-        //        }
-        // fill empty place after removing
+        
     }
     
     func printData(){
@@ -125,14 +157,6 @@ class SelectFivePlayersViewModel: ObservableObject{
         print("Count of selected players \(selectedPLayers.count)")
     }
     
-    struct PlayerModel: Identifiable, Hashable{
-        var id = UUID()
-        var value: Int
-    }
     
-    struct PlayerArrayModel: Identifiable, Hashable{
-        var id = UUID()
-        var value: [PlayerModel]
-    }
     
 }

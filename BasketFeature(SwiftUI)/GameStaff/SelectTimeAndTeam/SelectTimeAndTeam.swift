@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SelectTimeAndTeam: View {
+    @EnvironmentObject var game: Game
     @State var selectedTime = "1"
     @State var selectedIndex = 0
     @State var nextScreen = false
@@ -63,7 +64,7 @@ struct SelectTimeAndTeam: View {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.black)
                 .overlay(
-                    Text("Химки")
+                    Text(game.teamA!.name)
                         .foregroundColor(.black)
                         .font(.system(size: 24))
                 )
@@ -78,7 +79,7 @@ struct SelectTimeAndTeam: View {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.black)
                 .overlay(
-                    Text("ЦСКА")
+                    Text(game.teamB!.name)
                         .foregroundColor(.black)
                         .font(.system(size: 24))
                 )
