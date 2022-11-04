@@ -8,21 +8,19 @@
 import SwiftUI
 
 struct SelectFoulView: View {
+    @EnvironmentObject var game: Game
     @Environment (\.dismiss) var dismiss
     @StateObject var viewModel = SelectFoulViewModel()
     @State var nextView = false
     
-    
-    
-    
     var body: some View {
         ZStack{
             VStack{
-                NavigationLink(destination: SelectTimeAndTeam(), isActive: $nextView) {EmptyView()}
+                NavigationLink(destination: SelectTimeAndTeam().environmentObject(game), isActive: $nextView) {EmptyView()}
                 ForEach(viewModel.typesOfFoul.indices) { i in
                     Button {
+                        writeDataOfAction(typeOfFoul: viewModel.typesOfFoul[i], idOfType: i)
                         viewModel.sendSelectedValue(id: i)
-                        
                     } label: {
                         RoundedRectangle(cornerRadius: 10)
                             .strokeBorder(Color.black)
@@ -33,11 +31,11 @@ struct SelectFoulView: View {
                             )
                     }
                     .sheet(isPresented: $viewModel.showBallSheet) {
-                        SelectBallView(countOfBalls: $viewModel.countOfBalls, valueOfShots: $viewModel.valueOfShots, showAlert: $viewModel.showAlert)
+                        SelectBallView(countOfBalls: $viewModel.countOfBalls, valueOfShots: $viewModel.valueOfShots, showAlert: $viewModel.showAlert).environmentObject(game)
                     }
-                    .sheet(isPresented: $viewModel.showTechnicalSheet) {
-                        SelectTechnicalParamsView(showAlert: $viewModel.showAlert)
-                    }
+//                    .sheet(isPresented: $viewModel.showTechnicalSheet) {
+//                        SelectTechnicalParamsView(showAlert: $viewModel.showAlert)
+//                    }
                     
 
                 }
@@ -55,6 +53,16 @@ struct SelectFoulView: View {
         }
     }
     
+    func writeDataOfAction(typeOfFoul: String, idOfType: Int){
+        if let foul = game.currentAction as? Foul{
+            foul.typeOfFoul = typeOfFoul
+            if idOfType == SelectFoulViewModel.IndexOfTypesOfFoul.impenetrable.rawValue {
+                game.addToListOfAction()
+            }
+            
+        }
+        
+    }
     
     var MainTitle: some View{
         Text("Фол")

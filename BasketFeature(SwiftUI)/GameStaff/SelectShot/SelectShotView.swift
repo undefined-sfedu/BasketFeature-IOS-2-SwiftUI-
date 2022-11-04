@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SelectShotView: View {
+    @EnvironmentObject var game: Game
     @StateObject var viewModel  = SelectShotViewModel()
     @Environment (\.dismiss) var dismiss
     @State var presentSheet = false
@@ -16,11 +17,12 @@ struct SelectShotView: View {
     var body: some View {
         ZStack{
         VStack(alignment: .leading){
-            NavigationLink(destination: SelectTimeAndTeam(), isActive: $nextView) {EmptyView()}
+            NavigationLink(destination: SelectTimeAndTeam().environmentObject(game), isActive: $nextView) {EmptyView()}
             ForEach(viewModel.typeOfEnd, id: \.self) { i in
                 HStack{
                     ForEach(i, id: \.self) { item in
                         Button {
+                            writeDataOfAction(typeOfShot: item)
                             presentSheet.toggle()
                         } label: {
                             RoundedRectangle(cornerRadius: 10)
@@ -32,7 +34,7 @@ struct SelectShotView: View {
                                 )
                         }
                         .sheet(isPresented: $presentSheet) {
-                            SelectShotParamsView(showAlert: $showAlert)
+                            SelectShotParamsView(showAlert: $showAlert).environmentObject(game)
                         }
                         
                             
@@ -53,6 +55,13 @@ struct SelectShotView: View {
             nextView.toggle()
         }
         }
+    }
+    
+    func writeDataOfAction(typeOfShot: String){
+        if let shot = game.currentAction as? Shot{
+            shot.typeOfEnding = typeOfShot
+        }
+        
     }
     
     var MainTitle: some View{

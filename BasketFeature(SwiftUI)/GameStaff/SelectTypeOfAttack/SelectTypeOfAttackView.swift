@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SelectTypeOfAttackView: View {
+    @EnvironmentObject var game: Game
     @Environment (\.dismiss) var dismiss
     @StateObject var viewModel = SelectTypeOfAttackViewModel()
     @State var nextScreen = false
@@ -15,9 +16,11 @@ struct SelectTypeOfAttackView: View {
         
         
         VStack{
-            NavigationLink(destination: SelectResultView(), isActive: $nextScreen) {EmptyView()}
+            NavigationLink(destination: SelectResultView().environmentObject(game), isActive: $nextScreen) {EmptyView()}
             ForEach(viewModel.typesOfAttack, id: \.self) { i in
                 Button {
+                    game.currentAction.typeOfAttack = i
+                    printShotData()
                     nextScreen.toggle()
                 } label: {
                     RoundedRectangle(cornerRadius: 10)
@@ -57,6 +60,16 @@ struct SelectTypeOfAttackView: View {
                 )
                 .frame(height: UIScreen.main.bounds.height * 0.1)
         }
+    }
+    func printShotData(){
+        print("---------------------------")
+        print("Team - \(game.currentAction.team)")
+        print("time of game - \(game.currentAction.time)")
+        print("begin of attack - \(game.currentAction.typeOfBeginAttack)")
+        print("players - \(game.currentAction.lineOfPlayersInAction)")
+        print("time of attack - \(game.currentAction.secondOfAction)")
+        print(" type of attack \(game.currentAction.typeOfAttack)")
+        print("---------------------------")
     }
 }
 

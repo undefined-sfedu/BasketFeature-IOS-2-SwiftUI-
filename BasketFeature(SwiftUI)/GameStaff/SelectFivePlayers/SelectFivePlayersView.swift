@@ -123,7 +123,6 @@ struct SelectFivePlayersView: View {
                 .frame(maxWidth: .infinity)
                 .background(
                     RoundedRectangle(cornerRadius: 10)
-                        
                         .strokeBorder(viewModel.selectedPLayers.count >= 5 ? Color.customOrange : Color.customGray, lineWidth: 2.5)
                         .background(viewModel.selectedPLayers.count >= 5 ? Color.white.cornerRadius(10) : Color.customGray.opacity(0.3).cornerRadius(10))
                 )

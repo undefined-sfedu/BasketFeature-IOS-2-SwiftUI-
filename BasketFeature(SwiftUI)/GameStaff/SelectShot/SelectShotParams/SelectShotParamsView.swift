@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SelectShotParamsView: View {
+    @EnvironmentObject var game: Game
     private enum TypeOfView: Int{
         case selectZone = 0
         case selectResult
@@ -59,6 +60,9 @@ struct SelectShotParamsView: View {
     var ContinueButton: some View{
         Button {
             indexOfSelectedTitles += 1
+            if let shot = game.currentAction as? Shot{
+                shot.numberOfZone = selectedZone + 1
+            }
         } label: {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.customOrange, lineWidth: 3)
@@ -78,7 +82,9 @@ struct SelectShotParamsView: View {
             ForEach(0..<resOfShot.count) { i in
                 Button {
                     indexOfSelectedTitles += 1
-                    
+                    if let shot = game.currentAction as? Shot{
+                        shot.resultOfShot = resOfShot[i]
+                    }
                 } label: {
                     RoundedRectangle(cornerRadius: 10)
                         .strokeBorder(Color.black)
@@ -99,7 +105,13 @@ struct SelectShotParamsView: View {
             
             ForEach(0..<resOfShot.count) { i in
                 Button {
+                    if let shot = game.currentAction as? Shot{
+                        print(resOfAssist[i].lowercased() == "да")
+                        shot.assist = (resOfAssist[i].lowercased() == "да" ? true : false)
+                        game.addToListOfAction()
+                    }
                     showAlert.toggle()
+                    
                     dismiss()
                 } label: {
                     RoundedRectangle(cornerRadius: 10)

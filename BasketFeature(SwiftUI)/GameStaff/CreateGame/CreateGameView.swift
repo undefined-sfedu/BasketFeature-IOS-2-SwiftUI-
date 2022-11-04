@@ -10,7 +10,7 @@ import SwiftUI
 struct CreateGameView: View {
     @EnvironmentObject var tabBarConfig: TabBarConfig
     @StateObject var viewModel = CreateGameViewModel()
-    @StateObject var game = Game(teamA: nil, teamB: nil, date: nil)
+    @StateObject var game = Game()
     
     @State var presentListA = false
     @State var presentListB = false
@@ -199,13 +199,11 @@ struct CreateGameView: View {
     var NextScreenButton: some View{
         Button {
             if viewModel.checkData(teamAName: titleOfAHeader, teamBName: titleOfBHeader){
-                game.setTeam(team:viewModel.getTeamByName(name: titleOfAHeader) , teamA: true )
-                game.setTeam(team:viewModel.getTeamByName(name: titleOfBHeader) , teamA: false )
+                game.setTeam(team:viewModel.getTeamByName(name: titleOfAHeader) , teamA: true)
+                game.setTeam(team:viewModel.getTeamByName(name: titleOfBHeader) , teamA: false)
                 game.setDate(date: selectedDate)
                 nextView.toggle()
-                print(game.teamA?.name)
-                print(game.teamB?.name)
-                print(game.date?.description)
+                
             }
             
             

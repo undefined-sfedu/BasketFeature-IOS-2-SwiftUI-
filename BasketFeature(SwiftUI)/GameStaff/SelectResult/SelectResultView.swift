@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct SelectResultView: View {
+    @EnvironmentObject var game: Game
     @Environment (\.dismiss) var dismiss
     @StateObject var viewModel = SelectResultViewModel()
     @State var nextScreen = false
     @State var idOfSelected = 0
     var body: some View {
         VStack{
-            NavigationLink(destination: viewModel.getNextView(id: idOfSelected), isActive: $nextScreen) {EmptyView()}
+            NavigationLink(destination: viewModel.getNextView(id: idOfSelected).environmentObject(game), isActive: $nextScreen) {EmptyView()}
             ForEach(viewModel.typesOfRes.indices) { i in
                 Button {
                     idOfSelected = i
+                    changeTypeOfAction()
                     nextScreen.toggle()
                 } label: {
                     RoundedRectangle(cornerRadius: 10)
@@ -58,6 +60,18 @@ struct SelectResultView: View {
                         .font(.system(size: 24))
                 )
                 .frame(height: UIScreen.main.bounds.height * 0.1)
+        }
+    }
+    
+    func changeTypeOfAction(){
+        var typeAction = SelectResultViewModel.IndexOfTypesOfRes.init(rawValue: idOfSelected)!
+        switch typeAction {
+        case .foul:
+            game.currentAction = Foul(action: game.currentAction)
+        case .shot:
+            game.currentAction = Shot(action: game.currentAction)
+        case .loss:
+            game.currentAction = Loss(action: game.currentAction)
         }
     }
 }

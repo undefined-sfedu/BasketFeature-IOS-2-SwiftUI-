@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PropertyView: View {
     @Environment (\.dismiss) var dismiss
+    @EnvironmentObject var game: Game
     @StateObject var viewModel = PropertyViewModel()
     @State var nextScreen = false
     // Picker properties
@@ -16,13 +17,13 @@ struct PropertyView: View {
     @State var selectedIndex = 1
     var arrOfValues = [14.0, 24.0]
     // Select player properties
-    @State var players = ["0", "25", "31", "41", "43"]
-    @State var selectedPlayer = ""
-    @State var selectedPlayers = []
+    @State var players = [Int]()
+    @State var selectedPlayer = -1
+    @State var selectedPlayers = [Int]()
     var body: some View {
         VStack{
             VStack{
-                NavigationLink(destination: SelectTypeOfAttackView(), isActive: $nextScreen) {EmptyView()}
+                NavigationLink(destination: SelectTypeOfAttackView().environmentObject(game), isActive: $nextScreen) {EmptyView()}
                 BackButton
                     .padding(.bottom)
             }
@@ -46,12 +47,13 @@ struct PropertyView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .strokeBorder(item == selectedPlayer ? Color.customOrange : .black, lineWidth: 2)
                             .overlay(
-                                Text(item)
+                                Text("\(item)")
                                     .foregroundColor(item == selectedPlayer ? .customOrange :.black)
                                     .font(.system(size: 24))
                             )
                             .frame(maxHeight: UIScreen.main.bounds.height * 0.14)
                     }
+                    .disabled(selectedPlayer == item ? true : false)
                     
                 }
             }
@@ -67,6 +69,13 @@ struct PropertyView: View {
             NextViewButton
             Spacer()
         }
+        .onAppear(perform: {
+            
+            players.removeAll()
+            game.getTeamByName(name: game.currentAction.team).selectedPlayers.forEach { item in
+                players.append(item.number)
+            }
+        })
         .padding(.horizontal)
         
         .navigationBarItems(leading: MainTitle)
@@ -140,6 +149,8 @@ struct PropertyView: View {
     
     var NextViewButton: some View{
         Button {
+            writeDataOfShot()
+            
             nextScreen.toggle()
         } label: {
             RoundedRectangle(cornerRadius: 10)
@@ -151,6 +162,11 @@ struct PropertyView: View {
                 )
                 .frame(height: UIScreen.main.bounds.height * 0.1)
         }
+    }
+    
+    func writeDataOfShot(){
+        game.currentAction.secondOfAction = Int(viewModel.selectedSecond)
+        game.currentAction.lineOfPlayersInAction = selectedPlayers
     }
     
 }

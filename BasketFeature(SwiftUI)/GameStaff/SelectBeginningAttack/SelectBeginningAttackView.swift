@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SelectBeginningAttackView: View {
     @StateObject var viewModel = SelectBeginningAttackViewModel()
+    @EnvironmentObject var game: Game
     @State var nextScreen = false
     @Environment (\.dismiss) var dismiss
     
@@ -16,9 +17,11 @@ struct SelectBeginningAttackView: View {
         
         
         VStack{
-            NavigationLink(destination: PropertyView(), isActive: $nextScreen) {EmptyView()}
+            NavigationLink(destination: PropertyView().environmentObject(game), isActive: $nextScreen) {EmptyView()}
             ForEach(viewModel.typesOfAttack, id: \.self) { i in
                 Button {
+                    game.currentAction.typeOfBeginAttack = i
+                    
                     nextScreen.toggle()
                 } label: {
                     RoundedRectangle(cornerRadius: 10)

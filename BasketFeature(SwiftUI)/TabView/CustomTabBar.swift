@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CustomTabBar: View {
     var images = ["Settings", "Ball", "Teams"]
-    @State var colorOfImages: [Color] = [.customGray, .customGray, .customOrange]
+    @State var colorOfImages: [Color] = [.customGray, .customGray, .customGray]
     @State var selectedScreen: Int = 2{
         didSet{
             colorOfImages = [.customGray, .customGray, .customGray]
@@ -18,6 +18,7 @@ struct CustomTabBar: View {
     }
     @State var titlesOfImage = ["Настройки","Игры","Команды"]
     @StateObject var tabBarConfig = TabBarConfig()
+    
     var body: some View {
         VStack{
             if selectedScreen == 0{
@@ -57,6 +58,11 @@ struct CustomTabBar: View {
                 }
             }
         }
+        .onAppear(perform: {
+            colorOfImages = [.customGray, .customGray, .customGray]
+            colorOfImages[selectedScreen] = .customOrange
+        })
+        
         .navigationBarHidden(true)
     }
 }

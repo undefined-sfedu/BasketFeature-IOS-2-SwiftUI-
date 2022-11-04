@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SelectLossView: View {
+    @EnvironmentObject var game: Game
     @Environment (\.dismiss) var dismiss
     @StateObject var viewModel = SelectLossViewModel()
     @State var nextView = false
@@ -15,9 +16,10 @@ struct SelectLossView: View {
     var body: some View {
         ZStack {
             VStack{
-                NavigationLink(destination: SelectTimeAndTeam(), isActive: $nextView) {EmptyView()}
+                NavigationLink(destination: SelectTimeAndTeam().environmentObject(game), isActive: $nextView) {EmptyView()}
                 ForEach(viewModel.typesOfLoss, id: \.self) { item in
                     Button {
+                        writeDataOfAction(typeOfLoss: item)
                         showAlert.toggle()
                     } label: {
                         RoundedRectangle(cornerRadius: 10)
@@ -43,6 +45,16 @@ struct SelectLossView: View {
                 nextView.toggle()
             }
         }
+        
+        
+    }
+    
+    func writeDataOfAction(typeOfLoss: String){
+        if let loss = game.currentAction as? Loss{
+            loss.typeOfLoss = typeOfLoss
+            game.addToListOfAction()
+        }
+        
     }
     
     var MainTitle: some View{

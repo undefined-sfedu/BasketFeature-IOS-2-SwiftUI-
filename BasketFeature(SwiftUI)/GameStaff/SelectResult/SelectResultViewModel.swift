@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 class SelectResultViewModel: ObservableObject{
+    
     enum IndexOfTypesOfRes: Int{
         case foul = 0
         case shot
@@ -19,7 +20,7 @@ class SelectResultViewModel: ObservableObject{
         "Потеря"
     ]
     
-   @ViewBuilder func getNextView(id:Int) -> some View{
+    @ViewBuilder func getNextView(id:Int) -> some View{
         
         let index = IndexOfTypesOfRes.init(rawValue: id)!
         switch index{

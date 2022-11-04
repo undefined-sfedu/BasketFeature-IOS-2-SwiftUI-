@@ -13,7 +13,7 @@ class SelectFoulViewModel: ObservableObject{
     @Published var countOfBalls = 0
     @Published var showBallSheet = false
     @Published var showImpenetrableSheet = false
-    @Published var showTechnicalSheet = false
+//    @Published var showTechnicalSheet = false
     @Published var valueOfShots = [false, false, false]
     
     enum IndexOfTypesOfFoul: Int{
@@ -21,14 +21,14 @@ class SelectFoulViewModel: ObservableObject{
         case twoShot
         case threeShot
         case impenetrable // непробивной
-        case technical
+//        case technical
     }
     var typesOfFoul = [
     "1 бросок",
     "2 броска",
     "3 броска",
     "непробивной",
-    "технический"
+//    "технический"
     ]
     
     func sendSelectedValue(id: Int){
@@ -48,8 +48,8 @@ class SelectFoulViewModel: ObservableObject{
                 showBallSheet.toggle()
             case .impenetrable:
                 showAlert.toggle()
-            case .technical:
-                showTechnicalSheet.toggle()
+//            case .technical:
+//                showTechnicalSheet.toggle()
             }
         }
     

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SelectBallView: View {
+    @EnvironmentObject var game: Game
     @Environment (\.dismiss) var dismiss
     @Binding var countOfBalls: Int
     @Binding var valueOfShots: [Bool]
@@ -74,6 +75,10 @@ struct SelectBallView: View {
     
     var SendBallsButton: some View{
         Button {
+            if let foul = game.currentAction as? Foul{
+                foul.arrayOfShots = valueOfShots
+            }
+            game.addToListOfAction()
             showAlert.toggle()
             dismiss()
             
