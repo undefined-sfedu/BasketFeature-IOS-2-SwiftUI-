@@ -27,13 +27,16 @@ struct LoginView: View {
                     CustomTextField(description: $viewModel.emailDescription)
                     CustomTextField(description: $viewModel.passwordDescription, isSecureField: true)
                     
-                    ForgetPassword
-                        .sheet(isPresented: $goToForgetPassword) {
-                            ForgetPasswordView(presentAlertOnLoginView: $presentAlertChangedPassword)
-                        }
+//                    ForgetPassword
+//                        .sheet(isPresented: $goToForgetPassword) {
+//                            ForgetPasswordView(presentAlertOnLoginView: $presentAlertChangedPassword)
+//                        }
+                    
+                    
                     EnterButton
                         .padding(.horizontal)
                     RegisterButton
+                    
                 }
             }
             CustomAlert(isShow: $presentAlertChangedPassword, largeTitle: "Пароль изменен", smallTitle: "Войдите заново", titleButton: "Ок", selfClosed: true)

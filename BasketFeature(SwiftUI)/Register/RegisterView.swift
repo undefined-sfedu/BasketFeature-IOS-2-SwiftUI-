@@ -12,11 +12,11 @@ struct RegisterView: View {
     @State var presentPopUp = false
     @State var haveAccount = false
     @State var confirmAccount = false
-    @State var goToTeamView = false
+//    @State var goToTeamView = false
     var body: some View {
         
         VStack {
-            NavigationLink(destination: CustomTabBar(), isActive: $goToTeamView) {EmptyView()}
+            NavigationLink(destination: CustomTabBar(), isActive: $viewModel.goToNextView) {EmptyView()}
             NavigationLink(destination: LoginView(), isActive: $haveAccount) {EmptyView()}
             ScrollView(showsIndicators: false){
                 CustomTextField(description: $viewModel.emailDescription)
@@ -36,10 +36,10 @@ struct RegisterView: View {
             .navigationTitle("Регистрация")
             .navigationBarBackButtonHidden(true)
         }
-        .sheet(isPresented: $viewModel.presentPopUp) {
-            PopUpView
-            
-        }
+    
+//        .sheet(isPresented: $viewModel.presentPopUp) {
+//            PopUpView
+//        }
         
         
     }
@@ -88,7 +88,7 @@ struct RegisterView: View {
             Button {
                 viewModel.presentPopUp.toggle()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    goToTeamView.toggle()
+//                    goToTeamView.toggle()
                 }
             } label: {
                 Text("Подтвердить")
