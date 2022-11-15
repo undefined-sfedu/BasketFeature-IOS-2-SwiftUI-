@@ -28,6 +28,12 @@ struct PropertyView: View {
                     .padding(.bottom)
             }
             
+            HStack {
+                Text("Тип времени")
+                    .font(.system(size: 24))
+                    .fontWeight(.medium)
+                Spacer()
+            }
             CustomPicker
             HStack {
                 Text("Владение мячом")
@@ -67,7 +73,7 @@ struct PropertyView: View {
             CustomSlider
             Spacer()
             NextViewButton
-            Spacer()
+                .padding(.bottom)
         }
         .onAppear(perform: {
             
