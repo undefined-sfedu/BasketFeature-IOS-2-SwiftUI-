@@ -8,81 +8,64 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @StateObject var viewModel = RegisterViewModel()
-    @State var presentPopUp = false
-    @State var haveAccount = false
-    @State var confirmAccount = false
-//    @State var goToTeamView = false
+    
+    // MARK: - Properties
+
+    @StateObject private var viewModel = RegisterViewModel()
+    @State private var presentPopUp = false
+    @State private var haveAccount = false
+    @State private var confirmAccount = false
+
+    // MARK: - Body
+    
     var body: some View {
-        
         VStack {
-            NavigationLink(destination: CustomTabBar(), isActive: $viewModel.goToNextView) {EmptyView()}
-            NavigationLink(destination: LoginView(), isActive: $haveAccount) {EmptyView()}
-            ScrollView(showsIndicators: false){
+            NavigationLink(destination: CustomTabBar(), isActive: $viewModel.goToNextView) { EmptyView() }
+            NavigationLink(destination: LoginView(), isActive: $haveAccount) { EmptyView() }
+            ScrollView(showsIndicators: false) {
                 CustomTextField(description: $viewModel.emailDescription)
                 
-                Text("Пароль должен содержать минимум 8 символов латинскими буквами, а также хотя бы одну цифру")
+                Text(^String.Register.passwordDescription)
                     .padding(.horizontal)
                 
                 CustomTextField(description: $viewModel.passwordDescription, isSecureField: true)
                 CustomTextField(description: $viewModel.repeatPasswordDescription, isSecureField: true)
-                
-                RegisterButton
+                Spacer()
+                ViewFactory.defaultLargeButton(title: ^String.Register.register) { viewModel.register() }
                     .padding(.horizontal)
                 AlreadyHaveAccountButton
                     .padding(.horizontal)
                 
             }
-            .navigationTitle("Регистрация")
+            .navigationTitle(^String.Register.registration)
             .navigationBarBackButtonHidden(true)
-        }
-    
-//        .sheet(isPresented: $viewModel.presentPopUp) {
-//            PopUpView
-//        }
-        
-        
-    }
-    
-    var RegisterButton: some View{
-        Button {
-            viewModel.register()
-//            goToTeamView.toggle()
             
-        } label: {
-            Text("Зарегистрироваться")
-//                .font(.largeTitle)
-                .font(.system(size: 23))
-                .foregroundColor(.black)
-                .padding(.vertical)
-                .frame(maxWidth: .infinity)
-                .background(Color.appOrange.cornerRadius(10))
         }
-        
     }
+    
+    // MARK: - Custom Views
     
     var AlreadyHaveAccountButton: some View{
         Button {
             haveAccount.toggle()
             
         } label: {
-            Text("уже есть аккаунт")
+            Text(^String.Register.alreadyHaveAccount)
                 .foregroundColor(.black)
                 .underline()
         }
     }
     
-    var PopUpView: some View{
-        
-        VStack{
+    var PopUpView: some View {
+        VStack {
             HStack {
-                Text("Подтверждение почты")
+                Text(^String.EmailConfirmation.title)
                     .font(.largeTitle)
                     .fontWeight(.bold)
                 Spacer()
             }
             Spacer()
-            Text("Вам на почту был отправлена ссылка для подтверждения. Пройдите по ссылке, чтобы активировать ваш аккаунт.")
+            Text(^String.EmailConfirmation.description)
                 .frame(maxWidth:.infinity)
             
             Spacer()
@@ -92,7 +75,7 @@ struct RegisterView: View {
 //                    goToTeamView.toggle()
                 }
             } label: {
-                Text("Подтвердить")
+                Text(^String.EmailConfirmation.confirm)
                     .font(.largeTitle)
                     .foregroundColor(.black)
                     .padding(.vertical)
@@ -104,10 +87,13 @@ struct RegisterView: View {
         .padding(.all)
     }
     
+    
 }
-
+// MARK: - Preview Provider
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView()
+        NavigationView {
+            RegisterView()
+        }
     }
 }

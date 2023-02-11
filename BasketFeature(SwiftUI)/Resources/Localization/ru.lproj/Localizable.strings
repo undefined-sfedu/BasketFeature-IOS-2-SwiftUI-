@@ -1,0 +1,24 @@
+/*
+  Localizable.strings
+  BasketFeature(SwiftUI)
+
+  Created by Daniil on 11.02.2023.
+  
+*/
+
+// Common
+"CommonEmail" = "Электронная почта";
+"CommonPassword" = "Пароль";
+"CommonRepeatPassword" = "Повторите пароль";
+
+// Register
+"RegisterPasswordDescription" = "Пароль должен содержать минимум 8 символов латинскими буквами, а также хотя бы одну цифру";
+"RegisterRegistration" = "Регистрация";
+"RegisterAlreadyHaveAccount" = "Уже есть аккаунт";
+"RegisterRegister" = "Зарегистрироваться";
+
+//EmailConfirmation
+"EmailConfirmationTitle" = "Подтверждение\nпочты";
+"EmailConfirmationDescription" = "Вам на почту была отправлена ссылка для подтверждения.\nПройдите по ссылке, чтобы активировать ваш аккаунт.";
+"EmailConfirmationNotConfirmatedEmail" = "*аккаунт не подтвержден,\nпройдите по ссылке в письме";
+"EmailConfirmationConfirm" = "Подтвердить";

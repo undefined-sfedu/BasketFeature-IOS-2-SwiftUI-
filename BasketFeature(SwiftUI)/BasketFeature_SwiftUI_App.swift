@@ -13,7 +13,7 @@ struct BasketFeature_SwiftUI_App: App {
     var body: some Scene {
         WindowGroup {
             NavigationView{
-                if LocalUser().getData(typeOfData: .id) == ""{
+                if LocalUser().getData(typeOfData: .id) == "" {
                     LoginView().preferredColorScheme(.light)
                 }
                 else{

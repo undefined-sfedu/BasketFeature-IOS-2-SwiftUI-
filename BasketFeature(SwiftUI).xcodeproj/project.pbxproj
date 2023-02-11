@@ -26,7 +26,7 @@
 		F34B54E028E303120045BA28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F34B54DF28E303120045BA28 /* Assets.xcassets */; };
 		F34B54E328E303120045BA28 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F34B54E228E303120045BA28 /* Preview Assets.xcassets */; };
 		F34B54EA28E303400045BA28 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B54E928E303400045BA28 /* CustomTextField.swift */; };
-		F34B54EC28E30D500045BA28 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B54EB28E30D500045BA28 /* Extensions.swift */; };
+		F34B54EC28E30D500045BA28 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B54EB28E30D500045BA28 /* Colors.swift */; };
 		F34B54EE28E30FCB0045BA28 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B54ED28E30FCB0045BA28 /* RegisterViewModel.swift */; };
 		F34B54F128E311290045BA28 /* TextFieldDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B54F028E311290045BA28 /* TextFieldDescription.swift */; };
 		F34B54F328E31E890045BA28 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B54F228E31E890045BA28 /* RegisterModel.swift */; };
@@ -46,6 +46,7 @@
 		F3803F3E28FFCD1700E590CB /* SelectBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3803F3D28FFCD1700E590CB /* SelectBallView.swift */; };
 		F3803F4428FFDC7600E590CB /* SelectTechnicalParamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3803F4328FFDC7600E590CB /* SelectTechnicalParamsView.swift */; };
 		F3810C1F28F89F23009170BA /* SelectTimeAndTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3810C1E28F89F23009170BA /* SelectTimeAndTeam.swift */; };
+		F38FD0E22997BB3C000EE7E5 /* View+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38FD0E12997BB3C000EE7E5 /* View+Convenience.swift */; };
 		F394FA6A28EFE647008DB55B /* AddPlayerToTeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394FA6928EFE647008DB55B /* AddPlayerToTeamModel.swift */; };
 		F3986E1A28E9623E008F16E9 /* ForgetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3986E1928E9623E008F16E9 /* ForgetPasswordView.swift */; };
 		F3A11CBB2913DE0F00E383AA /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A11CBA2913DE0F00E383AA /* Actions.swift */; };
@@ -54,6 +55,8 @@
 		F3C6EB412901977B00A2A5BC /* SelectShotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C6EB402901977B00A2A5BC /* SelectShotView.swift */; };
 		F3C6EB45290197AD00A2A5BC /* SelectShotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C6EB44290197AD00A2A5BC /* SelectShotViewModel.swift */; };
 		F3C6EB4829019A7600A2A5BC /* SelectShotParamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C6EB4729019A7600A2A5BC /* SelectShotParamsView.swift */; };
+		F3CD0EE02997B3710044C725 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CD0EDF2997B3710044C725 /* LocalizedString.swift */; };
+		F3CD0EF52997B5800044C725 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F3CD0EF72997B5800044C725 /* Localizable.strings */; };
 		F3CD446428EC272600CF88BB /* CustomPlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CD446328EC272600CF88BB /* CustomPlayerCell.swift */; };
 		F3CD446628EC2C4F00CF88BB /* AddPlayerToTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CD446528EC2C4F00CF88BB /* AddPlayerToTeamViewModel.swift */; };
 		F3D911DB28EC384C00BDA6D3 /* AddPlayerToTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D911DA28EC384C00BDA6D3 /* AddPlayerToTeamView.swift */; };
@@ -93,7 +96,7 @@
 		F34B54DF28E303120045BA28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F34B54E228E303120045BA28 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F34B54E928E303400045BA28 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		F34B54EB28E30D500045BA28 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F34B54EB28E30D500045BA28 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		F34B54ED28E30FCB0045BA28 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		F34B54F028E311290045BA28 /* TextFieldDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDescription.swift; sourceTree = "<group>"; };
 		F34B54F228E31E890045BA28 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
@@ -113,6 +116,7 @@
 		F3803F3D28FFCD1700E590CB /* SelectBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBallView.swift; sourceTree = "<group>"; };
 		F3803F4328FFDC7600E590CB /* SelectTechnicalParamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTechnicalParamsView.swift; sourceTree = "<group>"; };
 		F3810C1E28F89F23009170BA /* SelectTimeAndTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeAndTeam.swift; sourceTree = "<group>"; };
+		F38FD0E12997BB3C000EE7E5 /* View+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Convenience.swift"; sourceTree = "<group>"; };
 		F394FA6928EFE647008DB55B /* AddPlayerToTeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerToTeamModel.swift; sourceTree = "<group>"; };
 		F3986E1928E9623E008F16E9 /* ForgetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordView.swift; sourceTree = "<group>"; };
 		F3A11CBA2913DE0F00E383AA /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
@@ -121,6 +125,9 @@
 		F3C6EB402901977B00A2A5BC /* SelectShotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectShotView.swift; sourceTree = "<group>"; };
 		F3C6EB44290197AD00A2A5BC /* SelectShotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectShotViewModel.swift; sourceTree = "<group>"; };
 		F3C6EB4729019A7600A2A5BC /* SelectShotParamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectShotParamsView.swift; sourceTree = "<group>"; };
+		F3CD0EDF2997B3710044C725 /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
+		F3CD0EF62997B5800044C725 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F3CD0EFA2997B6390044C725 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F3CD446328EC272600CF88BB /* CustomPlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPlayerCell.swift; sourceTree = "<group>"; };
 		F3CD446528EC2C4F00CF88BB /* AddPlayerToTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerToTeamViewModel.swift; sourceTree = "<group>"; };
 		F3D911DA28EC384C00BDA6D3 /* AddPlayerToTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerToTeamView.swift; sourceTree = "<group>"; };
@@ -193,18 +200,12 @@
 		F34B54DA28E3030E0045BA28 /* BasketFeature(SwiftUI) */ = {
 			isa = PBXGroup;
 			children = (
+				F3CD0EDA2997AE9E0044C725 /* Common */,
+				F3986E1B28E96259008F16E9 /* CustomViews */,
+				F3986E1C28E96282008F16E9 /* Data */,
+				F3CD0EDD2997B0C40044C725 /* Modules */,
+				F3CD0EDE2997B2520044C725 /* Resources */,
 				F34B54DB28E3030E0045BA28 /* BasketFeature_SwiftUI_App.swift */,
-				F34B54EB28E30D500045BA28 /* Extensions.swift */,
-				F3986E1C28E96282008F16E9 /* Custom Data Types */,
-				F3986E1B28E96259008F16E9 /* Custom Views */,
-				F34B54EF28E30FD40045BA28 /* Register */,
-				F3FBBFF828E4C1F500B6C73E /* Login */,
-				F3986E1828E9621A008F16E9 /* ForgetPassword */,
-				F3FF7A7328E98DD2008B1FE8 /* TabView */,
-				F3561C7028EF0EAC0098188E /* TeamStaff */,
-				F3561C7228EF0EF10098188E /* GameStaff */,
-				F34B54DF28E303120045BA28 /* Assets.xcassets */,
-				F34B54E128E303120045BA28 /* Preview Content */,
 			);
 			path = "BasketFeature(SwiftUI)";
 			sourceTree = "<group>";
@@ -346,31 +347,28 @@
 			path = ForgetPassword;
 			sourceTree = "<group>";
 		};
-		F3986E1B28E96259008F16E9 /* Custom Views */ = {
+		F3986E1B28E96259008F16E9 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				F3FF7A7328E98DD2008B1FE8 /* TabView */,
 				F34B54E928E303400045BA28 /* CustomTextField.swift */,
 				F3FF7A7128E97E04008B1FE8 /* CustomAlert.swift */,
 				F32B7C1928E9E9CF00E279AE /* TeamCell.swift */,
 				F3CD446328EC272600CF88BB /* CustomPlayerCell.swift */,
 				F324F27128F1966900293DE4 /* Field.swift */,
 			);
-			path = "Custom Views";
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
-		F3986E1C28E96282008F16E9 /* Custom Data Types */ = {
+		F3986E1C28E96282008F16E9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				F34B54F028E311290045BA28 /* TextFieldDescription.swift */,
+				F3CD0EDC2997B0060044C725 /* Models */,
 				F3A11CBA2913DE0F00E383AA /* Actions.swift */,
-				F32B7C0F28E9E42F00E279AE /* Player.swift */,
 				F32B7C1128E9E47A00E279AE /* Team.swift */,
 				F366B76A29116A96003DA6AB /* Game.swift */,
-				F32B7C1328E9E7DC00E279AE /* User.swift */,
-				F316CC7428ED535500F98BC4 /* UrlHelper.swift */,
-				F316CC7828ED6DE700F98BC4 /* LocalUser.swift */,
 			);
-			path = "Custom Data Types";
+			path = Data;
 			sourceTree = "<group>";
 		};
 		F3C6EB3F2901976300A2A5BC /* SelectShot */ = {
@@ -389,6 +387,66 @@
 				F3C6EB4729019A7600A2A5BC /* SelectShotParamsView.swift */,
 			);
 			path = SelectShotParams;
+			sourceTree = "<group>";
+		};
+		F3CD0EDA2997AE9E0044C725 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F3CD0EDB2997AEB00044C725 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F3CD0EDB2997AEB00044C725 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F34B54EB28E30D500045BA28 /* Colors.swift */,
+				F3CD0EDF2997B3710044C725 /* LocalizedString.swift */,
+				F38FD0E12997BB3C000EE7E5 /* View+Convenience.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F3CD0EDC2997B0060044C725 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F34B54F028E311290045BA28 /* TextFieldDescription.swift */,
+				F32B7C0F28E9E42F00E279AE /* Player.swift */,
+				F32B7C1328E9E7DC00E279AE /* User.swift */,
+				F316CC7428ED535500F98BC4 /* UrlHelper.swift */,
+				F316CC7828ED6DE700F98BC4 /* LocalUser.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F3CD0EDD2997B0C40044C725 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F34B54EF28E30FD40045BA28 /* Register */,
+				F3FBBFF828E4C1F500B6C73E /* Login */,
+				F3986E1828E9621A008F16E9 /* ForgetPassword */,
+				F3561C7028EF0EAC0098188E /* TeamStaff */,
+				F3561C7228EF0EF10098188E /* GameStaff */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		F3CD0EDE2997B2520044C725 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F3CD0EE12997B3CC0044C725 /* Localization */,
+				F34B54E128E303120045BA28 /* Preview Content */,
+				F34B54DF28E303120045BA28 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F3CD0EE12997B3CC0044C725 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				F3CD0EF72997B5800044C725 /* Localizable.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		F3D911DC28EC394F00BDA6D3 /* AddPlayerToTeam */ = {
@@ -502,6 +560,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = F34B54CF28E3030E0045BA28;
 			packageReferences = (
@@ -523,6 +582,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F34B54E328E303120045BA28 /* Preview Assets.xcassets in Resources */,
+				F3CD0EF52997B5800044C725 /* Localizable.strings in Resources */,
 				F34B54E028E303120045BA28 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,6 +609,7 @@
 				F3433C1728EC1F3500585633 /* ShowTeamView.swift in Sources */,
 				F3803F4428FFDC7600E590CB /* SelectTechnicalParamsView.swift in Sources */,
 				F316CC7528ED535500F98BC4 /* UrlHelper.swift in Sources */,
+				F38FD0E22997BB3C000EE7E5 /* View+Convenience.swift in Sources */,
 				F34B54F528E31EA10045BA28 /* TeamsView.swift in Sources */,
 				F3561C6F28EF02580098188E /* ShowTeamModel.swift in Sources */,
 				F35B399928EFFA57008A62B9 /* SelectFivePlayersView.swift in Sources */,
@@ -582,6 +643,7 @@
 				F3803F3728FFC17E00E590CB /* SelectLossViewModel.swift in Sources */,
 				F3803F3528FFC16600E590CB /* SelectLossView.swift in Sources */,
 				F32B7C1228E9E47A00E279AE /* Team.swift in Sources */,
+				F3CD0EE02997B3710044C725 /* LocalizedString.swift in Sources */,
 				F3CD446628EC2C4F00CF88BB /* AddPlayerToTeamViewModel.swift in Sources */,
 				F324F27228F1966900293DE4 /* Field.swift in Sources */,
 				F32B7C1A28E9E9CF00E279AE /* TeamCell.swift in Sources */,
@@ -590,7 +652,7 @@
 				F32B7C1D28E9EE4700E279AE /* AddTeamView.swift in Sources */,
 				F32B7C1828E9E8A400E279AE /* TeamsModel.swift in Sources */,
 				F32B7C1028E9E42F00E279AE /* Player.swift in Sources */,
-				F34B54EC28E30D500045BA28 /* Extensions.swift in Sources */,
+				F34B54EC28E30D500045BA28 /* Colors.swift in Sources */,
 				F3E9129128FA81F400D47E44 /* SelectBeginningAttackView.swift in Sources */,
 				F3803F3A28FFC92C00E590CB /* SelectFoulView.swift in Sources */,
 				F3E9129328FA81FF00D47E44 /* SelectBeginningAttackViewModel.swift in Sources */,
@@ -600,11 +662,24 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		F3CD0EF72997B5800044C725 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F3CD0EF62997B5800044C725 /* en */,
+				F3CD0EFA2997B6390044C725 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		F34B54E428E303120045BA28 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -665,6 +740,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -722,7 +798,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BasketFeature(SwiftUI)/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BasketFeature(SwiftUI)/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = RBRFGT8CHB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -753,7 +829,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BasketFeature(SwiftUI)/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BasketFeature(SwiftUI)/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = RBRFGT8CHB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

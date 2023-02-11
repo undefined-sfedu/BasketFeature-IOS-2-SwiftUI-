@@ -21,11 +21,13 @@ class RegisterViewModel: ObservableObject{
     
     
     // MARK: - View's Methods
-    func register(){
+    func register() {
         
-        if checkFields(){
-            model.register(email: emailDescription.fieldValue, password: passwordDescription.fieldValue)
-        }
+        presentPopUp.toggle()
+        
+//        if checkFields() {
+//            model.register(email: emailDescription.fieldValue, password: passwordDescription.fieldValue)
+//        }
     }
     
     // MARK: - Model's Methods
