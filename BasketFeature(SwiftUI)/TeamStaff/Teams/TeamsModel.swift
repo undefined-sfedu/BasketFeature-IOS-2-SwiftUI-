@@ -24,7 +24,7 @@ class TeamsModel{
             let maybeData = try? JSON(data: corData)
             guard let myData = maybeData else {return}
             print(answer.response?.statusCode)
-            print(myData)
+//            print(myData)
             if answer.response?.statusCode == 200{
                 var res = [Team]()
                 let teams = myData.arrayValue

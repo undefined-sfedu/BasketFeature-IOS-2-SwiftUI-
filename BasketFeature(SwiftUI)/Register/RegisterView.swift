@@ -51,7 +51,8 @@ struct RegisterView: View {
             
         } label: {
             Text("Зарегистрироваться")
-                .font(.largeTitle)
+//                .font(.largeTitle)
+                .font(.system(size: 23))
                 .foregroundColor(.black)
                 .padding(.vertical)
                 .frame(maxWidth: .infinity)

@@ -1677,7 +1677,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "556EE7A3-2EE2-45DF-818B-5ECE674CD28D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BasketFeature(SwiftUI)/GameStaff/SelectShot/SelectShotParams/SelectShotParamsView.swift"
@@ -1773,7 +1773,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "2A7200C7-8554-40C0-AF94-2F51B6EA6265"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BasketFeature(SwiftUI)/Register/RegisterViewModel.swift"
@@ -1789,7 +1789,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "51A03DE4-1A55-4E3B-AD07-4FC340B87537"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BasketFeature(SwiftUI)/Register/RegisterViewModel.swift"
@@ -1799,6 +1799,22 @@
             endingLineNumber = "27"
             landmarkName = "register()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "56F61E29-016F-42EE-A12D-DE3742ADFB89"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BasketFeature(SwiftUI)/GameStaff/SelectShot/SelectShotParams/SelectShotParamsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "SelectResultOfAssist"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

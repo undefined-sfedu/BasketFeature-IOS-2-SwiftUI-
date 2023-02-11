@@ -49,11 +49,9 @@ class AddTeamViewModel: ObservableObject{
     }
     
     // MARK: - Models Methods
-    func updateView(){
+    func updateView() {
         shouldDismissView = true
-        
     }
-    
 }
 
 private extension AddTeamViewModel{

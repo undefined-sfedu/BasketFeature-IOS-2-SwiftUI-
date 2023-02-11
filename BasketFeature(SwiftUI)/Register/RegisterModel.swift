@@ -41,6 +41,10 @@ class RegisterModel{
                 }
                 
             }
+            else{
+                let data = try? JSON(data: answerData)
+                print(data)
+            }
         }
     }
 }

@@ -26,12 +26,12 @@ class AddTeamModel{
         print(url)
         AF.request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: headers).responseJSON { [self] answer in
             print(answer.response?.statusCode)
-            print(answer)
+//            print(answer)
             guard let corData = answer.data else {return}
             let maybeData = try? JSON(data: corData)
             guard let myData = maybeData else {return}
 //            print(myData)
-            if answer.response?.statusCode == 200{
+            if answer.response?.statusCode == 200 {
                 viewModel?.updateView()
                 var teamId = myData["id"].intValue
                 addPlayersToTeam(teamId: teamId, players: players)
