@@ -10,7 +10,7 @@ import SwiftUI
 
 class ViewFactory {
     
-    class func defaultLargeButton( title: String,
+    static func defaultLargeButton( title: String,
                                 completion: @escaping () -> () ) -> some View {
         Button {
             completion()
