@@ -22,10 +22,11 @@ class AddPlayerToTeamViewModel: ObservableObject{
         model.viewModel = self
     }
     @Published var textFieldsDescription = [
-        TextFieldDescription(placeholder: "Фамилия", titleOfError: "неверный формат", borderColor: .appGray, titleColor: .black, visibleOfError: false),
-        TextFieldDescription(placeholder: "Имя", titleOfError: "неверный формат", borderColor: .appGray, titleColor: .black, visibleOfError: false),
-        TextFieldDescription(placeholder: "Отчество", titleOfError: "неверный формат", borderColor: .appGray, titleColor: .black, visibleOfError: false),
-        TextFieldDescription(placeholder: "Номер", titleOfError: "неверный формат", borderColor: .appGray, titleColor: .black, visibleOfError: false)
+        
+        TextFieldModel(placeholder: ^String.TextFieldPlaceholders.lastName, titleOfError: ^String.TextFieldError.invalidFormat),
+        TextFieldModel(placeholder: ^String.TextFieldPlaceholders.name, titleOfError: ^String.TextFieldError.invalidFormat),
+        TextFieldModel(placeholder: ^String.TextFieldPlaceholders.middleName, titleOfError: ^String.TextFieldError.invalidFormat),
+        TextFieldModel(placeholder: String((^String.TextFieldPlaceholders.number).dropLast()), titleOfError: ^String.TextFieldError.invalidFormat)
     ]
     
     // MARK: - View's methods

@@ -15,10 +15,10 @@ class ForgetPasswordViewModel: ObservableObject{
     }
     @Published var whatViewPresent: PresentViewType = .sendEmail
     //MARK: - Text Field Descriptions
-    @Published var emailDescription = TextFieldDescription(fieldValue: "", placeholder: "Электронная почта", titleOfError: "данная почта не зарегистрирована", borderColor: .appGray, titleColor: .black, visibleOfError: false)
-    @Published var codeDescription = TextFieldDescription(fieldValue: "", placeholder: "Введите код", titleOfError: "неверный код", borderColor: .appGray, titleColor: .black, visibleOfError: false)
-    @Published var passwordDescription = TextFieldDescription(fieldValue: "", placeholder: "Введите пароль", titleOfError: "неверный формат", borderColor: .appGray, titleColor: .black, visibleOfError: false)
-    @Published var repeatPasswordDescription = TextFieldDescription(fieldValue: "", placeholder: "Повторите пароль", titleOfError: "пароли не совпадают", borderColor: .appGray, titleColor: .black, visibleOfError: false)
+    @Published var emailDescription = TextFieldModel(placeholder: ^String.Common.email, titleOfError: ^String.TextFieldError.emailIsNotRegistered)
+    @Published var codeDescription = TextFieldModel(placeholder: ^String.TextFieldPlaceholders.enterPasscode, titleOfError: ^String.TextFieldError.invalidPasscode)
+    @Published var passwordDescription = TextFieldModel(placeholder: ^String.TextFieldPlaceholders.enterPassword, titleOfError: ^String.TextFieldError.invalidFormat)
+    @Published var repeatPasswordDescription = TextFieldModel(placeholder: ^String.Common.repeatPassword, titleOfError: ^String.TextFieldError.differentPasswords)
     //MARK: - Reusable variable
     @Published var smallTitle = "К какой почте привязан ваш аккаунт?"
     //MARK: - Timer Logic

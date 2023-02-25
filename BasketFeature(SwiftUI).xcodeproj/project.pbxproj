@@ -28,7 +28,7 @@
 		F34B54EA28E303400045BA28 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B54E928E303400045BA28 /* CustomTextField.swift */; };
 		F34B54EC28E30D500045BA28 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B54EB28E30D500045BA28 /* Colors.swift */; };
 		F34B54EE28E30FCB0045BA28 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B54ED28E30FCB0045BA28 /* RegisterViewModel.swift */; };
-		F34B54F128E311290045BA28 /* TextFieldDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B54F028E311290045BA28 /* TextFieldDescription.swift */; };
+		F34B54F128E311290045BA28 /* TextFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B54F028E311290045BA28 /* TextFieldModel.swift */; };
 		F34B54F328E31E890045BA28 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B54F228E31E890045BA28 /* RegisterModel.swift */; };
 		F34B54F528E31EA10045BA28 /* TeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B54F428E31EA10045BA28 /* TeamsView.swift */; };
 		F3561C6D28EF02370098188E /* ShowTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3561C6C28EF02370098188E /* ShowTeamViewModel.swift */; };
@@ -98,7 +98,7 @@
 		F34B54E928E303400045BA28 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		F34B54EB28E30D500045BA28 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		F34B54ED28E30FCB0045BA28 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
-		F34B54F028E311290045BA28 /* TextFieldDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDescription.swift; sourceTree = "<group>"; };
+		F34B54F028E311290045BA28 /* TextFieldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModel.swift; sourceTree = "<group>"; };
 		F34B54F228E31E890045BA28 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		F34B54F428E31EA10045BA28 /* TeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsView.swift; sourceTree = "<group>"; };
 		F3561C6C28EF02370098188E /* ShowTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTeamViewModel.swift; sourceTree = "<group>"; };
@@ -380,7 +380,7 @@
 		F3CD0EDC2997B0060044C725 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F34B54F028E311290045BA28 /* TextFieldDescription.swift */,
+				F34B54F028E311290045BA28 /* TextFieldModel.swift */,
 				F32B7C0F28E9E42F00E279AE /* Player.swift */,
 				F32B7C1328E9E7DC00E279AE /* User.swift */,
 				F316CC7428ED535500F98BC4 /* UrlHelper.swift */,
@@ -576,7 +576,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F34B54F128E311290045BA28 /* TextFieldDescription.swift in Sources */,
+				F34B54F128E311290045BA28 /* TextFieldModel.swift in Sources */,
 				F35B399728EFF930008A62B9 /* CreateGameModel.swift in Sources */,
 				F3B2F29328F0BDD000E96FDA /* SelectFivePlayersViewModel.swift in Sources */,
 				F3F2BD1928FA979B001DEE56 /* SelectResultViewModel.swift in Sources */,

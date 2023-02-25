@@ -41,6 +41,26 @@ extension String {
     enum RestorePassword: String {
         case title
     }
+    
+    enum TextFieldError: String {
+        case invalidFormat
+        case differentPasswords
+        case invalidPassword
+        case invalidEmail
+        case invalidPasscode
+        case emailIsNotRegistered
+    }
+    
+    enum TextFieldPlaceholders: String {
+        case enterPasscode
+        case enterPassword
+        case named
+        case number
+        case name
+        case lastName
+        case middleName
+    }
+    
 }
 
 extension RawRepresentable {

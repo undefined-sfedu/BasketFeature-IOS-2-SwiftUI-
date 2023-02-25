@@ -23,10 +23,27 @@
 "EmailConfirmationDescription" = "Вам на почту была отправлена ссылка для подтверждения.\nПройдите по ссылке, чтобы активировать ваш аккаунт.";
 "EmailConfirmationNotConfirmatedEmail" = "*аккаунт не подтвержден,\nпройдите по ссылке в письме";
 
-
 // SignIn
 "SignInEnter" = "Войти";
 "SignInForgetPassword" = "забыл пароль";
 
 // RestorePassword
 "RestorePasswordTitle" = "Восстановить пароль";
+
+//TextFieldError
+"TextFieldErrorInvalidFormat" = "*неверный формат";
+"TextFieldErrorDifferentPasswords" = "*пароли не совпадают";
+"TextFieldErrorInvalidPassword" = "*неверный пароль";
+"TextFieldErrorInvalidEmail" = "*неверный E-mail";
+"TextFieldErrorInvalidPasscode" = "*неверный код";
+"TextFieldErrorEmailIsNotRegistered" = "*данная почта не зарегистрирована";
+
+//TextFieldPlaceholders
+"TextFieldPlaceholdersEnterPasscode" = "Введите код";
+"TextFieldPlaceholdersEnterPassword" = "Введите пароль";
+"TextFieldPlaceholdersNamed" = "Название";
+"TextFieldPlaceholdersNumber" = "Номер*";
+"TextFieldPlaceholdersName" = "Имя";
+"TextFieldPlaceholdersLastName" = "Фамилия";
+"TextFieldPlaceholdersMiddleName" = "Отчество";
+

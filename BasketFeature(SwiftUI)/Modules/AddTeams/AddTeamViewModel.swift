@@ -16,12 +16,12 @@ class AddTeamViewModel: ObservableObject{
                 viewDismissalModePublisher.send(shouldDismissView)
             }
         }
-    @Published var teamTextFieldDescription = TextFieldDescription(placeholder: "Название", titleOfError: "неверный формат", borderColor: .appGray, titleColor: .black, visibleOfError: false)
+    @Published var teamTextFieldDescription = TextFieldModel(placeholder: ^String.TextFieldPlaceholders.named, titleOfError: ^String.TextFieldError.invalidFormat)
     @Published var countOfPlayers: Double = 5{
         willSet{
             if newValue > countOfPlayers{
                 for _ in 1...Int(newValue-countOfPlayers){
-                    playersCells.append(TextFieldDescription(placeholder: "Номер*", titleOfError: "неверный формат", borderColor: .appGray, titleColor: .black, visibleOfError: false))
+                    playersCells.append(TextFieldModel(placeholder: ^String.TextFieldPlaceholders.number, titleOfError: ^String.TextFieldError.invalidFormat))
                 }
             }
             else if newValue < countOfPlayers{
@@ -31,7 +31,7 @@ class AddTeamViewModel: ObservableObject{
             }
         }
     }
-    @Published var playersCells: [TextFieldDescription] = Array(repeating: TextFieldDescription(placeholder: "Номер*", titleOfError: "неверный формат", borderColor: .appGray, titleColor: .black, visibleOfError: false), count: 5)
+    @Published var playersCells: [TextFieldModel] = Array(repeating: TextFieldModel(placeholder: ^String.TextFieldPlaceholders.number, titleOfError: ^String.TextFieldError.invalidFormat), count: 5)
     var model = AddTeamModel()
     init(){
         model.viewModel = self
@@ -54,7 +54,7 @@ class AddTeamViewModel: ObservableObject{
     }
 }
 
-private extension AddTeamViewModel{
+private extension AddTeamViewModel {
     func nameOfTeamAndNumbersOfPlayersAreCorrect() -> Bool{
         
         var res = true
@@ -69,10 +69,6 @@ private extension AddTeamViewModel{
                 res = false
             }
         }
-        
-//        for var item in playersCells{
-//
-//        }
         
         return res
     }

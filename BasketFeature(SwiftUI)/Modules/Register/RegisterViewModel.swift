@@ -9,9 +9,9 @@ import Foundation
 import SwiftUI
 class RegisterViewModel: ObservableObject{
     private var model = RegisterModel()
-    @Published var emailDescription = TextFieldDescription(placeholder: "Электронная почта", titleOfError: "Неверный формат")
-    @Published var passwordDescription = TextFieldDescription(placeholder: "Пароль", titleOfError: "Неверный формат")
-    @Published var repeatPasswordDescription = TextFieldDescription(placeholder: "Повторите пароль",  titleOfError: "Пароли не совпадают")
+    @Published var emailDescription = TextFieldModel(placeholder: ^String.Common.email, titleOfError: ^String.TextFieldError.invalidFormat)
+    @Published var passwordDescription = TextFieldModel(placeholder: ^String.Common.password, titleOfError: ^String.TextFieldError.invalidFormat)
+    @Published var repeatPasswordDescription = TextFieldModel(placeholder: ^String.Common.password,  titleOfError: ^String.TextFieldError.differentPasswords)
     @Published var presentPopUp = false
     @Published var goToNextView = false
     
@@ -23,11 +23,12 @@ class RegisterViewModel: ObservableObject{
     // MARK: - View's Methods
     func register() {
         
-        presentPopUp.toggle()
+//        presentPopUp.toggle()
         
 //        if checkFields() {
 //            model.register(email: emailDescription.fieldValue, password: passwordDescription.fieldValue)
 //        }
+        checkFields()
     }
     
     // MARK: - Model's Methods
@@ -43,6 +44,7 @@ private extension RegisterViewModel{
         var res = true
         if emailDescription.fieldValue.contains("@") == false{
             emailDescription.visibleOfError = true
+            
             res = false
         }
         

@@ -19,8 +19,8 @@ class LoginViewModel: ObservableObject{
         case wrongPassword
         case all
     }
-    @Published var emailDescription = TextFieldDescription(placeholder: "Электронная почта", titleOfError: "неверный E-mail", visibleOfError: false)
-    @Published var passwordDescription = TextFieldDescription(placeholder: "Пароль", titleOfError: "неверный пароль", visibleOfError: false)
+    @Published var emailDescription = TextFieldModel(placeholder: ^String.Common.email, titleOfError: ^String.TextFieldError.invalidEmail)
+    @Published var passwordDescription = TextFieldModel(placeholder: ^String.Common.password, titleOfError:^String.TextFieldError.invalidPassword)
     @Published var goToMainScreen = false
     // MARK: - View's Methods
     func enter(){

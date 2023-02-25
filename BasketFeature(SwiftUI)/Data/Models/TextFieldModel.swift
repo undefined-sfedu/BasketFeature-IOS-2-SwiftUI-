@@ -8,18 +8,16 @@
 import Foundation
 import SwiftUI
 
-struct TextFieldDescription: Identifiable{
+struct TextFieldModel: Identifiable{
     
     var id = UUID()
-    var fieldValue = ""{
+    var fieldValue = "" {
         didSet{
             visibleOfError = false
         }
     }
-    var placeholder = ""
-    var titleOfError = ""
-    var borderColor = Color.appGray
-    var titleColor = Color.black
-    var visibleOfError = false
     
+    var placeholder: String
+    var titleOfError: String
+    var visibleOfError = false
 }
