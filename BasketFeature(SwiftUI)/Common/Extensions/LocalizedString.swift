@@ -17,6 +17,7 @@ extension String {
         case email
         case password
         case repeatPassword
+        case confirm
     }
     
     enum Register: String {
@@ -30,9 +31,16 @@ extension String {
         case title
         case description
         case notConfirmatedEmail
-        case confirm
     }
     
+    enum SignIn: String {
+        case enter
+        case forgetPassword
+    }
+    
+    enum RestorePassword: String {
+        case title
+    }
 }
 
 extension RawRepresentable {

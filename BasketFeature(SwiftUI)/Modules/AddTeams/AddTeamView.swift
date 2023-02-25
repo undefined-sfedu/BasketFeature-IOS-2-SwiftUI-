@@ -12,7 +12,6 @@ struct AddTeamView: View {
     @EnvironmentObject var teamViewConfig: TeamsViewModel
     @EnvironmentObject var tabBarConfig: TabBarConfig
     
-    
     @Environment (\.dismiss) var dismiss
     
     var body: some View {
@@ -39,7 +38,7 @@ struct AddTeamView: View {
                 trailing: TrailingItem)
         }
         .onReceive(viewModel.viewDismissalModePublisher, perform: { shouldDismiss in
-            if shouldDismiss{
+            if shouldDismiss {
                 self.dismiss()
             }
         })
@@ -53,7 +52,7 @@ struct AddTeamView: View {
         }
         
     }
-    var TrailingItem: some View{
+    var TrailingItem: some View {
         Button {
             viewModel.createTeam()
         } label: {
@@ -61,7 +60,7 @@ struct AddTeamView: View {
         }
         
     }
-    var CustomSlider: some View{
+    var CustomSlider: some View {
         Slider(value: $viewModel.countOfPlayers, in: 5...15, step: 1) {
             Text("Label")
         } minimumValueLabel: {
@@ -71,20 +70,6 @@ struct AddTeamView: View {
         }
         .tint(.appOrange)
     }
-    
-    //    var CreateButton: some View{
-    //        Button {
-    //    viewModel.createTeam()
-    //        } label: {
-    //            Text("Создать")
-    //                .font(.system(size: 24))
-    //                .foregroundColor(.black)
-    //                .padding(.vertical)
-    //                .frame(maxWidth: .infinity)
-    //                .background(Color.customOrange.cornerRadius(10))
-    //        }
-    //
-    //    }
     
     
 }

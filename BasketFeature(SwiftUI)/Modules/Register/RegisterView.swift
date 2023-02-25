@@ -15,28 +15,28 @@ struct RegisterView: View {
     @State private var presentPopUp = false
     @State private var haveAccount = false
     @State private var confirmAccount = false
-
+    
     // MARK: - Body
     
     var body: some View {
         VStack {
             NavigationLink(destination: CustomTabBar(), isActive: $viewModel.goToNextView) { EmptyView() }
             NavigationLink(destination: LoginView(), isActive: $haveAccount) { EmptyView() }
+            
             ScrollView(showsIndicators: false) {
                 CustomTextField(description: $viewModel.emailDescription)
-                
                 Text(^String.Register.passwordDescription)
                     .padding(.horizontal)
-                
                 CustomTextField(description: $viewModel.passwordDescription, isSecureField: true)
                 CustomTextField(description: $viewModel.repeatPasswordDescription, isSecureField: true)
-                Spacer()
-                ViewFactory.defaultLargeButton(title: ^String.Register.register) { viewModel.register() }
-                    .padding(.horizontal)
-                AlreadyHaveAccountButton
+            
+            
+                ViewFactory.defaultLargeButton((^String.Register.register).capitalizeFirstLetter()) { viewModel.register() }
                     .padding(.horizontal)
                 
+                AlreadyHaveAccountButton
             }
+            .sheet(isPresented: $viewModel.presentPopUp, content: { PopUpView })
             .navigationTitle(^String.Register.registration)
             .navigationBarBackButtonHidden(true)
             
@@ -69,18 +69,11 @@ struct RegisterView: View {
                 .frame(maxWidth:.infinity)
             
             Spacer()
-            Button {
+            ViewFactory.defaultLargeButton(^String.Common.confirm) {
                 viewModel.presentPopUp.toggle()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
 //                    goToTeamView.toggle()
                 }
-            } label: {
-                Text(^String.EmailConfirmation.confirm)
-                    .font(.largeTitle)
-                    .foregroundColor(.black)
-                    .padding(.vertical)
-                    .frame(maxWidth: .infinity)
-                    .background(Color.appOrange.cornerRadius(10))
             }
         }
         

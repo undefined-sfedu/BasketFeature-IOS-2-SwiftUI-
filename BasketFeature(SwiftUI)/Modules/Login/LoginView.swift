@@ -27,13 +27,13 @@ struct LoginView: View {
                     CustomTextField(description: $viewModel.emailDescription)
                     CustomTextField(description: $viewModel.passwordDescription, isSecureField: true)
                     
-//                    ForgetPassword
-//                        .sheet(isPresented: $goToForgetPassword) {
-//                            ForgetPasswordView(presentAlertOnLoginView: $presentAlertChangedPassword)
-//                        }
+                    ForgetPassword
+                        .sheet(isPresented: $goToForgetPassword) {
+                            ForgetPasswordView(presentAlertOnLoginView: $presentAlertChangedPassword)
+                        }
                     
-                    
-                    EnterButton
+
+                    ViewFactory.defaultLargeButton(^String.SignIn.enter, completion: { viewModel.enter() })
                         .padding(.horizontal)
                     RegisterButton
                     
@@ -50,27 +50,12 @@ struct LoginView: View {
     }
     
     
-    
     var ForgetPassword: some View{
         Button {
             goToForgetPassword.toggle()
         } label: {
             Text("забыл пароль")
                 .foregroundColor(.black)
-        }
-        
-    }
-    
-    var EnterButton: some View{
-        Button {
-            viewModel.enter()
-        } label: {
-            Text("Войти")
-                .font(.largeTitle)
-                .foregroundColor(.black)
-                .padding(.vertical)
-                .frame(maxWidth: .infinity)
-                .background(Color.appOrange.cornerRadius(10))
         }
         
     }

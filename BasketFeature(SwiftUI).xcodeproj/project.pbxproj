@@ -46,7 +46,7 @@
 		F3803F3E28FFCD1700E590CB /* SelectBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3803F3D28FFCD1700E590CB /* SelectBallView.swift */; };
 		F3803F4428FFDC7600E590CB /* SelectTechnicalParamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3803F4328FFDC7600E590CB /* SelectTechnicalParamsView.swift */; };
 		F3810C1F28F89F23009170BA /* SelectTimeAndTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3810C1E28F89F23009170BA /* SelectTimeAndTeam.swift */; };
-		F38FD0E22997BB3C000EE7E5 /* View+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38FD0E12997BB3C000EE7E5 /* View+Convenience.swift */; };
+		F38FD0E22997BB3C000EE7E5 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38FD0E12997BB3C000EE7E5 /* ViewFactory.swift */; };
 		F394FA6A28EFE647008DB55B /* AddPlayerToTeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394FA6928EFE647008DB55B /* AddPlayerToTeamModel.swift */; };
 		F3986E1A28E9623E008F16E9 /* ForgetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3986E1928E9623E008F16E9 /* ForgetPasswordView.swift */; };
 		F3A11CBB2913DE0F00E383AA /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A11CBA2913DE0F00E383AA /* Actions.swift */; };
@@ -116,7 +116,7 @@
 		F3803F3D28FFCD1700E590CB /* SelectBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBallView.swift; sourceTree = "<group>"; };
 		F3803F4328FFDC7600E590CB /* SelectTechnicalParamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTechnicalParamsView.swift; sourceTree = "<group>"; };
 		F3810C1E28F89F23009170BA /* SelectTimeAndTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeAndTeam.swift; sourceTree = "<group>"; };
-		F38FD0E12997BB3C000EE7E5 /* View+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Convenience.swift"; sourceTree = "<group>"; };
+		F38FD0E12997BB3C000EE7E5 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 		F394FA6928EFE647008DB55B /* AddPlayerToTeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerToTeamModel.swift; sourceTree = "<group>"; };
 		F3986E1928E9623E008F16E9 /* ForgetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordView.swift; sourceTree = "<group>"; };
 		F3A11CBA2913DE0F00E383AA /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
@@ -126,7 +126,6 @@
 		F3C6EB44290197AD00A2A5BC /* SelectShotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectShotViewModel.swift; sourceTree = "<group>"; };
 		F3C6EB4729019A7600A2A5BC /* SelectShotParamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectShotParamsView.swift; sourceTree = "<group>"; };
 		F3CD0EDF2997B3710044C725 /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
-		F3CD0EF62997B5800044C725 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F3CD0EFA2997B6390044C725 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F3CD446328EC272600CF88BB /* CustomPlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPlayerCell.swift; sourceTree = "<group>"; };
 		F3CD446528EC2C4F00CF88BB /* AddPlayerToTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerToTeamViewModel.swift; sourceTree = "<group>"; };
@@ -236,35 +235,6 @@
 				F32B7C1728E9E8A400E279AE /* TeamsModel.swift */,
 			);
 			path = Teams;
-			sourceTree = "<group>";
-		};
-		F3561C7028EF0EAC0098188E /* TeamStaff */ = {
-			isa = PBXGroup;
-			children = (
-				F34B54F628E31EA70045BA28 /* Teams */,
-				F32B7C1B28E9EE2500E279AE /* AddTeams */,
-				F3433C1528EC1F1400585633 /* ShowTeam */,
-				F3D911DC28EC394F00BDA6D3 /* AddPlayerToTeam */,
-			);
-			path = TeamStaff;
-			sourceTree = "<group>";
-		};
-		F3561C7228EF0EF10098188E /* GameStaff */ = {
-			isa = PBXGroup;
-			children = (
-				F3561C7328EF0F5A0098188E /* Games */,
-				F3561C7628EF0FAB0098188E /* CreateGame */,
-				F35B399B28EFFA6D008A62B9 /* SelectFivePlayers */,
-				F3810C1D28F89EFB009170BA /* SelectTimeAndTeam */,
-				F3E9128F28FA81D600D47E44 /* SelectBeginningAttack */,
-				F3F2BD0928FA887B001DEE56 /* Property */,
-				F3F2BD0E28FA95DB001DEE56 /* SelectTypeOfAttack */,
-				F3F2BD0F28FA95EE001DEE56 /* SelectResult */,
-				F3803F3328FFC14000E590CB /* SelectLoss */,
-				F3803F3828FFC8FC00E590CB /* SelectFoul */,
-				F3C6EB3F2901976300A2A5BC /* SelectShot */,
-			);
-			path = GameStaff;
 			sourceTree = "<group>";
 		};
 		F3561C7328EF0F5A0098188E /* Games */ = {
@@ -402,7 +372,7 @@
 			children = (
 				F34B54EB28E30D500045BA28 /* Colors.swift */,
 				F3CD0EDF2997B3710044C725 /* LocalizedString.swift */,
-				F38FD0E12997BB3C000EE7E5 /* View+Convenience.swift */,
+				F38FD0E12997BB3C000EE7E5 /* ViewFactory.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -425,8 +395,21 @@
 				F34B54EF28E30FD40045BA28 /* Register */,
 				F3FBBFF828E4C1F500B6C73E /* Login */,
 				F3986E1828E9621A008F16E9 /* ForgetPassword */,
-				F3561C7028EF0EAC0098188E /* TeamStaff */,
-				F3561C7228EF0EF10098188E /* GameStaff */,
+				F34B54F628E31EA70045BA28 /* Teams */,
+				F32B7C1B28E9EE2500E279AE /* AddTeams */,
+				F3433C1528EC1F1400585633 /* ShowTeam */,
+				F3D911DC28EC394F00BDA6D3 /* AddPlayerToTeam */,
+				F3561C7328EF0F5A0098188E /* Games */,
+				F3561C7628EF0FAB0098188E /* CreateGame */,
+				F35B399B28EFFA6D008A62B9 /* SelectFivePlayers */,
+				F3810C1D28F89EFB009170BA /* SelectTimeAndTeam */,
+				F3E9128F28FA81D600D47E44 /* SelectBeginningAttack */,
+				F3F2BD0928FA887B001DEE56 /* Property */,
+				F3F2BD0E28FA95DB001DEE56 /* SelectTypeOfAttack */,
+				F3F2BD0F28FA95EE001DEE56 /* SelectResult */,
+				F3803F3328FFC14000E590CB /* SelectLoss */,
+				F3803F3828FFC8FC00E590CB /* SelectFoul */,
+				F3C6EB3F2901976300A2A5BC /* SelectShot */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -559,7 +542,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 				ru,
 			);
 			mainGroup = F34B54CF28E3030E0045BA28;
@@ -609,7 +591,7 @@
 				F3433C1728EC1F3500585633 /* ShowTeamView.swift in Sources */,
 				F3803F4428FFDC7600E590CB /* SelectTechnicalParamsView.swift in Sources */,
 				F316CC7528ED535500F98BC4 /* UrlHelper.swift in Sources */,
-				F38FD0E22997BB3C000EE7E5 /* View+Convenience.swift in Sources */,
+				F38FD0E22997BB3C000EE7E5 /* ViewFactory.swift in Sources */,
 				F34B54F528E31EA10045BA28 /* TeamsView.swift in Sources */,
 				F3561C6F28EF02580098188E /* ShowTeamModel.swift in Sources */,
 				F35B399928EFFA57008A62B9 /* SelectFivePlayersView.swift in Sources */,
@@ -666,7 +648,6 @@
 		F3CD0EF72997B5800044C725 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F3CD0EF62997B5800044C725 /* en */,
 				F3CD0EFA2997B6390044C725 /* ru */,
 			);
 			name = Localizable.strings;

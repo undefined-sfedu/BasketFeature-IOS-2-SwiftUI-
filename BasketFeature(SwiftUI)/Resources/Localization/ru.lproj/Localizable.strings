@@ -10,15 +10,23 @@
 "CommonEmail" = "Электронная почта";
 "CommonPassword" = "Пароль";
 "CommonRepeatPassword" = "Повторите пароль";
+"CommonConfirm" = "Подтвердить";
 
 // Register
 "RegisterPasswordDescription" = "Пароль должен содержать минимум 8 символов латинскими буквами, а также хотя бы одну цифру";
 "RegisterRegistration" = "Регистрация";
 "RegisterAlreadyHaveAccount" = "Уже есть аккаунт";
-"RegisterRegister" = "Зарегистрироваться";
+"RegisterRegister" = "зарегистрироваться";
 
 //EmailConfirmation
 "EmailConfirmationTitle" = "Подтверждение\nпочты";
 "EmailConfirmationDescription" = "Вам на почту была отправлена ссылка для подтверждения.\nПройдите по ссылке, чтобы активировать ваш аккаунт.";
 "EmailConfirmationNotConfirmatedEmail" = "*аккаунт не подтвержден,\nпройдите по ссылке в письме";
-"EmailConfirmationConfirm" = "Подтвердить";
+
+
+// SignIn
+"SignInEnter" = "Войти";
+"SignInForgetPassword" = "забыл пароль";
+
+// RestorePassword
+"RestorePasswordTitle" = "Восстановить пароль";
