@@ -25,7 +25,8 @@ class LoginViewModel: ObservableObject{
     // MARK: - View's Methods
     func enter(){
         if dataIsCorrect(){
-            model.enter(email: emailDescription.fieldValue, password: passwordDescription.fieldValue)
+//            model.enter(email: emailDescription.fieldValue, password: passwordDescription.fieldValue)
+            model.enterX(email: emailDescription.fieldValue, password: passwordDescription.fieldValue)
         }
         else{
             emailDescription.visibleOfError = true

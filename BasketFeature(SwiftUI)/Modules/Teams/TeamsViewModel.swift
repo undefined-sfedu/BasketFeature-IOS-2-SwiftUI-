@@ -10,7 +10,7 @@ class TeamsViewModel: ObservableObject{
     private var model = TeamsModel()
     @Published var teams = [Team]()
     
-    init(){
+    init() {
 //        teams.forEach { item in
 //            nameOfTeams.append(item.name)
 //        }
@@ -24,7 +24,7 @@ class TeamsViewModel: ObservableObject{
     
     
 // MARK: - View Methods
-    func getTeams(){
+    func getTeams() {
         model.getTeams()
     }
 // MARK: - Model Methods

@@ -6,8 +6,11 @@
 //
 
 import Foundation
-struct LocalUser{
-    enum UserKeys: String{
+// TODO: - Remove this class after removing dependency
+struct LocalUser {
+    static let shared = LocalUser()
+    
+    enum UserKeys: String {
         case id = "user_ID"
         case email = "user_Email"
         case firstName = "user_FirstName"

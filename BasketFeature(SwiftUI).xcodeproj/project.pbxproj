@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F30EAD1328E9B14100E23CA8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F30EAD1228E9B14100E23CA8 /* Alamofire */; };
-		F30EAD1628E9B47800E23CA8 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F30EAD1528E9B47800E23CA8 /* SwiftyJSON */; };
+		AE2CDD81A0D3B2E01776F2DC /* Pods_BasketFeature_SwiftUI_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C41AD456453B74DA1F25FF1 /* Pods_BasketFeature_SwiftUI_.framework */; };
 		F316CC7528ED535500F98BC4 /* UrlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F316CC7428ED535500F98BC4 /* UrlHelper.swift */; };
 		F316CC7728ED562100F98BC4 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F316CC7628ED562100F98BC4 /* LoginModel.swift */; };
 		F316CC7928ED6DE700F98BC4 /* LocalUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F316CC7828ED6DE700F98BC4 /* LocalUser.swift */; };
@@ -63,6 +62,9 @@
 		F3E2275228EE992700A712D4 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E2275128EE992700A712D4 /* CustomTabBar.swift */; };
 		F3E2275428EEA59600A712D4 /* AddTeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E2275328EEA59600A712D4 /* AddTeamModel.swift */; };
 		F3E2275628EEB6CB00A712D4 /* TabBarConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E2275528EEB6CB00A712D4 /* TabBarConfig.swift */; };
+		F3E7C12729AB7FBF00A4017B /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7C12629AB7FBF00A4017B /* RequestManager.swift */; };
+		F3E7C12929AB93DE00A4017B /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7C12829AB93DE00A4017B /* PreferenceManager.swift */; };
+		F3E7C12B29AB942100A4017B /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7C12A29AB942100A4017B /* UserDataManager.swift */; };
 		F3E9129128FA81F400D47E44 /* SelectBeginningAttackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E9129028FA81F400D47E44 /* SelectBeginningAttackView.swift */; };
 		F3E9129328FA81FF00D47E44 /* SelectBeginningAttackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E9129228FA81FF00D47E44 /* SelectBeginningAttackViewModel.swift */; };
 		F3F2BD0B28FA88AE001DEE56 /* PropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F2BD0A28FA88AE001DEE56 /* PropertyView.swift */; };
@@ -78,6 +80,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C41AD456453B74DA1F25FF1 /* Pods_BasketFeature_SwiftUI_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BasketFeature_SwiftUI_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6E15654CB932BE19A53EC8D /* Pods-BasketFeature(SwiftUI).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasketFeature(SwiftUI).release.xcconfig"; path = "Target Support Files/Pods-BasketFeature(SwiftUI)/Pods-BasketFeature(SwiftUI).release.xcconfig"; sourceTree = "<group>"; };
 		F316CC7428ED535500F98BC4 /* UrlHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlHelper.swift; sourceTree = "<group>"; };
 		F316CC7628ED562100F98BC4 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		F316CC7828ED6DE700F98BC4 /* LocalUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUser.swift; sourceTree = "<group>"; };
@@ -133,6 +137,9 @@
 		F3E2275128EE992700A712D4 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		F3E2275328EEA59600A712D4 /* AddTeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeamModel.swift; sourceTree = "<group>"; };
 		F3E2275528EEB6CB00A712D4 /* TabBarConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarConfig.swift; sourceTree = "<group>"; };
+		F3E7C12629AB7FBF00A4017B /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		F3E7C12829AB93DE00A4017B /* PreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
+		F3E7C12A29AB942100A4017B /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
 		F3E9129028FA81F400D47E44 /* SelectBeginningAttackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBeginningAttackView.swift; sourceTree = "<group>"; };
 		F3E9129228FA81FF00D47E44 /* SelectBeginningAttackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBeginningAttackViewModel.swift; sourceTree = "<group>"; };
 		F3F2BD0A28FA88AE001DEE56 /* PropertyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyView.swift; sourceTree = "<group>"; };
@@ -145,6 +152,7 @@
 		F3FBBFFB28E4C2F500B6C73E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F3FF7A6F28E9638E008B1FE8 /* ForgetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewModel.swift; sourceTree = "<group>"; };
 		F3FF7A7128E97E04008B1FE8 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		F6263C26AD492DA82B56B0B0 /* Pods-BasketFeature(SwiftUI).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasketFeature(SwiftUI).debug.xcconfig"; path = "Target Support Files/Pods-BasketFeature(SwiftUI)/Pods-BasketFeature(SwiftUI).debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,14 +160,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F30EAD1628E9B47800E23CA8 /* SwiftyJSON in Frameworks */,
-				F30EAD1328E9B14100E23CA8 /* Alamofire in Frameworks */,
+				AE2CDD81A0D3B2E01776F2DC /* Pods_BasketFeature_SwiftUI_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		375DADF005D00DFACBC8C1EF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F6263C26AD492DA82B56B0B0 /* Pods-BasketFeature(SwiftUI).debug.xcconfig */,
+				C6E15654CB932BE19A53EC8D /* Pods-BasketFeature(SwiftUI).release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8266865ADE0F743EAC88D9BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C41AD456453B74DA1F25FF1 /* Pods_BasketFeature_SwiftUI_.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F32B7C1B28E9EE2500E279AE /* AddTeams */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +209,8 @@
 			children = (
 				F34B54DA28E3030E0045BA28 /* BasketFeature(SwiftUI) */,
 				F34B54D928E3030E0045BA28 /* Products */,
+				375DADF005D00DFACBC8C1EF /* Pods */,
+				8266865ADE0F743EAC88D9BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -363,6 +389,9 @@
 			isa = PBXGroup;
 			children = (
 				F3CD0EDB2997AEB00044C725 /* Extensions */,
+				F3E7C12629AB7FBF00A4017B /* RequestManager.swift */,
+				F3E7C12829AB93DE00A4017B /* PreferenceManager.swift */,
+				F3E7C12A29AB942100A4017B /* UserDataManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -504,9 +533,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F34B54E628E303120045BA28 /* Build configuration list for PBXNativeTarget "BasketFeature(SwiftUI)" */;
 			buildPhases = (
+				A6165176B646D36D0F41F6B7 /* [CP] Check Pods Manifest.lock */,
 				F34B54D428E3030E0045BA28 /* Sources */,
 				F34B54D528E3030E0045BA28 /* Frameworks */,
 				F34B54D628E3030E0045BA28 /* Resources */,
+				5D870C605C2C9E82C2F21E21 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -514,8 +545,6 @@
 			);
 			name = "BasketFeature(SwiftUI)";
 			packageProductDependencies = (
-				F30EAD1228E9B14100E23CA8 /* Alamofire */,
-				F30EAD1528E9B47800E23CA8 /* SwiftyJSON */,
 			);
 			productName = "BasketFeature(SwiftUI)";
 			productReference = F34B54D828E3030E0045BA28 /* BasketFeature(SwiftUI).app */;
@@ -546,8 +575,6 @@
 			);
 			mainGroup = F34B54CF28E3030E0045BA28;
 			packageReferences = (
-				F30EAD1128E9B14100E23CA8 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				F30EAD1428E9B47800E23CA8 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = F34B54D928E3030E0045BA28 /* Products */;
 			projectDirPath = "";
@@ -571,11 +598,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5D870C605C2C9E82C2F21E21 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BasketFeature(SwiftUI)/Pods-BasketFeature(SwiftUI)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BasketFeature(SwiftUI)/Pods-BasketFeature(SwiftUI)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BasketFeature(SwiftUI)/Pods-BasketFeature(SwiftUI)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6165176B646D36D0F41F6B7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BasketFeature(SwiftUI)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F34B54D428E3030E0045BA28 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3E7C12929AB93DE00A4017B /* PreferenceManager.swift in Sources */,
 				F34B54F128E311290045BA28 /* TextFieldModel.swift in Sources */,
 				F35B399728EFF930008A62B9 /* CreateGameModel.swift in Sources */,
 				F3B2F29328F0BDD000E96FDA /* SelectFivePlayersViewModel.swift in Sources */,
@@ -613,6 +683,7 @@
 				F35B399528EFF928008A62B9 /* CreateGameViewModel.swift in Sources */,
 				F3986E1A28E9623E008F16E9 /* ForgetPasswordView.swift in Sources */,
 				F3810C1F28F89F23009170BA /* SelectTimeAndTeam.swift in Sources */,
+				F3E7C12B29AB942100A4017B /* UserDataManager.swift in Sources */,
 				F3F2BD1128FA9615001DEE56 /* SelectTypeOfAttackView.swift in Sources */,
 				F3C6EB412901977B00A2A5BC /* SelectShotView.swift in Sources */,
 				F3F2BD0D28FA8B94001DEE56 /* PropertyViewModel.swift in Sources */,
@@ -631,6 +702,7 @@
 				F32B7C1A28E9E9CF00E279AE /* TeamCell.swift in Sources */,
 				F3561C7828EF0FBD0098188E /* CreateGameView.swift in Sources */,
 				F3FF7A7028E9638E008B1FE8 /* ForgetPasswordViewModel.swift in Sources */,
+				F3E7C12729AB7FBF00A4017B /* RequestManager.swift in Sources */,
 				F32B7C1D28E9EE4700E279AE /* AddTeamView.swift in Sources */,
 				F32B7C1828E9E8A400E279AE /* TeamsModel.swift in Sources */,
 				F32B7C1028E9E42F00E279AE /* Player.swift in Sources */,
@@ -774,6 +846,7 @@
 		};
 		F34B54E728E303120045BA28 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6263C26AD492DA82B56B0B0 /* Pods-BasketFeature(SwiftUI).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -805,6 +878,7 @@
 		};
 		F34B54E828E303120045BA28 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6E15654CB932BE19A53EC8D /* Pods-BasketFeature(SwiftUI).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -856,38 +930,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		F30EAD1128E9B14100E23CA8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		F30EAD1428E9B47800E23CA8 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		F30EAD1228E9B14100E23CA8 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F30EAD1128E9B14100E23CA8 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		F30EAD1528E9B47800E23CA8 /* SwiftyJSON */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F30EAD1428E9B47800E23CA8 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
-			productName = SwiftyJSON;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F34B54D028E3030E0045BA28 /* Project object */;
 }

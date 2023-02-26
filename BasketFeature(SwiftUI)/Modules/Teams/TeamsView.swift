@@ -17,7 +17,6 @@ struct TeamsView: View {
     var body: some View {
         NavigationView{
             VStack{
-                
                 NavigationLink(destination:AddTeamView(), isActive: $addTeamCondition) {EmptyView()}
                 if viewModel.teams.isEmpty == false{
                     NavigationLink(destination: ShowTeamView().environmentObject(viewModel.teams[idOfSelectedTeam]), isActive: $showTeam) {EmptyView()}

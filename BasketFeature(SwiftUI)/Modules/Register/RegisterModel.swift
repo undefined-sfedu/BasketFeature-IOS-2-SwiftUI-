@@ -6,44 +6,43 @@
 //
 
 import Foundation
+import Moya
 import Alamofire
 import SwiftyJSON
-class RegisterModel{
-    private var serverHelper = UrlHelper()
-    var viewModel: RegisterViewModel? = nil
-    private var localUser = LocalUser()
+
+class RegisterModel {
     
-    func register(email: String, password: String){
-        let url = serverHelper.getPath(typeOfrequest: .createUser, typeOfParam: .withoutParam, param: nil)
-        let body = [
-            "email" : email,
-            "password" : password
-        ]
-        AF.request(url, method: .post, parameters: body, encoding: JSONEncoding.default).responseJSON { [self] answer in
-            
-            guard let answerData = answer.data else {return}
-            
-            if answer.response?.statusCode == 200{
-                let data = try? JSON(data: answerData)
-                print(data)
-                if let corData = data{
-                    var res = [(LocalUser.UserKeys,String)]()
-                    res.append((LocalUser.UserKeys.firstName, corData["first_name"].stringValue))
-                    res.append((LocalUser.UserKeys.id, corData["id"].stringValue))
-                    res.append((LocalUser.UserKeys.lastName, corData["last_name"].stringValue))
-                    res.append((LocalUser.UserKeys.middleName, corData["middle_name"].stringValue))
-                    res.append((LocalUser.UserKeys.email, corData["email"].stringValue))
-                    res.forEach { item in
-                        localUser.writeData(typeOfData: item.0, data: item.1)
+    // MARK: - Properties
+    
+    var viewModel: RegisterViewModel? = nil
+    private let userDataManager = UserDataManager.shared
+    
+    // MARK: - Methods
+    
+    func register(email: String, password: String) {
+        RequestManager.shared.request(.register(email: email, password: password)) { [weak self] result in
+            switch result {
+            case .success(let response):
+                print(response.statusCode)
+                if response.statusCode == 200 {
+                    do {
+                        let corData = try JSON(data: response.data)
+                        let user = User(email: corData["email"].stringValue,
+                                        id: corData["id"].intValue,
+                                        firstName: corData["first_name"].stringValue,
+                                        lastName: corData["last_name"].stringValue,
+                                        middleName: corData["middle_name"].stringValue)
+                        self?.userDataManager.user = user
+                        self?.viewModel?.userIsRegistered()
+                    } catch {
+                        print(error.localizedDescription)
                     }
-                    viewModel?.userIsRegistered()
                 }
-                
-            }
-            else{
-                let data = try? JSON(data: answerData)
-                print(data)
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }
+    
 }
+

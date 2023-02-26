@@ -8,11 +8,11 @@
 import Foundation
 import SwiftUI
 
-struct TextFieldModel: Identifiable{
+struct TextFieldModel: Identifiable {
     
     var id = UUID()
     var fieldValue = "" {
-        didSet{
+        didSet {
             visibleOfError = false
         }
     }

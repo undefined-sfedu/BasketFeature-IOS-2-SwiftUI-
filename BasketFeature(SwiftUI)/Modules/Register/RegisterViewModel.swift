@@ -26,9 +26,10 @@ class RegisterViewModel: ObservableObject{
 //        presentPopUp.toggle()
         
 //        if checkFields() {
-//            model.register(email: emailDescription.fieldValue, password: passwordDescription.fieldValue)
+            model.register(email: emailDescription.fieldValue, password: passwordDescription.fieldValue)
 //        }
-        checkFields()
+//        checkFields()
+
     }
     
     // MARK: - Model's Methods
@@ -39,7 +40,7 @@ class RegisterViewModel: ObservableObject{
 
 private extension RegisterViewModel{
     
-    func checkFields() -> Bool{
+    func checkFields() -> Bool {
         
         var res = true
         if emailDescription.fieldValue.contains("@") == false{

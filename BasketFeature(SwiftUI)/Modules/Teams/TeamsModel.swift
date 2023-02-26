@@ -8,46 +8,32 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import Moya
 class TeamsModel{
-    var viewModel: TeamsViewModel? = nil
-    private var serverHelper = UrlHelper()
-    private var localUser = LocalUser()
     
-    func getTeams(){
-        //        var url = serverHelper.getPath(typeOfrequest: .getUserTeams)
-        //        url += "\(localUser.getData(typeOfData: .id))"
-        let url = serverHelper.getPath(typeOfrequest: .getAllTeams, typeOfParam: .withoutParam, param: nil)
-        print(url)
-        AF.request(url).responseJSON { [self] answer in
-            
-            guard let corData = answer.data else {return}
-            let maybeData = try? JSON(data: corData)
-            guard let myData = maybeData else {return}
-            print(answer.response?.statusCode)
-//            print(myData)
-            if answer.response?.statusCode == 200{
-                var res = [Team]()
-                let teams = myData.arrayValue
-                
-                
-                for team in teams where team["user_id"].intValue == Int(localUser.getData(typeOfData: .id))!
-                //                teams.forEach{ item in
-                //                    let name = item["name"].stringValue
-                //                    let id = item["id"].intValue
-                //                    let userId = item["user_id"].intValue
-                //                    let team = Team(backId: id, userId: userId, name: name)
-                //                    res.append(team)
-                //                }
-                {
-                    let name = team["name"].stringValue
-                    let id = team["id"].intValue
-                    let userId = team["user_id"].intValue
-                    let team = Team(backId: id, userId: userId, name: name)
-                    res.append(team)
+    var viewModel: TeamsViewModel? = nil
+    private let userDataManager = UserDataManager.shared
+    
+    func getTeams() {
+        RequestManager.shared.request(.getTeams) { [weak self] result in
+            switch result {
+            case .success(let response):
+                print(response.statusCode)
+                do {
+                    let data = try JSON(data: response.data)
+                    if response.statusCode == 200 {
+                        let userTeamsJSON = data.arrayValue.filter({ $0["user_id"].intValue == self?.userDataManager.user?.id })
+                        let userTeams = userTeamsJSON.map( { Team(backId: $0["id"].intValue, userId: $0["user_id"].intValue, name: $0["name"].stringValue) })
+                        self?.viewModel?.updateTeams(team: userTeams.reversed())
+                    }
+                } catch {
+                    print(self, error.localizedDescription)
                 }
-                viewModel?.updateTeams(team: res.reversed())
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
-        
     }
+    
+    
 }

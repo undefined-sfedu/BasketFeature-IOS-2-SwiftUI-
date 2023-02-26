@@ -6,12 +6,12 @@
 //
 
 import Foundation
-struct User{
-    var email: String
-    var id: Int
-    var firstName: String
-    var lastName: String
-    var middleName: String
+struct User: Codable {
+    let email: String
+    let id: Int
+    let firstName: String
+    let lastName: String
+    let middleName: String
     
     
 }
