@@ -26,8 +26,7 @@ class AddTeamModel {
                     let data = try JSON(data: response.data)
                     if response.statusCode == 200 {
                         let teamId = data["id"].intValue
-                        self?.addPlayersToTeam(teamId: teamId, players: players)
-                        completion()
+                        self?.addPlayersToTeam(teamId: teamId, players: players, completion: completion)
                     }
                 } catch {
                     print(error.localizedDescription)
@@ -38,13 +37,18 @@ class AddTeamModel {
         }
     }
     
-    func addPlayersToTeam(teamId: Int, players: [Int]) {
+    func addPlayersToTeam(teamId: Int, players: [Int], completion: @escaping () ->()) {
         print("Adding players to team...")
+        var counter = 0
         players.forEach({
             RequestManager.shared.request(.createPlayerForTeam(playerNumber: $0, teamId: teamId)) { result in
                 switch result {
                 case .success(let response):
                     print(response.statusCode)
+                    counter += 1
+                    if counter == players.count {
+                        completion()
+                    }
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
