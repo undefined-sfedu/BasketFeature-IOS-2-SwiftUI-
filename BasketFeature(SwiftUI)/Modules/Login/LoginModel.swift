@@ -5,8 +5,6 @@
 //  Created by Daniil on 05.10.2022.
 //
 
-import Foundation
-import Alamofire
 import SwiftyJSON
 import Moya
 

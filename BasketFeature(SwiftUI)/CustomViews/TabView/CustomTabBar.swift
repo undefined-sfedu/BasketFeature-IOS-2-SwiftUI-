@@ -30,7 +30,7 @@ struct CustomTabBar: View {
             }
             else{
 //                TeamsView(tabBarIsActive: $tabBarIsHidden)
-                TeamsView().environmentObject(tabBarConfig)
+                TeamListView().environmentObject(tabBarConfig)
                     .accentColor(.appOrange)
             }
             if !tabBarConfig.tabBarIsHidden{

@@ -22,7 +22,7 @@ class LoginViewModel: ObservableObject {
     @Published var passwordDescription = TextFieldModel(placeholder: ^String.Common.password, titleOfError:^String.TextFieldError.invalidPassword)
     @Published var goToMainScreen = false
     
-    // MARK: - View's Methods
+    // MARK: - Methods
     
     func enter() {
         if dataIsCorrect() {
@@ -49,14 +49,15 @@ class LoginViewModel: ObservableObject {
         }
     }
     
-}
-
-private extension LoginViewModel {
+    // MARK: - Private Methods
     
-    func dataIsCorrect() -> Bool {
+    private func dataIsCorrect() -> Bool {
         if emailDescription.fieldValue.isEmpty || passwordDescription.fieldValue.isEmpty {
             return false
         }
         return true
     }
+    
 }
+
+

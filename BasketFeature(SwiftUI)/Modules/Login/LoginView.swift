@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct LoginView: View {
+    
+    // MARK: - Properties
+    
+    
     @StateObject var viewModel = LoginViewModel()
     @State var goToForgetPassword = false
     @State var presentAlertChangedPassword = false
     @State var presentEmailIsNotConfirm = false
     @State var goToConfirmEmail = false
+    
+    // MARK: - Body
+    
     var body: some View {
         
         ZStack {
@@ -49,8 +56,9 @@ struct LoginView: View {
         .navigationBarHidden(true)
     }
     
+    // MARK: - Custom Views
     
-    var ForgetPassword: some View{
+    var ForgetPassword: some View {
         Button {
             goToForgetPassword.toggle()
         } label: {
@@ -60,7 +68,7 @@ struct LoginView: View {
         
     }
     
-    var RegisterButton: some View{
+    var RegisterButton: some View {
         Button {
             goToConfirmEmail.toggle()
         } label: {
@@ -72,6 +80,8 @@ struct LoginView: View {
     }
     
 }
+
+// MARK: - Preview Provider
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {

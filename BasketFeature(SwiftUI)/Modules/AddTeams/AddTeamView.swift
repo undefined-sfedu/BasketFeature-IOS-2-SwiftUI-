@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct AddTeamView: View {
+    
+    // MARK: - Properties
+    
     @StateObject var viewModel = AddTeamViewModel()
-    @EnvironmentObject var teamViewConfig: TeamsViewModel
+    @EnvironmentObject var teamViewConfig: TeamListViewModel
     @EnvironmentObject var tabBarConfig: TabBarConfig
     
     @Environment (\.dismiss) var dismiss
+    
+    // MARK: - Body
     
     var body: some View {
         
@@ -52,6 +57,9 @@ struct AddTeamView: View {
         }
         
     }
+    
+    // MARK: - Custom Views
+    
     var TrailingItem: some View {
         Button {
             viewModel.createTeam()
@@ -73,6 +81,8 @@ struct AddTeamView: View {
     
     
 }
+
+// MARK: - Preview Provider
 
 struct AddTeamView_Previews: PreviewProvider {
     static var previews: some View {

@@ -22,7 +22,6 @@ class AddPlayerToTeamViewModel: ObservableObject{
         model.viewModel = self
     }
     @Published var textFieldsDescription = [
-        
         TextFieldModel(placeholder: ^String.TextFieldPlaceholders.lastName, titleOfError: ^String.TextFieldError.invalidFormat),
         TextFieldModel(placeholder: ^String.TextFieldPlaceholders.name, titleOfError: ^String.TextFieldError.invalidFormat),
         TextFieldModel(placeholder: ^String.TextFieldPlaceholders.middleName, titleOfError: ^String.TextFieldError.invalidFormat),

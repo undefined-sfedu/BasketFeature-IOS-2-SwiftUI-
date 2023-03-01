@@ -7,19 +7,25 @@
 
 import SwiftUI
 
-struct TeamsView: View {
-    @ObservedObject var viewModel = TeamsViewModel()
+struct TeamListView: View {
+    
+    // MARK: - Properties
+    
+    @ObservedObject var viewModel = TeamListViewModel()
     @EnvironmentObject var tabBarConfig: TabBarConfig
     @State var addTeamCondition = false
     @State var showTeam = false
     @State var idOfSelectedTeam = 0
     //    @Binding var tabBarIsActive: Bool
+    
+    // MARK: - Body
+    
     var body: some View {
         NavigationView {
             VStack {
                 NavigationLink(destination: AddTeamView(), isActive: $addTeamCondition) { EmptyView() }
                 if viewModel.teams.isEmpty == false {
-                    NavigationLink(destination: ShowTeamView().environmentObject(viewModel.teams[idOfSelectedTeam]), isActive: $showTeam) { EmptyView() }
+                    NavigationLink(destination: TeamView().environmentObject(viewModel.teams[idOfSelectedTeam]), isActive: $showTeam) { EmptyView() }
                     List {
                         ForEach(0..<viewModel.teams.count) { item in
                             Button {
@@ -58,15 +64,15 @@ struct TeamsView: View {
         
     }
         
+    // MARK: - Custom Views
     
-    
-    var LeadingItem: some View{
+    var LeadingItem: some View {
         Text("Команды")
             .font(.system(size: 24))
             .fontWeight(.bold)
     }
     
-    var TrailingItem: some View{
+    var TrailingItem: some View {
         NavigationLink(destination: AddTeamView(),
                        label: {
             Image(systemName: "plus")
@@ -83,9 +89,11 @@ struct TeamsView: View {
     }
 }
 
+// MARK: - Preview Provider
+
 struct TeamsView_Previews: PreviewProvider {
     static var previews: some View {
         //        TeamsView(tabBarIsActive: .constant(true))
-        TeamsView()
+        TeamListView()
     }
 }

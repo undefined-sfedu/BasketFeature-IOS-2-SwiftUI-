@@ -3,4 +3,54 @@
    uuid = "A8AAB60B-B8C3-4C15-AD6C-42C5D92C0859"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "960E00B9-3463-42B2-8062-92A299B823F7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BasketFeature(SwiftUI)/Modules/ShowTeam/ShowTeamModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "getPlayers(teamId:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "960E00B9-3463-42B2-8062-92A299B823F7 - 9c597e7632f72314"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in BasketFeature_SwiftUI_.ShowTeamModel.getPlayers(teamId: Swift.Int) -&gt; ()"
+                  moduleName = "BasketFeature(SwiftUI)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniilsestopalov/Documents/DEVELOPMENT/BasketFeature-IOS-2-SwiftUI-/BasketFeature(SwiftUI)/Modules/ShowTeam/ShowTeamModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "2476">
+               </Location>
+               <Location
+                  uuid = "960E00B9-3463-42B2-8062-92A299B823F7 - bb14215fc4b3e1d8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SwiftyJSON.JSON) -&gt; () in closure #1 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in BasketFeature_SwiftUI_.ShowTeamModel.getPlayers(teamId: Swift.Int) -&gt; ()"
+                  moduleName = "BasketFeature(SwiftUI)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniilsestopalov/Documents/DEVELOPMENT/BasketFeature-IOS-2-SwiftUI-/BasketFeature(SwiftUI)/Modules/ShowTeam/ShowTeamModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "300">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -9,6 +9,9 @@ import Foundation
 import SwiftUI
 
 class RegisterViewModel: ObservableObject {
+    
+    // MARK: - Properties
+    
     private var model = RegisterModel()
     @Published var emailDescription = TextFieldModel(placeholder: ^String.Common.email, titleOfError: ^String.TextFieldError.invalidFormat)
     @Published var passwordDescription = TextFieldModel(placeholder: ^String.Common.password, titleOfError: ^String.TextFieldError.invalidFormat)
@@ -16,7 +19,8 @@ class RegisterViewModel: ObservableObject {
     @Published var presentPopUp = false
     @Published var goToNextView = false
         
-    // MARK: - View's Methods
+    // MARK: - Methods
+    
     func register() {
         
 //        presentPopUp.toggle()
@@ -27,35 +31,34 @@ class RegisterViewModel: ObservableObject {
 //        checkFields()
 
     }
-}
-
-private extension RegisterViewModel {
     
-    func checkFields() -> Bool {
+    // MARK: - Private Methods
+    
+    private func checkFields() -> Bool {
         
         var res = true
-        if emailDescription.fieldValue.contains("@") == false{
+        if emailDescription.fieldValue.contains("@") == false {
             emailDescription.visibleOfError = true
             
             res = false
         }
         
-        if passwordDescription.fieldValue != repeatPasswordDescription.fieldValue{
+        if passwordDescription.fieldValue != repeatPasswordDescription.fieldValue {
             emailDescription.visibleOfError = true
             repeatPasswordDescription.visibleOfError = true
             res = false
         }
         
-        if passwordDescription.fieldValue.count < 8 || repeatPasswordDescription.fieldValue.count < 8{
+        if passwordDescription.fieldValue.count < 8 || repeatPasswordDescription.fieldValue.count < 8 {
             repeatPasswordDescription.visibleOfError = true
             res = false
         }
         
-        if !checkNumInString(password: passwordDescription.fieldValue){
+        if !checkNumInString(password: passwordDescription.fieldValue) {
             passwordDescription.visibleOfError = true
             res = false
         }
-        if !checkNumInString(password: repeatPasswordDescription.fieldValue){
+        if !checkNumInString(password: repeatPasswordDescription.fieldValue) {
             passwordDescription.visibleOfError = true
             res = false
         }
@@ -65,7 +68,7 @@ private extension RegisterViewModel {
         
     }
     
-    func checkNumInString(password: String) -> Bool{
+    private func checkNumInString(password: String) -> Bool {
         for i in passwordDescription.fieldValue{
             if i.isNumber{
                 return true
@@ -74,4 +77,7 @@ private extension RegisterViewModel {
         }
         return false
     }
+    
 }
+
+

@@ -7,12 +7,16 @@
 
 import SwiftUI
 
-struct ShowTeamView: View {
+struct TeamView: View {
+    
+    // MARK: - Properties
     
     @EnvironmentObject var team: Team
     @EnvironmentObject var tabBarConfig: TabBarConfig
-    @StateObject var viewModel = ShowTeamViewModel()
+    @StateObject var viewModel = TeamViewModel()
     @State var presentCreatePlayerView = false
+    
+    // MARK: - Body
     
     var body: some View {
         VStack{
@@ -41,30 +45,29 @@ struct ShowTeamView: View {
         }
     }
     
-    
-    
-    
     //    var LeadingItem: some View{
     //        Text("\(team.name)")
     //            .font(.largeTitle)
     //            .fontWeight(.bold)
     //    }
     
-    var TrailingItem: some View{
+    // MARK: - Custom Views
+    
+    var TrailingItem: some View {
         Button {
             presentCreatePlayerView.toggle()
         } label: {
             Image(systemName: "plus")
                 .foregroundColor(.black)
         }
-        
-        
     }
     
 }
 
+// MARK: - Preview Provider
+
 struct ShowTeamView_Previews: PreviewProvider {
     static var previews: some View {
-        ShowTeamView()
+        TeamView()
     }
 }

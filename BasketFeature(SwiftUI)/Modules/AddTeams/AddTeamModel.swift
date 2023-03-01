@@ -5,57 +5,50 @@
 //  Created by Daniil on 06.10.2022.
 //
 
-import Foundation
-import Alamofire
 import SwiftyJSON
-class AddTeamModel{
-    var viewModel: AddTeamViewModel? = nil
-    private var serverHelper = UrlHelper()
-    private var localUser = LocalUser()
+import Alamofire
+import Moya
+
+class AddTeamModel {
     
-    func createTeam(name: String, players: [String]){
-//        var url = serverHelper.getPath(typeOfrequest: .createTeamForUser)
-//        url += "\(localUser.getData(typeOfData: .id))/teams/"
-        let url = serverHelper.getPath(typeOfrequest: .createTeamForUser, typeOfParam: .userId, param: [localUser.getData(typeOfData: .id)])
-        let headers: HTTPHeaders = [
-            "Accept": "application/json",
-            "Content-Type": "application/json"
-        ]
-        let body = ["name" : name]
-        print(name)
-        print(url)
-        AF.request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: headers).responseJSON { [self] answer in
-            print(answer.response?.statusCode)
-//            print(answer)
-            guard let corData = answer.data else {return}
-            let maybeData = try? JSON(data: corData)
-            guard let myData = maybeData else {return}
-//            print(myData)
-            if answer.response?.statusCode == 200 {
-                viewModel?.updateView()
-                var teamId = myData["id"].intValue
-                addPlayersToTeam(teamId: teamId, players: players)
+    // MARK: - Properties
+    
+    private let userDataManager = UserDataManager.shared
+    
+    // MARK: - Methods
+    
+    func createTeam(name: String, players: [Int], completion: @escaping () -> ()) {
+        guard let id = userDataManager.user?.id else { return }
+        RequestManager.shared.request(.createTeamForUser(userId: id, teamName: name)) { [weak self ]result in
+            switch result {
+            case .success(let response):
+                do {
+                    let data = try JSON(data: response.data)
+                    if response.statusCode == 200 {
+                        let teamId = data["id"].intValue
+                        self?.addPlayersToTeam(teamId: teamId, players: players)
+                        completion()
+                    }
+                } catch {
+                    print(error.localizedDescription)
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }
     
-    func addPlayersToTeam(teamId: Int, players: [String]){
-//        var url = serverHelper.getPath(typeOfrequest: .createPlayerForTeam)
-        let url = serverHelper.getPath(typeOfrequest: .createPlayerForTeam, typeOfParam: .teamId, param: ["\(teamId)"])
-        print(url)
-        let headers: HTTPHeaders = [
-            "Accept": "application/json",
-            "Content-Type": "application/json"
-        ]
-        for number in players{
-            let body = ["number": number]
-            AF.request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: headers).responseJSON { answer in
-                guard let corData = answer.data else {return}
-                let maybeData = try? JSON(data: corData)
-                guard let myData = maybeData else {return}
-                print(answer.response?.statusCode)
-//                print(myData)
+    func addPlayersToTeam(teamId: Int, players: [Int]) {
+        print("Adding players to team...")
+        players.forEach({
+            RequestManager.shared.request(.createPlayerForTeam(playerNumber: $0, teamId: teamId)) { result in
+                switch result {
+                case .success(let response):
+                    print(response.statusCode)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
             }
-        }
+        })
     }
 }

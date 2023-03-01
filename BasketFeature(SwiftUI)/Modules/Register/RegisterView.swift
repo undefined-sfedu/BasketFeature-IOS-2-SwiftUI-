@@ -82,7 +82,9 @@ struct RegisterView: View {
     
     
 }
+
 // MARK: - Preview Provider
+
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {

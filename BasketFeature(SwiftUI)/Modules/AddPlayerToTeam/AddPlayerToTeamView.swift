@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct AddPlayerToTeamView: View {
-    enum IndexesOfDescription: Int{
+    
+    // MARK: - Properties
+    
+    enum IndexesOfDescription: Int {
         case lastName = 0
         case name = 1
         case middleName = 2
@@ -18,6 +21,8 @@ struct AddPlayerToTeamView: View {
     @EnvironmentObject var team: Team
     @Environment (\.dismiss) var dismiss
     @StateObject var viewModel = AddPlayerToTeamViewModel()
+    
+    // MARK: - Body
     
     var body: some View {
         VStack{
@@ -51,6 +56,8 @@ struct AddPlayerToTeamView: View {
         
     }
     
+    // MARK: - Custom Views
+    
     var CreateButton: some View{
         Button {
             viewModel.addPlayer(teamId: team.backId)
@@ -66,6 +73,8 @@ struct AddPlayerToTeamView: View {
     }
     
 }
+
+// MARK: - Preview Provider
 
 struct AddPlayerToTeam_Previews: PreviewProvider {
     static var previews: some View {

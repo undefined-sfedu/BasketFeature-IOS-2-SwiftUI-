@@ -6,29 +6,25 @@
 //
 
 import Foundation
-class TeamsViewModel: ObservableObject {
-    private var model = TeamsModel()
+class TeamListViewModel: ObservableObject {
+    
+    // MARK: - Properties
+    
+    private var model = TeamListModel()
     @Published var teams = [Team]()
     
     init() {
-//        teams.forEach { item in
-//            nameOfTeams.append(item.name)
-//        }
-//
-//        for i in 0...teams.count - 1{
-//            teams[i].players = getLocalPlayers()
-//        }
         getTeams()
     }
     
+    // MARK: - Methods
     
-// MARK: - View Methods
     func getTeams() {
         model.getTeams() { [weak self] teams in
             self?.teams = teams
         }
     }
-
+    
 }
 
 

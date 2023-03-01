@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 import Moya
-class TeamsModel {
+class TeamListModel {
 
     // MARK: - Properties
     
@@ -38,6 +38,5 @@ class TeamsModel {
             }
         }
     }
-    
     
 }
