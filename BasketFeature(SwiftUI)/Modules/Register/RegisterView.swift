@@ -45,7 +45,7 @@ struct RegisterView: View {
     
     // MARK: - Custom Views
     
-    var AlreadyHaveAccountButton: some View{
+    var AlreadyHaveAccountButton: some View {
         Button {
             haveAccount.toggle()
             

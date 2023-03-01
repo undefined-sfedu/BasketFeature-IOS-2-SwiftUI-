@@ -7,38 +7,29 @@
 
 import Foundation
 import SwiftUI
-class RegisterViewModel: ObservableObject{
+
+class RegisterViewModel: ObservableObject {
     private var model = RegisterModel()
     @Published var emailDescription = TextFieldModel(placeholder: ^String.Common.email, titleOfError: ^String.TextFieldError.invalidFormat)
     @Published var passwordDescription = TextFieldModel(placeholder: ^String.Common.password, titleOfError: ^String.TextFieldError.invalidFormat)
     @Published var repeatPasswordDescription = TextFieldModel(placeholder: ^String.Common.password,  titleOfError: ^String.TextFieldError.differentPasswords)
     @Published var presentPopUp = false
     @Published var goToNextView = false
-    
-    init(){
-        model.viewModel = self
-    }
-    
-    
+        
     // MARK: - View's Methods
     func register() {
         
 //        presentPopUp.toggle()
-        
 //        if checkFields() {
-            model.register(email: emailDescription.fieldValue, password: passwordDescription.fieldValue)
+//            model.register(email: emailDescription.fieldValue, password: passwordDescription.fieldValue)
+        model.register(email: emailDescription.fieldValue, password: passwordDescription.fieldValue) { [weak self] in self?.goToNextView.toggle() }
 //        }
 //        checkFields()
 
     }
-    
-    // MARK: - Model's Methods
-    func userIsRegistered(){
-        goToNextView.toggle()
-    }
 }
 
-private extension RegisterViewModel{
+private extension RegisterViewModel {
     
     func checkFields() -> Bool {
         

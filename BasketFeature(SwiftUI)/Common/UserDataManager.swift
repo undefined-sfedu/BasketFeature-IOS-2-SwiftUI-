@@ -22,8 +22,8 @@ class UserDataManager: PreferenceManager<UserKeys> {
     
     var user: User? {
         get {
-            let data = object(for: .user) as? Data
-            return try? JSONDecoder().decode(User.self, from: data!)
+            guard let data = object(for: .user) as? Data else { return nil}
+            return try? JSONDecoder().decode(User.self, from: data)
         } set {
             let data = try? JSONEncoder().encode(newValue)
             setObject(data as Any, for: .user)

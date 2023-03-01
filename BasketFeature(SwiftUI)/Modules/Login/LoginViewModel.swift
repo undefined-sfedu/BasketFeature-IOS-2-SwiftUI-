@@ -7,40 +7,35 @@
 
 import Foundation
 import SwiftUI
-class LoginViewModel: ObservableObject{
+
+class LoginViewModel: ObservableObject {
     private var model = LoginModel()
     
-    init(){
-        model.viewModel = self
-    }
-    
-    enum TypeOfError{
+    enum RequestStatus {
+        case canEnter
         case wrongEmail
         case wrongPassword
         case all
     }
+    
     @Published var emailDescription = TextFieldModel(placeholder: ^String.Common.email, titleOfError: ^String.TextFieldError.invalidEmail)
     @Published var passwordDescription = TextFieldModel(placeholder: ^String.Common.password, titleOfError:^String.TextFieldError.invalidPassword)
     @Published var goToMainScreen = false
+    
     // MARK: - View's Methods
-    func enter(){
-        if dataIsCorrect(){
-//            model.enter(email: emailDescription.fieldValue, password: passwordDescription.fieldValue)
-            model.enterX(email: emailDescription.fieldValue, password: passwordDescription.fieldValue)
-        }
-        else{
+    
+    func enter() {
+        if dataIsCorrect() {
+            model.enter(email: emailDescription.fieldValue, password: passwordDescription.fieldValue) { [weak self] res in
+                self?.correctData(error: res)
+            }
+        } else {
             emailDescription.visibleOfError = true
             passwordDescription.visibleOfError = true
         }
-        
     }
     
-    // MARK: - Model Methods
-    func canEnter(){
-        goToMainScreen.toggle()
-    }
-    
-    func wrongData(error: TypeOfError){
+    func correctData(error: RequestStatus) {
         switch error {
         case .wrongEmail:
             emailDescription.visibleOfError = true
@@ -49,15 +44,17 @@ class LoginViewModel: ObservableObject{
         case .all:
             emailDescription.visibleOfError = true
             passwordDescription.visibleOfError = true
+        case .canEnter:
+            goToMainScreen.toggle()
         }
-        
     }
+    
 }
 
-private extension LoginViewModel{
+private extension LoginViewModel {
     
-    func dataIsCorrect() -> Bool{
-        if emailDescription.fieldValue.isEmpty || passwordDescription.fieldValue.isEmpty{
+    func dataIsCorrect() -> Bool {
+        if emailDescription.fieldValue.isEmpty || passwordDescription.fieldValue.isEmpty {
             return false
         }
         return true

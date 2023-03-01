@@ -15,12 +15,12 @@ struct TeamsView: View {
     @State var idOfSelectedTeam = 0
     //    @Binding var tabBarIsActive: Bool
     var body: some View {
-        NavigationView{
-            VStack{
-                NavigationLink(destination:AddTeamView(), isActive: $addTeamCondition) {EmptyView()}
-                if viewModel.teams.isEmpty == false{
-                    NavigationLink(destination: ShowTeamView().environmentObject(viewModel.teams[idOfSelectedTeam]), isActive: $showTeam) {EmptyView()}
-                    List{
+        NavigationView {
+            VStack {
+                NavigationLink(destination: AddTeamView(), isActive: $addTeamCondition) { EmptyView() }
+                if viewModel.teams.isEmpty == false {
+                    NavigationLink(destination: ShowTeamView().environmentObject(viewModel.teams[idOfSelectedTeam]), isActive: $showTeam) { EmptyView() }
+                    List {
                         ForEach(0..<viewModel.teams.count) { item in
                             Button {
                                 idOfSelectedTeam = item

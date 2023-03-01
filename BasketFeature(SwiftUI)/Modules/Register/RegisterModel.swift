@@ -5,8 +5,6 @@
 //  Created by Daniil on 27.09.2022.
 //
 
-import Foundation
-import Moya
 import Alamofire
 import SwiftyJSON
 
@@ -14,12 +12,11 @@ class RegisterModel {
     
     // MARK: - Properties
     
-    var viewModel: RegisterViewModel? = nil
     private let userDataManager = UserDataManager.shared
     
     // MARK: - Methods
     
-    func register(email: String, password: String) {
+    func register(email: String, password: String, completion: @escaping () -> ()) {
         RequestManager.shared.request(.register(email: email, password: password)) { [weak self] result in
             switch result {
             case .success(let response):
@@ -33,7 +30,7 @@ class RegisterModel {
                                         lastName: corData["last_name"].stringValue,
                                         middleName: corData["middle_name"].stringValue)
                         self?.userDataManager.user = user
-                        self?.viewModel?.userIsRegistered()
+                        completion()
                     } catch {
                         print(error.localizedDescription)
                     }
@@ -43,6 +40,6 @@ class RegisterModel {
             }
         }
     }
-    
+
 }
 

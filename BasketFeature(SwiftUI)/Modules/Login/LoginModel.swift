@@ -15,13 +15,11 @@ class LoginModel {
     // MARK: - Properties
     
     private let userDataManager = UserDataManager.shared
-    var viewModel: LoginViewModel? = nil
     
     // MARK: - Methods
     
-    func enterX(email: String, password: String) {
-        let provider = MoyaProvider<RequestManager>()
-        provider.request(.logIn(email: email, password: password)) { [weak self] result in
+    func enter(email: String, password: String, completion: @escaping (LoginViewModel.RequestStatus) -> () ) {
+        RequestManager.shared.request(.logIn(email: email, password: password)) { [weak self] result in
             switch result {
             case .success(let response):
                 
@@ -34,21 +32,18 @@ class LoginModel {
                                         lastName: data["last_name"].stringValue,
                                         middleName: data["middle_name"].stringValue)
                         self?.userDataManager.user = user
-                        self?.viewModel?.canEnter()
+                        completion(.canEnter)
                     } catch {
                         print(error.localizedDescription)
                     }
-                }
-                else if response.statusCode == 401{
-                    self?.viewModel?.wrongData(error: .wrongPassword)
+                } else if response.statusCode == 401 {
+                    completion(.wrongPassword)
+                } else if response.response?.statusCode == 404 {
+                    completion(.wrongEmail)
+                } else {
+                    completion(.all)
                 }
                 
-                else if response.response?.statusCode == 404{
-                    self?.viewModel?.wrongData(error: .wrongEmail)
-                }
-                else{
-                    self?.viewModel?.wrongData(error: .all)
-                }
             case .failure(let error):
                 print(error.localizedDescription)
             }
