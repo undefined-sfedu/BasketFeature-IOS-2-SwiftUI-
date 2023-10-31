@@ -8,12 +8,30 @@
 import SwiftUI
 
 struct GamesView: View {
+    @State var showAlert = false
     var body: some View {
-        NavigationView{
-        Text("")
-        
-            .navigationBarItems(leading: LeadingItem,
+        NavigationView {
+            ZStack {
+                VStack {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .strokeBorder(Color.black)
+                        GameCell(title: "Химки – ЦСКА", dateString: "21.07.2023")
+                    }
+                    .frame(height: 50)
+                    .padding(.top, 30)
+                    .padding(.horizontal)
+                    Spacer()
+                }
+                .gesture(TapGesture().onEnded({ _ in
+                    showAlert.toggle()
+                }))
+                .navigationBarItems(leading: LeadingItem,
                                 trailing: TrailingItem)
+                CustomAlert(isShow: $showAlert, largeTitle: "Ошибка!", smallTitle: "Нет соединения с сервером", titleButton: "Ok", selfClosed: false) {
+                    showAlert.toggle()
+                }
+            }
         }
     }
     

@@ -34,6 +34,7 @@
 		F3561C6F28EF02580098188E /* TeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3561C6E28EF02580098188E /* TeamModel.swift */; };
 		F3561C7528EF0F6A0098188E /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3561C7428EF0F6A0098188E /* GamesView.swift */; };
 		F3561C7828EF0FBD0098188E /* CreateGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3561C7728EF0FBD0098188E /* CreateGameView.swift */; };
+		F3582FA02AF13FFA0015A6CD /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3582F9F2AF13FFA0015A6CD /* GameCell.swift */; };
 		F35B399528EFF928008A62B9 /* CreateGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35B399428EFF928008A62B9 /* CreateGameViewModel.swift */; };
 		F35B399728EFF930008A62B9 /* CreateGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35B399628EFF930008A62B9 /* CreateGameModel.swift */; };
 		F35B399928EFFA57008A62B9 /* SelectFivePlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35B399828EFFA57008A62B9 /* SelectFivePlayersView.swift */; };
@@ -109,6 +110,7 @@
 		F3561C6E28EF02580098188E /* TeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamModel.swift; sourceTree = "<group>"; };
 		F3561C7428EF0F6A0098188E /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
 		F3561C7728EF0FBD0098188E /* CreateGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameView.swift; sourceTree = "<group>"; };
+		F3582F9F2AF13FFA0015A6CD /* GameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
 		F35B399428EFF928008A62B9 /* CreateGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameViewModel.swift; sourceTree = "<group>"; };
 		F35B399628EFF930008A62B9 /* CreateGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameModel.swift; sourceTree = "<group>"; };
 		F35B399828EFFA57008A62B9 /* SelectFivePlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFivePlayersView.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 				F3FF7A7128E97E04008B1FE8 /* CustomAlert.swift */,
 				F32B7C1928E9E9CF00E279AE /* TeamCell.swift */,
 				F3CD446328EC272600CF88BB /* CustomPlayerCell.swift */,
+				F3582F9F2AF13FFA0015A6CD /* GameCell.swift */,
 				F324F27128F1966900293DE4 /* Field.swift */,
 			);
 			path = CustomViews;
@@ -662,6 +665,7 @@
 				F3803F4428FFDC7600E590CB /* SelectTechnicalParamsView.swift in Sources */,
 				F316CC7528ED535500F98BC4 /* UrlHelper.swift in Sources */,
 				F38FD0E22997BB3C000EE7E5 /* ViewFactory.swift in Sources */,
+				F3582FA02AF13FFA0015A6CD /* GameCell.swift in Sources */,
 				F34B54F528E31EA10045BA28 /* TeamListView.swift in Sources */,
 				F3561C6F28EF02580098188E /* TeamModel.swift in Sources */,
 				F35B399928EFFA57008A62B9 /* SelectFivePlayersView.swift in Sources */,
